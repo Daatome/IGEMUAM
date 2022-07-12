@@ -1,18 +1,111 @@
-body { padding-top: 56px; }
-.left-aligned { margin-left: auto; }
-.bg-dark { background-color: #343a40 !important; }
-.bg-hero { background-color: #7952b3; }
+:root{/*se declaran las variables que usaremos*/
+    --fuenteHeadings: 'PT Sans', sans-serif;
+    /*Colores ordenados del mas fuerte al mas claro*/
+    --color1:#0E4562;
+    --color2:#156A78;
+    --color3:#1E8C85;
+    --color4:#299F7F;
+    --color5:#35B075;
+    --color6:#45C168;
+    --color7:#57D15C;
+    --color8:#82DE6B;
+    --color9:#AEE882;
+    --color10:#D5F19A;
+    --color11:#F2F8B5;
+    --color12:#F7F7F7;
+    
+
+}
+
+body { 
+    padding-top: 56px; 
+}
+
+.nav-link{
+    color: var(--color12)  !important;
+}
+
+.logo{
+    max-width: 80px;
+}
+
+
+.dropdown-menu {
+    
+    background-color: var(--color2);
+    
+}
+.dropdown-menu a:hover {
+    
+    background-color: var(--color6);
+    color: var(--color12);
+    
+}
+
+.dropdown-item{
+    color: var(--color12);
+}
+
+
+.left-aligned {
+     margin-left: auto;
+}
+.bg-dark { 
+    background-color: var(--color3) !important; 
+}
+.bg-hero { 
+    background-color: var(--color4); 
+}
 
 /* CALLOUT */
-.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
-.bd-callout h4 { margin-bottom:.25rem }
-.bd-callout p:last-child { margin-bottom:0 }
-.bd-callout code { border-radius:.25rem }
-.bd-callout+.bd-callout { margin-top:-.25rem }
-.bd-callout-info { border-left-color:#5bc0de }
-.bd-callout-warning { border-left-color:#f0ad4e }
-.bd-callout-danger { border-left-color:#d9534f }
+.bd-callout { 
+    padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem 
+}
+.bd-callout h4 { 
+    margin-bottom:.25rem 
+}
+.bd-callout p:last-child { 
+    margin-bottom:0 
+}
+.bd-callout code { 
+    border-radius:.25rem 
+}
+.bd-callout+.bd-callout { 
+    margin-top:-.25rem 
+}
+.bd-callout-info { 
+    border-left-color:#5bc0de 
+}
+.bd-callout-warning { 
+    border-left-color:#f0ad4e 
+}
+.bd-callout-danger { 
+    border-left-color:#d9534f 
+}
+
+/*Cards for team*/
+
+.tarjeta{
+    border-radius: 20px;
+    background-color: var(--color4);
+    border-radius: 50% 10% / 10% 40%;
+    margin-right: 10px;
+
+}
+.cuerpo-card{
+    max-height: 350px;
+    overflow: auto;
+    border-radius: 25% 10%;
+}
+
+
+
+
 
 /* footer */
-footer a { color: white; font-weight: bold; text-decoration: none; }
-footer a:hover { color: white; text-decoration: underline; }
+footer a { 
+    color: white; font-weight: bold; text-decoration: none; 
+}
+footer a:hover { 
+    color: white; text-decoration: underline; 
+}
