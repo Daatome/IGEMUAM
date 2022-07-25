@@ -1,119 +1,118 @@
 {% extends "layout.html" %}
 
+<!--aos-->
+<link href="{{ url_for('static', filename = 'aos.css') }}" rel="stylesheet">
 {% block title %}Team{% endblock %}
 {% block lead %}On this page you can introduce your team members, instructors, and advisors Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum assumenda, consectetur sit quisquam cum quia praesentium vel consequatur eos dolorem minima ratione iusto nemo modi quae a labore esse. Voluptatem!{% endblock %}
 
 {% block page_content %}
 
 <div class="container-xl">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="row justify-content-center align-items-center">
-        <h3>Click te photos to know more about us!</h3>
+  <h3>Click the photos to know more about us!</h3>
+  <div class="row  justify-items-center align-items-center">
+    <!--Start  member-->
+    <div class="col-md-3   " data-aos="fade-left">
 
-        <!--Start  member-->
-        <div class="tarjeta col-md-3 col-10 mb-3  ">
+      <div class="tarjeta" >
 
-          <div class="cuerpo-card mb-2 mt-3 bg-white">
-            <a class="text-decoration-none text-dark " data-bs-toggle="collapse" href="#colapsainfo1" role="button" aria-expanded="false" >
-              <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid ">
-              
+        <div class="cuerpo-card">
+          <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo1" role="button" aria-expanded="false" >
+            <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
+            <h3 class="ms-3">Jhon Doe</h3>
+          </a>
+          
+
+          <div class="collapse " id="colapsainfo1">
+            <div class="card-body ">
+              <p class="card-text"><span class="fs-5">Rol:</span></p>
+              <p class="card-text"><span class="fs-5">About me:</span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil rem illo sunt aut, autem nobis at libero neque dolorum voluptate, itaque amet earum ex excepturi illum doloribus ad enim? Tempora. </p>
+            </div>
+          </div>
+          
+
+        </div>
+      </div><!--fin de tarjeta-->
+
+    </div>
+
+    <!--End of member-->
+    <!--Start  member-->
+    <div class="col-md-3 col-10">
+
+      <div class="tarjeta  mb-3  ">
+
+        <div class="cuerpo-card mb-2 mt-3 bg-white">
+          <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo2" role="button" aria-expanded="false" >
+            <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
 
 
-            </a>
-            <div class="collapse" id="colapsainfo1">
-              <div class="card-body bg-white">
+          </a>
+          <div class="collapse" id="colapsainfo2">
+            <div class="card-body bg-white">
               <h5 class="card-header bg-white mt-2">John Doe</h5>
-
-                <p class="card-text"><span class="fs-5">Rol:</span>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias consectetur amet veritatis beatae eligendi adipisci sapiente facere eaque aperiam consequuntur error, culpa officiis repellat perferendis dolor nesciunt reprehenderit asperiores aspernatur!
-              </p>
-                <p class="card-text"><span class="fs-5">About me:</span> </p>
-              </div>
+              <p class="card-text"><span class="fs-5">Rol:</span></p>
+              <p class="card-text"><span class="fs-5">About me:</span> </p>
             </div>
           </div>
-            
         </div>
-        <!--End of member-->
-        <!--Start  member-->
-        <div class="tarjeta col-md-3 col-10 mb-3  ">
-
-          <div class="cuerpo-card mb-2 mt-3 bg-white">
-            <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo2" role="button" aria-expanded="false" >
-              <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
-
-
-            </a>
-            <div class="collapse" id="colapsainfo2">
-              <div class="card-body bg-white">
-                <h5 class="card-header bg-white mt-2">John Doe</h5>
-                <p class="card-text"><span class="fs-5">Rol:</span></p>
-                <p class="card-text"><span class="fs-5">About me:</span> </p>
-              </div>
-            </div>
-          </div>
-            
-        </div>
-        <!--End of member-->
-        <!--Start  member-->
-        <div class="tarjeta col-md-3 col-10 mb-3  ">
-
-          <div class="cuerpo-card mb-2 mt-3 bg-white">
-            <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo3" role="button" aria-expanded="false" >
-              <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
-
-
-            </a>
-            <div class="collapse" id="colapsainfo3">
-              <div class="card-body bg-white">
-                <h5 class="card-header bg-white mt-2">John Doe</h5>
-                <p class="card-text"><span class="fs-5">Rol:</span></p>
-                <p class="card-text"><span class="fs-5">About me:</span> </p>
-              </div>
-            </div>
-          </div>
-            
-        </div>
-        <!--End of member-->
-        <!--Start  member-->
-        <div class="tarjeta col-md-3 col-10 mb-3  ">
-
-          <div class="cuerpo-card mb-2 mt-3 bg-white">
-            <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo4" role="button" aria-expanded="false" >
-              <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
-
-
-            </a>
-            <div class="collapse" id="colapsainfo4">
-              <div class="card-body bg-white">
-                <h5 class="card-header bg-white mt-2">John Doe</h5>
-                <p class="card-text"><span class="fs-5">Rol:</span></p>
-                <p class="card-text"><span class="fs-5">About me:</span> </p>
-              </div>
-            </div>
-          </div>
-            
-        </div>
-        <!--End of member-->
-
-
+          
       </div>
     </div>
 
-    
-    <div class="col-md-2">
-      <h2>Inspirations</h2>
-      <hr>
-      <ul>
-        <li><a href="https://2019.igem.org/Team:CU/Team">2019 CU</a></li>
-        <li><a href="https://2019.igem.org/Team:UANL/Team">2019 UANL</a></li>
-        <li><a href="https://2019.igem.org/Team:William_and_Mary/Team">2019 William and Mary</a></li>
-        <li><a href="https://2020.igem.org/Team:BOKU-Vienna/Team">2020 BOKU Vienna </a></li>
-        <li><a href="https://2020.igem.org/Team:CAU_China/Team_Member">2020 CAU China</a></li>
-        <li><a href="https://2020.igem.org/Team:Lethbridge/Members">2020 Lethbridge</a></li>
-      </ul>
+    <!--End of member-->
+    <!--Start  member-->
+    <div class="col-md-3 col-10">
+      <div class="tarjeta  mb-3  ">
+
+        <div class="cuerpo-card mb-2 mt-3 bg-white">
+          <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo3" role="button" aria-expanded="false" >
+            <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
+  
+  
+          </a>
+          <div class="collapse" id="colapsainfo3">
+            <div class="card-body bg-white">
+              <h5 class="card-header bg-white mt-2">John Doe</h5>
+              <p class="card-text"><span class="fs-5">Rol:</span></p>
+              <p class="card-text"><span class="fs-5">About me:</span> </p>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+
     </div>
+    
+    <!--End of member-->
+   
+    <!--Start  member-->
+    <div class="col-md-3 col-10">
+
+      <div class="tarjeta mb-3  ">
+
+        <div class="cuerpo-card mb-2 mt-3 bg-white">
+          <a class="text-decoration-none text-dark" data-bs-toggle="collapse" href="#colapsainfo4" role="button" aria-expanded="false" >
+            <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_960_720.jpg" alt="logoigemuam" class=" img-fluid">
+  
+  
+          </a>
+          <div class="collapse" id="colapsainfo4">
+            <div class="card-body bg-white">
+              <h5 class="card-header bg-white mt-2">John Doe</h5>
+              <p class="card-text"><span class="fs-5">Rol:</span></p>
+              <p class="card-text"><span class="fs-5">About me:</span> </p>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+    </div>
+    
+    <!--End of member-->
+
+
   </div>
+    
 </div>
 
 

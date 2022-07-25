@@ -17,9 +17,29 @@
 
 }
 
+
+
+
+
 body { 
     padding-top: 56px; 
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--color6);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--color2);
+    border-radius: 100vw;
+
+    
+}
+
+
 
 .nav-link{
     color: var(--color12)  !important;
@@ -86,17 +106,30 @@ body {
 /*Cards for team*/
 
 .tarjeta{
-    border-radius: 20px;
     background-color: var(--color4);
+    
     border-radius: 50% 10% / 10% 40%;
-    margin-right: 10px;
+    
+
 
 }
-.cuerpo-card{
-    max-height: 350px;
+
+
+.cuerpo-card {
+    border-radius: 50% 10% / 10% 40% !important;
+    background-color: var(--color12);
+    max-height: 330px;
     overflow: auto;
-    border-radius: 25% 10%;
+    border: var(--color4) solid 3px;    
+
 }
+
+
+.cuerpo-card::-webkit-scrollbar-track{
+    margin: 20px ;
+    
+}
+
 
 
 
