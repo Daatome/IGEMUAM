@@ -25,19 +25,23 @@ body {
     padding-top: 56px; 
 }
 
-::-webkit-scrollbar{
-    width: 10px;
-}
-::-webkit-scrollbar-track{
-    background: var(--color6);
-    border-radius: 100vw;
-}
-::-webkit-scrollbar-thumb{
-    background: var(--color2);
-    border-radius: 100vw;
-
+@media (min-width:768px){
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+    body::-webkit-scrollbar-track{
+        background: var(--color6);
+        border-radius: 100vw;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: var(--color2);
+        border-radius: 100vw;
+    
+        
+    }
     
 }
+
 
 
 
@@ -119,10 +123,12 @@ body {
     border-radius: 50% 10% / 10% 40% !important;
     background-color: var(--color12);
     max-height: 330px;
-    overflow: auto;
+    overflow: auto ;
     border: var(--color4) solid 3px;    
 
 }
+
+
 
 
 .cuerpo-card::-webkit-scrollbar-track{
