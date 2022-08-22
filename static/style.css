@@ -148,3 +148,25 @@ footer a {
 footer a:hover { 
     color: white; text-decoration: underline; 
 }
+.back-fix{
+    background-image: url("https://cdn.pixabay.com/photo/2018/07/13/16/51/thorns-3536124_960_720.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+
+.our-project{
+    background-color: var(--color4);
+    opacity: 70%!important;
+    border-radius: 15px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+.our-project:hover{
+    opacity: 100%!important;
+}
