@@ -107,6 +107,14 @@ body {
     border-left-color:#d9534f 
 }
 
+/*utilites*/
+
+.flecha{
+    font-weight: bold;
+    font-size: 30px;
+    text-align: end;
+}
+
 /*Cards for team*/
 
 .tarjeta{
@@ -148,7 +156,7 @@ footer a {
 footer a:hover { 
     color: white; text-decoration: underline; 
 }
-.back-fix{
+.back-fix--projectDescription{
     background-image: url("https://cdn.pixabay.com/photo/2018/07/13/16/51/thorns-3536124_960_720.jpg");
     height: 100%;
     background-repeat: no-repeat;
@@ -156,17 +164,84 @@ footer a:hover {
     background-position: center center;
     background-attachment: fixed;
 }
-
-
-
 .our-project{
     background-color: var(--color4);
-    opacity: 70%!important;
     border-radius: 15px;
     margin-top: 100px;
     margin-bottom: 100px;
+    
+}
+@media (min-width:768px){
+    .our-project{
+        opacity: 70%!important;
+        
+    }
+    
+    .our-project:hover{
+        opacity: 100%!important;
+    }
+    
+}
 
+/*second section main page*/
+.back-fix--teamDescription{
+    background-image: url("https://cdn.pixabay.com/photo/2019/08/05/15/18/people-4386248_960_720.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
-.our-project:hover{
-    opacity: 100%!important;
+.our-team{
+    background-color: var(--color5);
+    border-radius: 15px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
 }
+
+@media (min-width:768px){
+    .our-team{
+        opacity: 70%!important;
+        
+    }
+    
+    .our-team:hover{
+        opacity: 100%!important;
+    }
+}
+
+.boton-team{
+    background-color: var(--color5);
+    padding: 30px;
+    border-radius: 30px;
+    color: var(--color12);
+    text-align: center;
+    text-decoration: none;
+    color: var(--color12);
+    font-size: 35px;
+    font-weight: bold;
+}
+@media (min-width:768px){
+    .boton-team{
+        opacity: 70%!important;
+    }
+   
+    
+}
+@media (min-width:900px){
+    .boton-team{
+        width: 300px;
+        transition: ease-out  width  0.5s  ;
+        
+    }
+    .boton-team:hover{
+        width: 350px;
+        opacity: 100%!important;
+        color: var(--color12);
+        
+    }
+    
+}
+
+
