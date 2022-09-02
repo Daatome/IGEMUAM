@@ -1,8 +1,8 @@
 {% extends "layout.html" %} {% block page_content %}
-<div class="back-fix--projectDescription ">
+<div class="back-fix--projectDescription  ">
   <!--begin project description-->
   <div class="container-xl mt-5">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center ">
       <div class="col-md-8 text-white our-project" data-aos="fade-up">
         <a href="{{ url_for('pages', page='description') }}" class="text-decoration-none text-white">
 
@@ -39,10 +39,10 @@
 </div>
 <!--End of project description-->
 <!--begin Team description-->
-<div class="back-fix--teamDescription">
-  <div class="container-xl ">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-md-7 text-white our-team" data-aos="fade-up">
+<div class="back-fix--teamDescription container-xl mt-5">
+  <div class="container-xl  " data-aos="fade-up">
+    <div class="row justify-content-center align-items-center ">
+      <div class="col-md-7 text-white our-team me-1" >
         <h1 class="text-white">US</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus
@@ -57,7 +57,7 @@
           sunt sequi nemo!
         </p>
       </div>
-      <a class="boton-team col-md-4"href="{{ url_for('pages', page='team') }}">¡Know More About us!</a>
+      <a class="boton-team col-md-4"href="{{ url_for('pages', page='team') }}" >¡Know More About us!</a>
     </div>
   </div>
   <!--End of team description-->
