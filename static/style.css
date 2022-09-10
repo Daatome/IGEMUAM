@@ -31,11 +31,10 @@ body {
         width: 10px;
     }
     body::-webkit-scrollbar-track{
-        background: var(--color6);
-        border-radius: 100vw;
+        background: var(--color2);
     }
     ::-webkit-scrollbar-thumb{
-        background: var(--color2);
+        background: var(--color5);
         border-radius: 100vw;
     
         
@@ -130,6 +129,9 @@ body {
         width: 100%;
     }
 }
+.member-img{
+    max-height: auto !important;
+}
 .cuerpo-card {
     border-radius: 50% 10% / 10% 40% !important;
     background-color: var(--color12);
@@ -180,77 +182,49 @@ footer a:hover {
     
 }
 
-/*second section main page*/
-.back-fix--teamDescription{
-    background-image: url("https://cdn.pixabay.com/photo/2018/02/03/16/11/avatar-3127928_960_720.jpg");
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
 @media (min-width:768px){
-    .back-fix--teamDescription{
-        background-attachment: fixed;
-    }
     .back-fix--projectDescription{
-        background-attachment: fixed;
-
-    }
-}
-.our-team{
-    background-color: var(--color5);
-    border-radius: 15px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    
-}
-/*
-@media (min-width:768px){
-    .our-team{
-        opacity: 70%!important;
         
+        background-attachment: fixed;
     }
-    
-    .our-team:hover{
-        opacity: 100%!important;
-    }
-}*/
+}
+
+/*second section main page*/
 
 .boton-team{
-    background-color: var(--color5);
-    padding: 30px;
-    border-radius: 30px;
-    color: var(--color12);
+    border: solid 1px   var(--color6);
+
+    padding: 10px;
+    margin-top: 30px;
     text-align: center;
+    border-radius: 30px;
+}
+.boton-team a{
     text-decoration: none;
-    color: var(--color12);
-    font-size: 35px;
+    color: var(--color1);
     font-weight: bold;
+    transition: all 0.2s;
+    display: block;
+}
+.boton-team a:hover{
+    color: var(--color12);
+
 }
 .boton-team:hover{
+    letter-spacing: 2px;
+    background-color: var(--color1);
     color: var(--color12);
-}
-/*
-@media (min-width:768px){
-    .boton-team{
-        opacity: 70%!important;
-    }
-   
-    
-}*/
-@media (min-width:900px){
-    .boton-team{
-        width: 300px;
-        transition:   width  0.5s  !important;
-        
-    }
-    .boton-team:hover{
-        width: 400px;
-        opacity: 100%!important;
-        color: var(--color12);
-        
-    }
-    
+
 }
 
+/*FAQS*/
+
+.pregunta{
+    border-bottom: 2px solid var(--color4);
+    margin-top: 50px;
+}
+.pregunta:last-of-type{
+    border-bottom:none;
+
+}
 
