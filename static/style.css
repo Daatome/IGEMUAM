@@ -231,3 +231,25 @@ footer a:hover {
 .member-img:hover{
     opacity: 80%;
 }
+
+
+/*Entrepreneurship*/
+.entrepreneurship{
+    border-radius: 30px;
+    background-color: var(--color12);
+}
+.entrepreneurship-title{
+    border-bottom: 1px solid var(--color2);
+}
+
+.entrepreneurship-topic{
+    margin: 40px;
+    background-color: var(--color1);
+    color: var(--color12);
+    border-radius:0px 40px 0px 40px;
+    padding: 10px;
+}
+.entrepreneurship-topic:nth-child(odd){
+    background-color: var(--color7);
+
+}
