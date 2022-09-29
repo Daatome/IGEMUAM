@@ -5,19 +5,50 @@
 
 {% block page_content %}
 <div class="container-xl my-5 p-5 shadow-lg entrepreneurship">
+  <!--inicio de resumen-->
   <h1 class="entrepreneurship-title">Overview</h1>
-  <p class="entrepreneurship-overview">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta nihil possimus! Explicabo aperiam vitae consectetur suscipit, odit atque eos doloremque officiis blanditiis, quod quidem repudiandae sapiente, exercitationem at itaque.
-  </p>
+  <div class="entrepreneurship-overview">
+    <p>
+      Modern agriculture needs to substitute the use of traditional agrochemicals (fertilizers and pesticides) which have been proven to be dangerous for the ecosystem and human health (SOURCE). One of many innovative efforts to tackle this, is the design of biological pesticides also known as biopesticides. These new products are formulations based on natural molecules which have insecticidal properties or organisms that specifically target the pest (entomopathogenic organisms). Additionally, and of the most important, these new solutions are harmless to humans, other animals, and the environment (Kumar et al., 2021 & Basnet, 2022).
+    </p>
+    <p>
+      All biopesticides can be classified into three categories: microbial, biochemical, and bioprotective biopesticides. Microbial pesticides use a living organism for pest control. Biochemical pesticides use metabolites, molecules like short chain peptides, fatty acids, or hormones. Finally, the bioprotective pesticides are new genetically modified strands of crops, capable of synthesizing its own insecticidal, antifungal, or antibacterial molecules (Bharti & Ibrahim, 2020). 
+    </p>
+    <p>
+      We designed SPIDICIDE-Cx, a biochemical biopesticide with two spider venom peptides as its active ingredients. This product targets Coleopteran pests which cause significant damages and losses on national fields like nopal (Opuntia spp), agave (Agave spp), and avocado (Persea Americana Mill). The used peptides are <button class=" btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#protein-modal">Omega-hexatoxina-Hv2a (AcTx-Hv2a) and U1-terafotoxina-Sp1a (OAIP-1)</button>    from the Australian spider and tarantula Hadronyche versuta and Selenotypus plumipes respectively (Hardy et al., 2013 & Windley et al., 2012). 
+    </p>
+    <!--modal para llevar a modelado de proteinas-->
+    <div class="modal fade" id="protein-modal" tabindex="-1" aria-labelledby="protein-modal-label" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              We design two fusion proteins to improve the oral efficiency of each peptide. To know read more about how these proteins act, their insecticidal properties, and the fusion proteins, please visit the PROTEIN MODEL section of the wiki. 
+            </p>
+            <div class="modal-footer">
+
+              <a href="{{ url_for('pages', page='model') }}" class="text-decoration-none text-dark fw-bold">Go to protein model</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!--fin de resumen -->
   <!--inicio de topics-->
   <!--topic 1-->
   <div class="entrepreneurship-topic">
     <a class="text-decoration-none text-white text-center" data-bs-toggle="collapse" href="#colapsatopic1" role="button" aria-expanded="false">
-      <h2>Topic1</h2>
+      <h2>MEETING ITECH TOALTEPE </h2>
     </a>
     <div class="collapse" id="colapsatopic1">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illum est alias eius tempora praesentium hic repellendus beatae tempore nam placeat reiciendis, doloribus, modi iusto. Deserunt incidunt in a aperiam</p>
-     <h3 class="text-end"><a href="" class="text-decoration-none text-white">click to details</a></h3>
+     <h3 class="text-end"><a href="{{url_for('pages', page='meeting-itech-toaltepe')}}" class="text-decoration-none text-white">click to details</a></h3>
     </div>
   </div>
   <!--fin de topic 1-->
