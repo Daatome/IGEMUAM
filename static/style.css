@@ -264,3 +264,11 @@ footer a:hover {
     border-radius: 40px 0px 40px 0px;
     background-color: var(--color2);
 }
+
+
+/*clases qgenerales para colocar informacion en forma de blog*/
+
+.blog-table{
+    max-width: 100%;
+    overflow: auto;
+}
