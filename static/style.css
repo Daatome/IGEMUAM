@@ -267,7 +267,10 @@ footer a:hover {
 
 
 /*clases qgenerales para colocar informacion en forma de blog*/
-
+.blog-title{
+    border-bottom: 2px solid var(--color4);
+    margin-bottom: 20px;
+}
 .blog-table{
     max-width: 100%;
     overflow: auto;
