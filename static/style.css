@@ -248,7 +248,7 @@ footer a:hover {
     color: var(--color12);
     border-radius:0px 40px 0px 40px;
     padding: 10px;
-    transition: 1s ease all;
+    transition: 0.3s ease all;
 
 }
 .entrepreneurship-topic:nth-child(odd){
