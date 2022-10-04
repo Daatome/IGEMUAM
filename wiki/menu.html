@@ -31,6 +31,8 @@
             <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+
           </ul>
         </li>
 
@@ -40,20 +42,29 @@
             Project
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='protocols') }}">Protocols</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+          </ul>
+        </li>
+
+        <!--Model-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Model
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
           </ul>
         </li>
 
         <!---- PARTS ---->
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Parts
@@ -64,28 +75,60 @@
             <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
           </ul>
         </li>
+        -->
 
         <!---- SAFETY ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Safety
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='safety') }}">Overview</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+          </ul>
         </li>
 
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='human-practices') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Human Practices</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}">Integrated Human Practices</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='integrated') }}">Integrated</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
           </ul>
         </li>
         <!--ENTREPRENEURSHIP-->
         <li>
           <a class="nav-link" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a>
-
         </li>
 
+        <!--Achivevements-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Achivevements
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='requirements') }}"> Medal Requirements</a></li>
+          </ul>
+        </li>
+        <!--Parts-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='basic-parts') }}">Basic Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='composite-parts') }}">Composite Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='primers') }}">Primers</a></li>
+          </ul>
+        </li>
 
+        
         <!---- AWARDS ---->
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Awards
@@ -101,7 +144,7 @@
             <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
 
           </ul>
-        </li>
+        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('pages', page='faqs') }}">FAQS</a>
         </li>
