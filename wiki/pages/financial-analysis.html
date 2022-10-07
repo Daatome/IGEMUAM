@@ -1,0 +1,2033 @@
+{% extends "layout.html" %}
+  
+{% block title %}Engineering Success{% endblock %}
+{% block lead %}Demonstrate engineering success in a part of your project by going through at least one iteration of the engineering design cycle.{% endblock %}
+
+{% block page_content %}
+
+<div class="container-xl mt-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-2 me-2">
+            <h2>Index</h2>
+            
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{{url_for('pages', page='entrepreneurship')}}"class="text-decoration-none text-success">Return</a></li>
+                <li class="list-group-item"><a href="#market-analysis" class="text-decoration-none text-dark">Market Analysis</a></li>
+                <li class="list-group-item"><a href="#competitors-analysis" class="text-decoration-none text-dark">Competitors Analysis</a></li>
+                <li class="list-group-item"><a href="#bibliography" class="text-decoration-none text-dark">Bibliography</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <h1 class="blog-title" >Market and Competitors Analysis</h1>
+            <div class="blog-section" id="overview">
+                <h2 class="blog-subtitle">Overview</h2>
+
+            </div>
+            <div class="blog-section" id="fixed-capital-costs">
+                <h2 class="blog-subtitle">Fixed Capital Costs</h2>
+                <p>After defining the engineering and technology required for the production process, we proceed to estimate the financial expenses needed to build the infrastructure, buy equipment, and start the operation of the production plant. </p>
+                <p>We used the <button class="btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-1F"> Lang Factor method</button>  to estimate the fixed capital cost based on the cost of equipment (CPE). </p>
+                <h3 class="blog-subtitle">Fixed Capital of the Initial Investment</h3>
+                <p>The cost of the equipment required in the preoperative year is presented below. All prices are from 2022 and were consulted directly with suppliers. </p>
+                <!--modal para boton de arriba-->
+                <div class="modal fade" id="info-anexo-1F" tabindex="-1" aria-labelledby="info-anexo-1FLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 1F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>We consider the Lang factors corresponding to a solid-fluid processing plant. </p>
+                          <div class="blog-table">
+                            <table  border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                <tbody class="table">
+                                    <tr >
+                                        <td width="52%" valign="top" ><p><strong>Assets</strong></p></td>
+                                        <td width="23%" valign="top" ><p><strong>Factor</strong></p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p><strong>Source</strong></p></td>
+                                        <td  width="0%"></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Equipment Purchase Cost (National)</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>5%</p></td>
+                                        <td width="23%" colspan="2" ><p>CPE National</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Equipment Purchase Cost (International)</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>30%</p></td>
+                                        <td width="23%" colspan="2" ><p>CPE International</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Installation </strong></p></td>
+                                        <td width="23%" colspan="2" ><p>30%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Piping</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>30%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Instrumentation</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>15%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Insulation</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>5%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Electrical</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>15%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Engeeniering</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>65%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Imprevistos</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>60%</p></td>
+                                        <td width="23%" colspan="2" valign="top" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Auxiliary Facilities </strong></p></td>
+                                        <td width="23%" colspan="2" ><p>30%</p></td>
+                                        <td width="23%" colspan="2" ><p>Total CPE</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>Buildings </strong></p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Land and yard improvement</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                    </tr>
+                                    
+                                    <tr class="table-success">
+                                        <td width="52%" ><p><strong>WWTP Equiptment</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td width="52%" ><p><strong>Transport</strong></p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                        <td width="23%" colspan="2" ><p>---</p></td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                                
+                                
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin de modal-->
+
+                <div class="blog-table">
+                    <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                        <tbody>
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Asset</strong></p></td>
+                                <td width="25%" ><p><strong>Cost (MXN)</strong></p></td>
+                                <td width="26%" ><p><strong>Place of Origin</strong></p></td>
+                                </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Sacale (K-110)</strong></p></td>
+                                <td width="25%" ><p>83,732</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-110)</strong></p></td>
+                                <td width="25%" ><p>123,550</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Mixer (M-110)</strong></p></td>
+                                <td width="25%" ><p>301,247</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Tank (F-210)</strong></p></td>
+                                <td width="25%" ><p>159,928</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-220)</strong></p></td>
+                                <td width="25%" ><p>115,763</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Vaporizer (V-210)</strong></p></td>
+                                <td width="25%" ><p>121,673</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Bioreactor (R-210)</strong></p></td>
+                                <td width="25%" ><p>11,008,800</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Tank (F-230)</strong></p></td>
+                                <td width="25%" ><p>251,121</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Disk-Stak Centrifuge (H-210)</strong></p></td>
+                                <td width="25%" ><p>127,712</p></td>
+                                <td width="26%" ><p>Germany</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Tank (F-240)</strong></p></td>
+                                <td width="25%" ><p>201,094</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-310)</strong></p></td>
+                                <td width="25%" ><p>17,432</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Nickel Column &amp;amp; chromatography system (H-310)</strong></p></td>
+                                <td width="25%" ><p>300,000</p></td>
+                                <td width="26%" ><p>China</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-320)</strong></p></td>
+                                <td width="25%" ><p>17,432</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Ultrafilter (H-310)</strong></p></td>
+                                <td width="25%" ><p>47,743</p></td>
+                                <td width="26%" ><p>China</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-330)</strong></p></td>
+                                <td width="25%" ><p>90,868</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Mixer (M-310)</strong></p></td>
+                                <td width="25%" ><p>187,096</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Tank (F-410)</strong></p></td>
+                                <td width="25%" ><p>90,868</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Filling Machine (X-410)</strong></p></td>
+                                <td width="25%" ><p>408,200</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="47%" ><p><strong>Transporting Band (J-410)</strong></p></td>
+                                <td width="25%" ><p>3,654,000</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="47%" ><p><strong>Labeling Machine (X-420)</strong></p></td>
+                                <td width="25%" ><p>98,111</p></td>
+                                <td width="26%" ><p>Mexico</p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                        
+                          
+                </div>
+                <p>It´s essential to calculate the cost of the equipment bought from national and international suppliers as the cost of transportation and taxes differ from each other.</p>
+                <div class="blog-table">
+                    <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                        <tbody>
+                            <tr>
+                                <td width="33%" ><p><strong>∑TCPE (MXN)</strong></p></td>
+                                <td width="33%" ><p><strong>∑CPEN (MXN)</strong></p></td>
+                                <td width="33%" ><p><strong>∑CPEI (MXN)</strong></p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="33%" ><p>17,406,371</p></td>
+                                <td width="33%" ><p>16,930,915 </p></td>
+                                <td width="33%" ><p>475,455 </p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                        
+                         
+                </div>
+                <p>Once we estimated the cost of purchased equipment, we applied the Lang factors to calculate the total fixed capital.</p>
+                <div class="blog-table">
+                    <table class=" table " border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                        <tbody>
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Fixed Asset</strong></p></td>
+                                <td width="33%" ><p><strong>Cost (MXN)</strong></p></td>
+                            </tr>
+                            
+                            <tr >
+                                <td width="66%" ><p><strong>∑TCPPE</strong></p></td>
+                                <td width="33%" ><p>17,406,371</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Equipment Purchase Cost (National)</strong></p></td>
+                                <td width="33%" ><p>827,906</p></td>
+                            </tr>
+                            
+                            <tr >
+                                <td width="66%" ><p><strong>Equipment Purchase Cost (International)</strong></p></td>
+                                <td width="33%" ><p>142,637</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Installation </strong></p></td>
+                                <td width="33%" ><p>5,221,911</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="66%" ><p><strong>Piping</strong></p></td>
+                                <td width="33%" ><p>5,221,911</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Instrumentation</strong></p></td>
+                                <td width="33%" ><p>2,610,956</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="66%" ><p><strong>Insulation</strong></p></td>
+                            <td width="33%" ><p>870,319</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Electrical</strong></p></td>
+                                <td width="33%" ><p>2,610,956</p></td>
+                            </tr>
+                            
+                            <tr>
+                                <td width="66%" ><p><strong>Engeeniering</strong></p></td>
+                                <td width="33%" ><p>11,314,141</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Imprevistos</strong></p></td>
+                                <td width="33%" ><p>10,443,822</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Auxiliary Facilities </strong></p></td>
+                                <td width="33%" ><p>5,221,911</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><a><strong><button class=" btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-2F" >Buildings</button></strong></a></p></td>
+                                <td width="33%" ><p>13,987,886</p></td>
+                                
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><strong>Terrain (5,000 m<sup>2</sup>)</strong></p></td>
+                                <td width="33%" ><p>5,659,840</p></td>
+                            </tr>
+                            
+                            <tr >
+                                <td width="66%" ><p><a><strong><button class=" btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-3F" >WWTP Equiptment</button> </strong></a></p></td>
+                                <td width="33%" ><p>2,564,918</p></td>
+                                
+                            </tr>
+                            
+                            <tr class="table-success">
+                                <td width="66%" ><p><a><strong> <button class=" btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-4F" >Transport</button></strong></a></p></td>
+                                <td width="33%" ><p>1,774,500</p></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td width="66%" ><p><strong>Total Fixed Capital</strong></p></td>
+                                <td width="33%" ><p><strong>85,879,983</strong></p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                    <!--info modal-->
+                    <div class="modal fade" id="info-anexo-2F" tabindex="-1" aria-labelledby="info-anexo-2FLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Anexo 2F</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="blog-table">
+                                    <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                        <tbody>
+                                            <tr class="table-success">
+                                                <td width="38%" nowrap="" valign="top" >  </td>
+                                                <td width="15%" nowrap="" ><p><strong>Size (m<sup>2</sup>)</strong></p></td>
+                                                <td width="23%" nowrap="" ><p><strong>Cost per m<sup>2</sup> (MXN)</strong></p></td>
+                                                <td width="22%" nowrap="" ><p><strong>Cost (MXN)</strong></p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Bathrooms</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>125.4</p></td>
+                                                <td width="23%" nowrap="" ><p>5,770</p></td>
+                                                <td width="22%" nowrap="" ><p>723,680</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Parking Lot</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>760.9</p></td>
+                                                <td width="23%" nowrap="" ><p>3,332</p></td>
+                                                <td width="22%" nowrap="" ><p>2,535,186</p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Storehouse</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>311.9</p></td>
+                                                <td width="23%" nowrap="" ><p>3,909</p></td>
+                                                <td width="22%" nowrap="" ><p>1,219,264</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Offices</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>451.2</p></td>
+                                                <td width="23%" nowrap="" ><p>6,737</p></td>
+                                                <td width="22%" nowrap="" ><p>3,039,937</p></td>
+                                            </tr>
+                                            
+                                            <tr >
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Manufacturing and laboratory</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>701.5</p></td>
+                                                <td width="23%" nowrap="" ><p>5,770</p></td>
+                                                <td width="22%" nowrap="" ><p>4,047,413</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>WWTP</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>132.5</p></td>
+                                                <td width="23%" nowrap="" ><p>5,770</p></td>
+                                                <td width="22%" nowrap="" ><p>764,294</p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Auxiliary Services</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>46.0</p></td>
+                                                <td width="23%" nowrap="" ><p>5,770</p></td>
+                                                <td width="22%" nowrap="" ><p>265,535</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="38%" nowrap="" valign="top" ><p><strong>Other</strong></p></td>
+                                                <td width="15%" nowrap="" ><p>241.3</p></td>
+                                                <td width="23%" nowrap="" ><p>5,770</p></td>
+                                                <td width="22%" nowrap="" ><p>1,392,577</p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="77%" nowrap="" colspan="3" valign="top" ><p><strong>Total Cost</strong></p></td>
+                                                <td width="22%" nowrap="" ><p><strong>13,987,886</strong></p></td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                    
+                                        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin de info modal-->
+                    <!--info modal-->
+                    <div class="modal fade" id="info-anexo-3F" tabindex="-1" aria-labelledby="info-anexo-3FLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Anexo 3F</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="">
+                                    <table class="table"  border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                        <tbody>
+                                            <tr class="table-success">
+                                                <td width="50%" ><p><strong>Equipment</strong></p></td>
+                                                <td width="49%" ><p><strong>Cost (MXN)</strong></p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="50%" ><p><strong>Tank</strong></p></td>
+                                                <td width="49%" ><p>107,541</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="50%" ><p><strong>DAF System</strong></p></td>
+                                                <td width="49%" ><p>27,771</p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="50%" ><p><strong>RAE</strong></p></td>
+                                                <td width="49%" ><p>2,215,302</p></td>
+                                            </tr>
+                                            
+                                            <tr class="table-success">
+                                                <td width="50%" ><p><strong>Ozone Generator</strong></p></td>
+                                                <td width="49%" ><p>214,304</p></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td width="50%" ><p><strong>Total Cost </strong></p></td>
+                                                <td width="49%" ><p><strong>2,564,918</strong></p></td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                    
+                                      
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--fin de info modal-->
+                    <!--info modal-->
+                    <div class="modal fade" id="info-anexo-4F" tabindex="-1" aria-labelledby="info-anexo-4FLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Anexo 4F</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="blog-table">
+                                <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                    <tbody>
+                                        <tr class="table-success">
+                                            <td width="33%" ><p><strong>Asset</strong></p></td>
+                                            <td width="33%" ><p><strong>Supplier</strong></p></td>
+                                            <td width="33%" ><p><strong>Cost (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr >
+                                            <td width="33%" ><p><strong>Cargo Van 1</strong></p></td>
+                                            <td width="33%" ><p>Volkswagen México</p></td>
+                                            <td width="33%" ><p>591,500</p></td>
+                                        </tr>
+                                        
+                                        <tr class="table-success">
+                                            <td width="33%" ><p><strong>Cargo Van 2</strong></p></td>
+                                            <td width="33%" ><p>Volkswagen México</p></td>
+                                            <td width="33%" ><p>591,500</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="33%" ><p><strong>Cargo Van 3</strong></p></td>
+                                        <td width="33%" ><p>Volkswagen México</p></td>
+                                        <td width="33%" ><p>591,500</p></td>
+                                        </tr>
+                                        
+                                        <tr class="table-success">
+                                            <td width="66%" colspan="2" ><p><strong>Total</strong></p></td>
+                                            <td width="33%" ><p><strong>1,774,500</strong></p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                     
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--fin de info modal-->
+                        
+                          
+                        
+                            
+                </div>
+                <h3 class="blog-subtitle">Reinvestments</h3>
+                <p>As production increases over the years, there will be the need for reinvestments on fixed assets. Just like previously done, these reinvestments are also calculated via the Lang factor method.</p>
+                <div class="blog-table">
+                    <table class="table"  border="1" cellspacing="0" cellpadding="0" > 
+                        <tbody>
+                            <tr class="table-success">
+                            <td  valign="top" ><p><strong>Year of reinvestment</strong></p></td>
+                            <td  valign="top" ><p><strong>Asset bought</strong></p></td>
+                            <td  valign="top" ><p><strong>Total Cost (MXN)</strong></p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td  valign="top" ><p><strong>2024</strong></p></td>
+                            <td  valign="top" ><p><button type="button" class="btn btn-outline-secondary text-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-5F">Bioreactors</button></p></td>
+                            <td  valign="top" ><p>15,905,947</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td  valign="top" ><p><strong>2027</strong></p></td>
+                            <td  valign="top" ><p><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-6F">Cargo Vans</button></p></td>
+                            <td  valign="top" ><p>2,038,864 </p></td>
+                            </tr>
+                            
+                        </tbody>
+                        
+                    </table>
+                    <!--inicio modal-->
+                    <div class="modal fade" id="info-anexo-5F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Anexo-5F</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="blog-table">
+                                <table class="table-modal" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                <tbody>
+                                    <tr class="table-success">
+                                    <td width="25%" ><p><strong>Asset</strong></p></td>
+                                    <td width="25%" ><p><strong>Units</strong></p></td>
+                                    <td width="25%" valign="top" ><p><strong>Price per Unit (MXN)</strong></p></td>
+                                    <td width="25%" ><p><strong>Total Cost (MXN)</strong></p></td>
+                                    </tr>
+                                
+                                    <tr>
+                                    <td width="25%" ><p><strong>Bioreactor</strong></p></td>
+                                    <td width="25%" ><p>2</p></td>
+                                    <td width="25%" valign="top" ><p>1,834,800</p></td>
+                                    <td width="25%" ><p>3,787,130</p></td>
+                                    </tr>
+                                
+                                    </tbody>
+                                </table>
+                                    
+                                     
+                              </div>
+                              <h3>Lang Factor Method</h3>
+                              <div class="blog-table ">
+                                <table class="table-modal" border="1" cellspacing="0" cellpadding="0" width="100%" >
+                                    <tbody>
+                                        <tr>
+                                        <td width="66%" ><p><strong>Fixed Asset</strong></p></td>
+                                        <td width="33%" ><p><strong>Cost (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>∑TCPPE</strong></p></td>
+                                        <td width="33%" ><p>3,787,130</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Equipment Purchase Cost (National)</strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Equipment Purchase Cost (International)</strong></p></td>
+                                        <td width="33%" ><p>3,787,130</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Installation </strong></p></td>
+                                        <td width="33%" ><p>1,136,139</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Piping</strong></p></td>
+                                        <td width="33%" ><p>1,136,139</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Instrumentation</strong></p></td>
+                                        <td width="33%" ><p>568,070</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Insulation</strong></p></td>
+                                        <td width="33%" ><p>189,357</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Electrical</strong></p></td>
+                                        <td width="33%" ><p>568,070</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Engeeniering</strong></p></td>
+                                        <td width="33%" ><p>2,461,635</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Imprevistos</strong></p></td>
+                                        <td width="33%" ><p>2,272,278</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Auxiliary Facilities </strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Buildings (2,000 m<sup>2</sup>)</strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Terrain (5,000 m<sup>2</sup>)</strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>WWTP Equiptment</strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Transport</strong></p></td>
+                                        <td width="33%" ><p>0</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="66%" ><p><strong>Total </strong></p></td>
+                                        <td width="33%" ><p><strong>15,905,947</strong></p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!--fin modal-->
+                    <!--inicio modal-->
+                    <div class="modal fade" id="info-anexo-6F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Anexo-6F</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="blog-table">
+                                <table class="table-modal"  border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                    <tbody>
+                                        <tr>
+                                        <td width="25%" ><p><strong>Asset</strong></p></td>
+                                        <td width="25%" ><p><strong>Units</strong></p></td>
+                                        <td width="25%" valign="top" ><p><strong>Price per Unit (MXN)</strong></p></td>
+                                        <td width="24%" ><p><strong>Total Cost (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="25%" ><p><strong>Cargo Van 1</strong></p></td>
+                                        <td width="25%" ><p>3</p></td>
+                                        <td width="25%" valign="top" ><p>679,621</p></td>
+                                        <td width="24%" ><p>2,038,864</p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                     
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!--fin modal-->
+                    
+                </div>
+                
+            </div>
+            <div class="blog-section" id="working-capital">
+                <h2 class="blog-subtitle">Working Capital</h2>
+                <p>Aside from the investment required for the fixed assets, we need resources to start production. The working capital allows to begin the proper operation of the production system and prevents it from stopping. </p>
+                <p>We estimated the working capital needed to satisfy all obligations in a month of production.</p>
+
+                <div class="blog-table" >
+                    <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                        <tbody>
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>Year</strong></p></td>
+                            <td width="33%" nowrap="" ><p><strong><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-7F">
+                                Total Working Capital (MXN)</button></strong> </p></td>
+                            <td width="33%" nowrap="" ><p><strong><button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#info-anexo-8F">Annual Δ (MXN)</button></strong></p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="33%" nowrap="" ><p><strong>2022</strong></p></td>
+                            <td width="33%" nowrap="" ><p>18,764,378</p></td>
+                            <td width="33%" nowrap="" ><p>18,764,378</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>2023</strong></p></td>
+                            <td width="33%" nowrap="" ><p>19,292,861</p></td>
+                            <td width="33%" nowrap="" ><p>1,953,854</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="33%" nowrap="" ><p><strong>2024</strong></p></td>
+                            <td width="33%" nowrap="" ><p>21,845,110</p></td>
+                            <td width="33%" nowrap="" ><p>2,511,763</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>2025</strong></p></td>
+                            <td width="33%" nowrap="" ><p>25,042,862</p></td>
+                            <td width="33%" nowrap="" ><p>2,862,565</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="33%" nowrap="" ><p><strong>2026</strong></p></td>
+                            <td width="33%" nowrap="" ><p>28,691,359</p></td>
+                            <td width="33%" nowrap="" ><p>3,586,949</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>2027</strong></p></td>
+                            <td width="33%" nowrap="" ><p>33,187,399</p></td>
+                            <td width="33%" nowrap="" ><p>1,020,368</p></td>
+                            </tr>
+                            
+                            <tr >
+                            <td width="33%" nowrap="" ><p><strong>2028</strong></p></td>
+                            <td width="33%" nowrap="" ><p>35,171,199</p></td>
+                            <td width="33%" nowrap="" ><p>1,340,033</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>2029</strong></p></td>
+                            <td width="33%" nowrap="" ><p>37,539,540</p></td>
+                            <td width="33%" nowrap="" ><p>474,629</p></td>
+                            </tr>
+                            
+                            <tr >
+                            <td width="33%" nowrap="" ><p><strong>2030</strong></p></td>
+                            <td width="33%" nowrap="" ><p>39,084,805</p></td>
+                            <td width="33%" nowrap="" ><p>683,751</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="33%" nowrap="" ><p><strong>2031</strong></p></td>
+                            <td width="33%" nowrap="" ><p>40,888,602</p></td>
+                            <td width="33%" nowrap="" ><p>42,024</p></td>
+                            </tr>
+                            
+                            <tr >
+                            <td width="33%" nowrap="" ><p><strong>2032</strong></p></td>
+                            <td width="33%" nowrap="" ><p>42,083,402</p></td>
+                            <td width="33%" nowrap="" ><p>0</p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                        
+                        
+                        
+                            
+                </div>
+
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-7F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo7F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>The working capital is comprised by</p>
+                            <ul class="list-group list-group-numbered">
+                                <li class="list-group-item">Raw Materials Inventory (RMI)</li>
+                                <li class="list-group-item">Work in Process Inventory (WPI)</li>
+                                <li class="list-group-item">Finished Goods Inventory (FGI)</li>
+                                <li class="list-group-item">Accounts Payable (AP)</li>
+                                <li class="list-group-item">Receivable (AR)</li>
+                                <li class="list-group-item">Cash (C)</li>
+                                <p>The predicted value of each assets/liability is presented below </p>
+                            </ul>
+
+                            <div class="mb-5 blog-table" >
+                                <table class="table-modal"  border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                    <tbody>
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>Year</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p><strong>RMI (MXN)</strong></p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p><strong>WPI (MXN)</strong></p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p><strong>FGI (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2022</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>3,875,792</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>940,221</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>5,561,118</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2023</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>3,984,950</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>966,702</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>5,717,743</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2024</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>4,754,884</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,106,452</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>6,544,323</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2025</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>5,673,577</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,277,105</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>7,553,683</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2026</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>6,769,771</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,473,366</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>8,714,504</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2027</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>8,077,761</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,704,207</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>10,079,860</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2028</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>8,594,960</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,801,540</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>10,655,556</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2029</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>9,228,173</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,918,155</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>11,345,296</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2030</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>9,552,008</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>1,981,912</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>11,722,400</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2031</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>9,979,338</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>2,063,573</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>12,205,401</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2032</strong></p></td>
+                                        <td width="21%" nowrap="" valign="top" ><p>10,233,282</p></td>
+                                        <td width="20%" nowrap="" valign="top" ><p>2,113,173</p></td>
+                                        <td width="27%" nowrap="" valign="top" ><p>12,498,766</p></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="blog-table" >
+                                <table class=" table table-modal"  border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                                    <tbody>
+                                        <tr>
+                                        <td width="30%" ><p><strong>Year</strong></p></td>
+                                        <td width="21%" ><p><strong>AR (MXN)</strong></p></td>
+                                        <td width="20%" ><p><strong>AP (MXN)</strong></p></td>
+                                        <td width="28%" ><p><strong>Cash (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2022</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>3,875,792</p></td>
+                                        <td width="20%" nowrap="" ><p>3,875,792</p></td>
+                                        <td width="28%" nowrap="" ><p>4,193,624</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2023</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>3,984,950</p></td>
+                                        <td width="20%" nowrap="" ><p>3,984,950</p></td>
+                                        <td width="28%" nowrap="" ><p>4,311,733</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2024</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>4,754,884</p></td>
+                                        <td width="20%" nowrap="" ><p>4,754,884</p></td>
+                                        <td width="28%" nowrap="" ><p>4,719,725</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2025</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>5,673,577</p></td>
+                                        <td width="20%" nowrap="" ><p>5,673,577</p></td>
+                                        <td width="28%" nowrap="" ><p>5,269,249</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2026</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>6,769,771</p></td>
+                                        <td width="20%" nowrap="" ><p>6,769,771</p></td>
+                                        <td width="28%" nowrap="" ><p>5,866,859</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2027</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>8,077,761</p></td>
+                                        <td width="20%" nowrap="" ><p>8,077,761</p></td>
+                                        <td width="28%" nowrap="" ><p>6,662,785</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2028</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>8,594,960</p></td>
+                                        <td width="20%" nowrap="" ><p>8,594,960</p></td>
+                                        <td width="28%" nowrap="" ><p>7,059,571</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2029</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>9,228,173</p></td>
+                                        <td width="20%" nowrap="" ><p>9,228,173</p></td>
+                                        <td width="28%" nowrap="" ><p>7,523,958</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2030</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>9,552,008</p></td>
+                                        <td width="20%" nowrap="" ><p>9,552,008</p></td>
+                                        <td width="28%" nowrap="" ><p>7,914,242</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2031</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>9,979,338</p></td>
+                                        <td width="20%" nowrap="" ><p>9,979,338</p></td>
+                                        <td width="28%" nowrap="" ><p>8,320,145</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td width="30%" nowrap="" ><p><strong>2032</strong></p></td>
+                                        <td width="21%" nowrap="" ><p>10,233,282</p></td>
+                                        <td width="20%" nowrap="" ><p>10,233,282</p></td>
+                                        <td width="28%" nowrap="" ><p>8,619,091</p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                        
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-8F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo8F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="fw-bold text-success">What does this delta stand for? And what is happening to the money?</p>
+                          <p>Based on the annual production we predicted the amount of resources needed to satisfy one month of production which is going to be kept as inventory in order to prevent the detention of production. This is the working capital and we calculated annually but that number does not represent the real outflow of money per year. Why? In the end of 2022, we have in inventory the working capital of said year and by the end of this year we acquire the working capital needed for the 2023 production. For this, we only add the difference between both years, we acquire the lacking working capital to complete the resources needed for 2023. At the end of 2023 we add the extra working capital needed for 2024 and so forth. </p>
+                          <p>If you read carefully through the numbers, you are going to notice that the difference between annual working capitals is not equal to the ∆.<span class="fw-bold text-success"> Why is this happening?</span></p>
+                          <p>As we know, money varies its purchasing power over time mostly decreasing due to inflation. Therefore, we need to consider this change of value. This phenomenon does not only affect the working capital but all expenses. </p>
+                          <p>Based on the historic inflation of the Mexican economy we predicted the next data</p>
+
+                          <div class="mt-2 table-blog row justify-content-center">
+                            <table class="table-modal"  border="1" cellspacing="0" cellpadding="0"  > 
+                                <tbody>
+                                    <tr >
+                                    <td  nowrap="" valign="top"  ><p><strong>Year</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p><strong>Inflation</strong></p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2023</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>7.06%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2024</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.58%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2025</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.51%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2026</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.45%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2027</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.39%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2028</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.34%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2029</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.28%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2030</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.23%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2031</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.18%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" valign="top" ><p><strong>2032</strong></p></td>
+                                    <td  nowrap="" valign="top" ><p>2.14%</p></td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                                
+                                  
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+            </div>
+            <div class="blog-section" id="funding-strategy">
+                <h2 class="blog-subtitle">Funding Strategy</h2>
+                <p>The initial investment used to build the infrastructure and start production is defined by the Fixed and Working Capital of 2022, which adds to a value of 105 million Mexican pesos (MXN) or 5.22 million dollars.</p>
+                <div class="blog-table">
+                    <table class="table" border="1" cellspacing="0" cellpadding="0" > 
+                        <tbody>
+                            <tr class="table-success">
+                            <td><p><strong>Asset</strong></p></td>
+                            <td><p><strong>Value (MXN)</strong></p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td><p><strong>Fixed Capital (2022)</strong></p></td>
+                            <td  valign="bottom" ><p>85,879,983</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td><p><strong>Working Capital (2022)</strong></p></td>
+                            <td  valign="bottom" ><p>18,764,378</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td><p><strong>Total Initial Investment</strong></p></td>
+                            <td  valign="bottom" ><p><strong>104,644,362</strong></p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                        
+                          
+                </div>
+                <p>We aim to fund the project from possible investors and bank loans. We aspire to sponsor 80% of the initial investment from partners and 20% from bank loans.</p>
+                <div class="blog-table">
+                    <table class="table"  border="1" cellspacing="0" cellpadding="0" > 
+                        <tbody>
+                            <tr class="table-success">
+                            <td><p><strong>Funding Source</strong></p></td>
+                            <td><p><strong>Share of Initial Investment (%)</strong></p></td>
+                            <td><p><strong>Value (MXN)</strong></p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td><p><strong>Partners/Investors</strong></p></td>
+                            <td><p>80</p></td>
+                            <td><p>90,151,289</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td><p><strong>Working Capital Loan</strong></p></td>
+                            <td><p>7</p></td>
+                            <td><p>7,815,003</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td><p><strong>Refectionary Credit</strong></p></td>
+                            <td><p>13</p></td>
+                            <td><p>14,722,819</p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="blog-section" id="production-costs">
+                <h2>Production Costs</h2>
+                <p>We estimated the annual production costs composed of </p>
+                <ul class="list-group">
+                    <p class="fw-bold">Variable Production Costs</p>
+                    <li class="list-group-item"><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-9F">Raw Materials</button></li>
+                    <li class="list-group-item"><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-10F">Auxiliary Services</button></li>
+                    <p class="fw-bold">Semi variable Production Costs:</p>
+                    <li class="list-group-item"><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-11F">Diect and Indirect Labor</button></li>
+                    <p class="fw-bold">Fixed Production Costs:</p>
+                    <li class="list-group-item">Maintenance</li>
+                    <li class="list-group-item"><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-13F">Consumable Manufacturing Supplies</button></li>
+                    <li class="list-group-item"><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#info-anexo-13F">Depreciation</button></li>
+                    <li class="list-group-item">Property Taxes</li>
+                    <li class="list-group-item">Insurance</li>
+                    <li class="list-group-item">Fixed Operating Costs</li>
+                </ul>
+
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-9F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 9F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="blog-table row justify-content-center">
+                                <table class="table-modal"  border="1" cellspacing="0" cellpadding="0"  > 
+                                    <tbody>
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>Year</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p><strong>Cost (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2023</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>47,819,400</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2024</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>57,058,606</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2025</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>68,082,923</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2026</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>81,237,252</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2027</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>96,933,135</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2028</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>103,139,516</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2029</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>110,738,071</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2030</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>114,624,097</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2031</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>119,752,057</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td  nowrap="" valign="top" ><p><strong>2032</strong></p></td>
+                                        <td  nowrap="" valign="top" ><p>122,799,378</p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-10F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 10F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ps-5" >
+                            <h6 class="text-success">Auxiliary Services</h6>
+                            <p>As an additional effort to reduce the ecological impact of our company, we designed the production plant only with electrical equipment reducing to a minimum the use of fossil fuel as a source of energy. Therefore, the costs of the auxiliary services are composed only of electricity and water bills. </p>
+                        
+                            <div class="blog-table row justify-content-end">
+                                <table class="table-modal" border="1" cellspacing="0" cellpadding="0"  > 
+                                    <tbody>
+                                        <tr>
+                                        <td  nowrap="" ><p><strong>Year</strong></p></td>
+                                        <td><p><strong>Electricity (MXN)</strong></p></td>
+                                        <td><p><strong>Water (MXN)</strong></p></td>
+                                        <td  nowrap="" ><p><strong>Total Cost (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2023</strong></p></td>
+                                        <td><p>376,826</p></td>
+                                        <td><p>3,127,473</p></td>
+                                        <td  nowrap="" ><p><strong>3,504,300</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2024</strong></p></td>
+                                        <td><p>392,657</p></td>
+                                        <td><p>3,234,192</p></td>
+                                        <td  nowrap="" ><p><strong>3,626,849</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2025</strong></p></td>
+                                        <td><p>451,426</p></td>
+                                        <td><p>3,430,759</p></td>
+                                        <td  nowrap="" ><p><strong>3,882,186</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2026</strong></p></td>
+                                        <td><p>522,579</p></td>
+                                        <td><p>3,660,930</p></td>
+                                        <td  nowrap="" ><p><strong>4,183,508</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2027</strong></p></td>
+                                        <td><p>562,100</p></td>
+                                        <td><p>3,826,882</p></td>
+                                        <td  nowrap="" ><p><strong>4,388,982</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2028</strong></p></td>
+                                        <td><p>585,298</p></td>
+                                        <td><p>3,967,210</p></td>
+                                        <td  nowrap="" ><p><strong>4,552,509</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2029</strong></p></td>
+                                        <td><p>613,668</p></td>
+                                        <td><p>4,123,057</p></td>
+                                        <td  nowrap="" ><p><strong>4,736,724</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2030</strong></p></td>
+                                        <td><p>626,591</p></td>
+                                        <td><p>4,246,477</p></td>
+                                        <td  nowrap="" ><p><strong>4,873,068</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2031</strong></p></td>
+                                        <td><p>644,651</p></td>
+                                        <td><p>4,384,570</p></td>
+                                        <td  nowrap="" ><p><strong>5,029,221</strong></p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                    
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-11F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 11F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <h6 class="text-success">Labor</h6>
+                          <p>From the Gantt diagram, we define the number of employees needed for each work shift and, therefore, each year to run the production plant.</p>
+                          <div class="blog-table row justify-content-center ">
+                            <table class="table-modal " border="1" cellspacing="0" cellpadding="0" > 
+                                <tbody>
+                                    <tr>
+                                    <td  colspan="4" ><p><strong>Number of employees</strong></p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td> </td>
+                                    <td><p><strong>Workers</strong></p></td>
+                                    <td><p><strong>Manager</strong></p></td>
+                                    <td><p><strong>----</strong></p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>2023/2032</strong></p></td>
+                                    <td><p>16/17</p></td>
+                                    <td><p>1/1</p></td>
+                                    <td><p>1/1</p></td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                            <p>In the following table, we present the annual salary of employees. This salary already considers all employer obligations dictated by local law.</p>
+                            <div class="blog-table">
+                                <table class="table-modal" border="1" cellspacing="0" cellpadding="0" > 
+                                    <tbody>
+                                        <tr>
+                                        <td  colspan="5" ><p><strong>Anual Salary (MXN)</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>Year</strong></p></td>
+                                        <td><p><strong>Operative Worker*</strong></p></td>
+                                        <td><p><strong>Operative Worker**</strong></p></td>
+                                        <td><p><strong>Production Manager</strong></p></td>
+                                        <td><p><strong>Production ----</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2023</strong></p></td>
+                                        <td><p>68,822</p></td>
+                                        <td><p>90,096</p></td>
+                                        <td><p>191,317</p></td>
+                                        <td><p>273,310</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2024</strong></p></td>
+                                        <td><p>73,753</p></td>
+                                        <td><p>96,501</p></td>
+                                        <td><p>204,859</p></td>
+                                        <td><p>292,656</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2025</strong></p></td>
+                                        <td><p>78,706</p></td>
+                                        <td><p>102,928</p></td>
+                                        <td><p>218,438</p></td>
+                                        <td><p>312,055</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2026</strong></p></td>
+                                        <td><p>83,679</p></td>
+                                        <td><p>109,376</p></td>
+                                        <td><p>232,054</p></td>
+                                        <td><p>331,506</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2027</strong></p></td>
+                                        <td><p>88,674</p></td>
+                                        <td><p>115,845</p></td>
+                                        <td><p>245,707</p></td>
+                                        <td><p>351,010</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2028</strong></p></td>
+                                        <td><p>93,486</p></td>
+                                        <td><p>122,131</p></td>
+                                        <td><p>259,039</p></td>
+                                        <td><p>370,056</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2029</strong></p></td>
+                                        <td><p>98,297</p></td>
+                                        <td><p>128,417</p></td>
+                                        <td><p>272,371</p></td>
+                                        <td><p>389,102</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2030</strong></p></td>
+                                        <td><p>103,109</p></td>
+                                        <td><p>134,703</p></td>
+                                        <td><p>285,704</p></td>
+                                        <td><p>408,148</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2031</strong></p></td>
+                                        <td><p>107,920</p></td>
+                                        <td><p>140,989</p></td>
+                                        <td><p>299,036</p></td>
+                                        <td><p>427,194</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2032</strong></p></td>
+                                        <td><p>112,978</p></td>
+                                        <td><p>147,521</p></td>
+                                        <td><p>312,799</p></td>
+                                        <td><p>446,856</p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                     
+                            </div>
+                            <p>*Operating Workers laboring 3 days a week</p>
+                            <p>**Operating Workers laboring 4 days a week</p>
+                            <p>The estimated value of direct and indirect labor per year is presented in the table below.</p>
+                            <div class="blog-table">
+                                <table class="table-modal" border="1" cellspacing="0" cellpadding="0" > 
+                                    <tbody>
+                                        <tr>
+                                        <td><p><strong>Year</strong></p></td>
+                                        <td><p><strong>Direct Labour Cost (MXN)</strong></p></td>
+                                        <td><p><strong>Indirect Labor Cost (MXN)</strong></p></td>
+                                        <td><p><strong>Total Labor Costs</strong></p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2023</strong></p></td>
+                                        <td  valign="bottom" ><p>1,271,339</p></td>
+                                        <td  valign="bottom" ><p>464,626</p></td>
+                                        <td  valign="bottom" ><p>1,735,965</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2024</strong></p></td>
+                                        <td  valign="bottom" ><p>1,435,792</p></td>
+                                        <td  valign="bottom" ><p>497,515</p></td>
+                                        <td  valign="bottom" ><p>1,933,307</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2025</strong></p></td>
+                                        <td  valign="bottom" ><p>1,531,780</p></td>
+                                        <td  valign="bottom" ><p>530,493</p></td>
+                                        <td  valign="bottom" ><p>2,062,273</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2026</strong></p></td>
+                                        <td  valign="bottom" ><p>1,628,126</p></td>
+                                        <td  valign="bottom" ><p>563,560</p></td>
+                                        <td  valign="bottom" ><p>2,191,686</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2027</strong></p></td>
+                                        <td  valign="bottom" ><p>1,724,829</p></td>
+                                        <td  valign="bottom" ><p>596,716</p></td>
+                                        <td  valign="bottom" ><p>2,321,545</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2028</strong></p></td>
+                                        <td  valign="bottom" ><p>1,818,420</p></td>
+                                        <td  valign="bottom" ><p>629,095</p></td>
+                                        <td  valign="bottom" ><p>2,447,515</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2029</strong></p></td>
+                                        <td  valign="bottom" ><p>1,912,011</p></td>
+                                        <td  valign="bottom" ><p>661,473</p></td>
+                                        <td  valign="bottom" ><p>2,573,485</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2030</strong></p></td>
+                                        <td  valign="bottom" ><p>2,005,602</p></td>
+                                        <td  valign="bottom" ><p>693,852</p></td>
+                                        <td  valign="bottom" ><p>2,699,454</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2031</strong></p></td>
+                                        <td  valign="bottom" ><p>2,099,194</p></td>
+                                        <td  valign="bottom" ><p>726,230</p></td>
+                                        <td  valign="bottom" ><p>2,825,424</p></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                        <td><p><strong>2032</strong></p></td>
+                                        <td  valign="bottom" ><p>2,196,967</p></td>
+                                        <td  valign="bottom" ><p>759,655</p></td>
+                                        <td  valign="bottom" ><p>2,956,622</p></td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                                    
+                                     
+                            </div>
+
+                                
+                                 
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-13F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 13F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>There are already formulas and ratios in the literature which provide an approximation of some expenses and costs based on the value of a specific asset or other expenses. The ratios applied are presented in the following table. </p>
+                          <div class="blog-table">
+                            <table class="table-modal" border="1" cellspacing="0" cellpadding="0"  > 
+                                <tbody>
+                                    <tr>
+                                    <td><p><strong>Fixed Production Costs</strong></p></td>
+                                    <td><p><strong>Source</strong></p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>Mantainance</strong></p></td>
+                                    <td><p>= $ Fixed Assets * 6%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>Consumable Manufacturing Supplies</strong></p></td>
+                                    <td><p>= $MyR * 15%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>Property Taxes</strong></p></td>
+                                    <td><p>=$ Fixed Assets * 1.5%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>Insurance</strong></p></td>
+                                    <td><p>=$ Fixed Assets * 2.5%</p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td><p><strong>Fixed Operating Costs</strong></p></td>
+                                    <td><p>$ Direct Labour * 45%</p></td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                                
+                                 
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                <!--inicio modal-->
+                <div class="modal fade" id="info-anexo-12F" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Anexo 12F</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <h6 class="text-success darker">Depreciation and Amortization Costs</h6>
+                          <div class="blog-table">
+                            <table class="table-modal" border="1" cellspacing="0" cellpadding="0"  > 
+                                <tbody>
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>Year</strong></p></td>
+                                    <td  nowrap="" ><p><strong>Depreciation and amortization Costs (MXN)</strong></p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2023</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,147,501 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2024</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,147,501 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2025</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,514,461 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2026</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,514,461 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2027</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,514,461 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2028</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,567,333 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2029</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,567,333 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2030</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,567,333 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2031</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,567,333 </p></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td  nowrap="" ><p><strong>2032</strong></p></td>
+                                    <td  nowrap="" valign="bottom" ><p>5,567,333 </p></td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                                
+                                  
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--fin modal-->
+                
+                <p>In the next table, we present an overview of the production costs from 2023 to 2032. </p>
+                <div class="blog-table">
+                    <table class="table" border="1" cellspacing="0" cellpadding="0" width="100%" > 
+                        <tbody>
+                            <tr class="text-center">
+                            <td width="8%" nowrap="" valign="bottom" ></td>
+                            <td width="91%" nowrap="" colspan="10" valign="bottom" ><p>(MXN)</p></td>
+                            </tr>
+                            
+                            <tr class="table-success">
+                            <td width="8%" ><p><strong>Production Costs</strong></p></td>
+                            <td width="8%" ><p><strong>2023</strong></p></td>
+                            <td width="8%" ><p><strong>2024</strong></p></td>
+                            <td width="8%" ><p><strong>2025</strong></p></td>
+                            <td width="9%" ><p><strong>2026</strong></p></td>
+                            <td width="9%" ><p><strong>2027</strong></p></td>
+                            <td width="9%" ><p><strong>2028</strong></p></td>
+                            <td width="9%" ><p><strong>2029</strong></p></td>
+                            <td width="9%" ><p><strong>2030</strong></p></td>
+                            <td width="9%" ><p><strong>2031</strong></p></td>
+                            <td width="9%" ><p><strong>2032</strong></p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Raw Material </strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>47,819,400</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>57,058,606</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>68,082,923</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>81,237,252</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>96,933,135</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>103,139,516</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>110,738,071</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>114,624,097</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>119,752,057</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>122,799,378</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Direct Labor</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,271,339</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,435,792</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,531,780</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,628,126</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,724,829</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,818,420</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,912,011</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,005,602</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,099,194</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,196,967</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Indirect Labor</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>464,626</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>497,515</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>530,493</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>563,560</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>596,716</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>629,095</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>661,473</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>693,852</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>726,230</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>759,655</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Auxiliary Services</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>3,504,300</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>3,626,849</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>3,882,186</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,183,508</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,388,982</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,552,509</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,736,724</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,873,068</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,029,221</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>4,973,527</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Maintenance</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,297,923</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,447,135</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,600,548</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,758,283</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,920,460</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>6,087,205</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>6,258,645</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>6,434,915</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>6,616,149</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>6,802,487</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Consumable Manufacturing Supplies</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>794,688</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>817,070</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>840,082</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>863,742</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>888,069</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>913,081</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>938,797</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>965,237</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>992,422</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,020,373</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Depreciation </strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,147,501</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,147,501</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>5,514,461</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,514,461</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,514,461</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,567,333</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,567,333</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,567,333</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,567,333</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>5,567,333</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Property Taxes</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,324,481</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,361,784</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>1,400,137</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,439,571</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,480,115</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,521,801</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,564,661</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,608,729</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,654,037</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,700,622</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Insurance</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>2,207,468</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>2,269,639</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>2,333,562</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,399,285</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,466,858</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,536,335</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,607,769</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,681,214</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,756,729</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>2,834,369</p></td>
+                            </tr>
+                            
+                            <tr>
+                            <td width="8%" ><p><strong>Fixed Operating Costs</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>781,184</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>869,988</p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p>928,023</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>986,259</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,044,695</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,101,382</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,158,068</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,214,754</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,271,441</p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p>1,330,480</p></td>
+                            </tr>
+                            
+                            <tr class="table-warning">
+                            <td width="8%" ><p><strong>Total</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p><strong>68,612,910</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p><strong>78,531,878</strong></p></td>
+                            <td width="8%" nowrap="" valign="bottom" ><p><strong>90,644,195</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>104,574,047</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>120,958,320</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>127,866,677</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>136,143,553</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>140,668,803</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>146,464,812</strong></p></td>
+                            <td width="9%" nowrap="" valign="bottom" ><p><strong>149,985,191</strong></p></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                        
+                         
+                </div>
+            </div>
+            <div class="blog-section" id="operating-expenses" >
+                <h2>Operating Expenses</h2>
+                We estimated the annual operating expenses composed of 
+                <ul class="list-group ">
+                    <button class="btn btn-outline-success text-start" data-bs-toggle="modal" data-bs-target="#info-anexo-14F">
+                        <p>Variable Expenses</p>
+                        <li class="list-group-item">Administrative Expenses</li>
+                        <li class="list-group-item">Marketing Expenses</li>
+                        <li class="list-group-item">Research and Development Expenses</li>
+                        <li class="list-group-item">Other Expenses</li>
+                    </button>
+                    <p class="fw-bold">Fixed Expenses</p>
+                    <button class="btn btn-outline-success text-start" data-bs-toggle="modal" data-bs-target="#info-anexo-14F">
+                        <li class="list-group-item" > Financial Expenses</li>
+                    </button>
+                </ul>
+                <!--inicio modal-->
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -275,3 +275,8 @@ footer a:hover {
     max-width: 100%;
     overflow: auto;
 }
+.table-modal  tr:nth-child(odd){
+    background-color: var(--color9);
+}
+
+

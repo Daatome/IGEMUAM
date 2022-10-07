@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+  
+{% block title %}Entrepreneurship{% endblock %}
+{% block lead %}The entrepreneurship prize recognizes exceptional effort to build a business case and commercialize an iGEM project.{% endblock %}
+
+{% block page_content %}
+<div class="container-xl my-5 p-5 ">
+    <div class="row justify-content-center">
+        <div class="col-md-2 me-2">
+            <h2>Index</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{{url_for('pages', page='entrepreneurship')}}" class="text-decoration-none text-success">Return</a></li>
+                <li class="list-group-item"><a href="#overview" class="text-decoration-none text-dark">Overview</a></li>
+                <li class="list-group-item"><a href="#patents" class="text-decoration-none text-dark">Patens</a></li>
+                <li class="list-group-item"><a href="#bibliography" class="text-decoration-none text-dark">Bibliography</a></li>
+            </ul>
+        </div>
+        <div class="blog col-md-9 ">
+            <h1 class="blog-title" >Product Analysis</h1>
+            <div class="blog-section">
+                <h2 class="blog-subtitle" id="overview">Overview</h2>
+                <p>As said before, our project plans the production of a biochemical biopesticide based on the spider venom peptides Omega-hexatoxina-Hv2a and U1-terafotoxina-Sp1a. The final product is intended to be a liquid concentrate with a 2% concentration of spider venom peptides divided evenly between each peptide. The objective of designing a liquid concentrate is for it to be used the same way that today’s agrochemicals are being used, providing a familiar and easy to use for local farmers. </p>
+            </div>
+            <div class="blog-section">
+                <h2 class="blog-subtitle">Presentation</h2>
+                <p>
+                    Based on our targeted market, medium and large producers, we needed a standard and easily to use presentation. Considering that the performance of our biopesticide is comparable with the similar products available, we estimate that for the treatment of 1 hectare of crops will require the application of 5 litters of SPIDICDE-Cx (Vestaron, 2021 & Bayer, 2021). Therefore, a reasonable presentation would be for us to produce 5 litters bottles, given the fact that medium producers often own 5 hectares of farm or more and thus needing only 5 bottles of SPIDICIDE-Cx. Nonetheless, this 5 liters bottle is accompany by a <button type="button" class=" btn-light" data-bs-toggle="modal" data-bs-target="#modal-container"> 1 liter bottle  presentation.  </button>
+                </p>
+                <!--modal-->
+                <div class="blog-modal">
+                    <div class="modal fade" id="modal-container" tabindex="-1" aria-labelledby="modal-containerLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Container</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              imagenes del contenedor
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <!--fin de modal-->
+            </div>
+
+            <div class="blog-section">
+                <h2 class="blog-subtitle">Formulation</h2>
+                <p>dev: check for updates</p>
+            </div>
+            <div class="blog-section" id="patens">
+                <h2 class="blog-subtitle">Patens</h2>
+                <p>All patents in Mexico are regulated by the IMPI (Instituto Mexicano de la Propiedad Industrial). However, patent regulation is also carried by other governmental institutions, like COFEPRIS, SEMARNAT, and SADER (IMPI, 2022).</p>
+                <p>Some active patents for pesticides in Mexican territory are the ones presented below. </p>
+                <h3>DIPEL 10G</h3>
+                <p>Produced by Abbott laboratories México, S.A. de C.V.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Patent number: RSCO-INAC-0105-007-005-0.32</li>
+                    <li class="list-group-item">Active Ingredient: Bacillus Thuringiensis</li>
+                    <li class="list-group-item">Uses: Application in corn and sorghum fields </li>
+                    <li class="list-group-item">Valid until: Unspecified </li>
+                </ul>
+                <h3>DIPEL Técnico</h3>
+                <p>Produced by </p>
+                <ul class="list-group">
+                    <li class="list-group-item">Patent number: RSCO-INAC-0105-001-017-100</li>
+                    <li class="list-group-item">Active Ingredient: Bacillus Thuringiensis</li>
+                    <li class="list-group-item">Uses: For exclusive use in formulated agricultural pesticide plants </li>
+                    <li class="list-group-item">Valid until: Unspecified </li>
+                </ul>
+                <h3>DELTA FORCE/SUPPORT MAX</h3>
+                <p>Produced by Agricultura Nacional, S.A. de C.V.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Patent number: RSCO-MEZC-INAC-1911-X0001-409-8.61</li>
+                    <li class="list-group-item">Active Ingredient: Imidacloprid + Deltametrina</li>
+                    <li class="list-group-item">Uses: Foliar application in chili/peppers fields</li>
+                    <li class="list-group-item">Valid until: 10/05/2026</li>
+                </ul>
+                <h3>MALATION 50% C.E.</h3>
+                <p>Produced by Agrevo Mexicana, S.A. de C.V.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Patent number: RSCO-MEZC-INAC-1911-X0001-409-8.61</li>
+                    <li class="list-group-item">Active Ingredient: Malathion</li>
+                    <li class="list-group-item">Uses: Application in avocado, corn, cotton, chili, sorghum, apple, and watermelon fields</li>
+                    <li class="list-group-item">Valid until: Unspecified</li>
+                </ul>
+                <p> note for dev: check for update of information</p>
+            </div>
+            <div class="blog-section" id="bibliography">
+                <h2>Bibliography</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
