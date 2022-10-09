@@ -21,10 +21,7 @@
     text-align: center !important;
 }
 
-h1{
-    color: var(--color1);
-    
-}
+
 
 .logo-home{
     max-width: 500px;
@@ -35,12 +32,16 @@ li{
 }
 
 
-
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
 
 
 
 body { 
     padding-top: 56px; 
+    margin-top: 50px;
 }
 
 @media (min-width:768px){
@@ -73,18 +74,19 @@ body {
 
 .dropdown-menu {
     
-    background-color: var(--color2);
+    background-color: var(--color12);
+    border: 1px solid var(--color3);
     
 }
 .dropdown-menu a:hover {
     
-    background-color: var(--color6);
-    color: var(--color12);
+    background-color: var(--color9);
+    color: var(--color3);
     
 }
 
 .dropdown-item{
-    color: var(--color12);
+    color: var(--color5);
 }
 
 
@@ -286,6 +288,8 @@ footer a:hover {
 /*clases qgenerales para colocar informacion en forma de blog*/
 .blog-title{
     margin-bottom: 20px;
+    color: var(--color1);
+    
 }
 .blog-title-line{
     border-bottom: 2px solid var(--color4);
@@ -306,4 +310,9 @@ footer a:hover {
 
 }
 
+/*safety*/
 
+.img-carrusel{
+    max-width: 100%;
+    max-height: 600px;
+}
