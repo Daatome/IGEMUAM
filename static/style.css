@@ -17,6 +17,23 @@
 
 }
 
+ h1,h2{
+    text-align: center !important;
+}
+
+h1{
+    color: var(--color1);
+    
+}
+
+.logo-home{
+    max-width: 500px;
+}
+li{
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
 
 
 
@@ -46,11 +63,11 @@ body {
 
 
 .nav-link{
-    color: var(--color12)  !important;
+    color: var(--color4)  !important;
 }
 
 .logo{
-    max-width: 80px;
+    max-width: 100px;
 }
 
 
@@ -156,7 +173,7 @@ footer a:hover {
     color: white; text-decoration: underline; 
 }
 .back-fix--projectDescription{
-    background-image: url("https://cdn.pixabay.com/photo/2018/07/13/16/51/thorns-3536124_960_720.jpg");
+    background-image: url("https://static.igem.wiki/teams/4422/wiki/home/fondo3.jpg");
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -164,7 +181,7 @@ footer a:hover {
     background-attachment: scroll;
 }
 .our-project{
-    background-color: var(--color4);
+    background-color: var(--color12);
     border-radius: 15px;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -268,8 +285,11 @@ footer a:hover {
 
 /*clases qgenerales para colocar informacion en forma de blog*/
 .blog-title{
-    border-bottom: 2px solid var(--color4);
     margin-bottom: 20px;
+}
+.blog-title-line{
+    border-bottom: 2px solid var(--color4);
+
 }
 .blog-table{
     max-width: 100%;
@@ -285,4 +305,5 @@ footer a:hover {
     list-style-type: square;
 
 }
+
 
