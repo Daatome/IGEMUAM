@@ -1,57 +1,233 @@
 {% extends "layout.html" %}
   
-{% block title %}Human Practices{% endblock %}
-{% block lead %}We ask every team to think deeply and creatively about whether their project is responsible and good for the world. Consider how the world affects your work and how your work affects the world.{% endblock %}
+{% block title %}Collaborations{% endblock %}
+{% block lead %}Sharing and collaboration are core values of iGEM. We encourage you to reach out and work with other teams on difficult problems that you can more easily solve together.{% endblock %}
 
 {% block page_content %}
-
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Silver Medal Criterion #3</h4>
-      <p>Explain how you have determined your work is responsible and good for the world.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-    </div>
-  
-    <div class="bd-callout bd-callout-info">
-      <h4>Gold Medal Criterion #1</h4>
-      <p>Demonstrate how your team responded to your human practices reflections, research, and/or engagement. You should show how your activities impacted your project purpose, design, and/or execution. </p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-    </div>
-  
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Integrated Human Practices Special Prize</h4>
-      <p>To compete for the this prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <p>How does your project affect society and how does society influence the direction of your project? How might ethical considerations and stakeholder input guide your project purpose and design and the experiments you conduct in the lab? How does this feedback enter into the process of your work all through the iGEM competition? Document a thoughtful and creative approach to exploring these questions and how your project evolved in the process to compete for this award!</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
-    </div>
-  </div>
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/integratedhumanpractices.png" alt="banner" class="img-fluid">
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>At iGEM we believe societal considerations should be upfront and integrated throughout the design and execution of synthetic biology projects. “Human Practices” refers to iGEM teams' efforts to actively consider how the world affects their work and their work affects the world. Through your Human Practices activities, your team should demonstrate how you have thought carefully and creatively about whether your project is responsible and good for the world. We invite you to explore issues relating (but not limited) to the ethics, safety, security, and sustainability of your project, and to show how this exploration feeds back into your project purpose, design, and execution.</p>
-    <p>Please note you can compete for the Silver Medal criterion #3, Gold Medal criterion #1 and the Best Integrated Human Practices prize with this page.</p>
-    <p>For more information, please see the <a href="https://responsibility.igem.org/human-practices/what-is-human-practices">Human Practices Hub</a>.
-    <p>On this page, your team should document all of your Human Practices work and activities. You should write about the Human Practices topics you considered in your project, document any activities you conducted to explore these topics (such as engaging with experts and stakeholders), describe why you took a particular approach (including referencing any work you built upon), and explain if and how you integrated takeaways from your Human Practices work back into your project purpose, design and/or execution.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:Thessaly/Human_Practices">2019 Thessaly</a></li>
-      <li><a href="https://2019.igem.org/Team:Linkoping_Sweden/Human_Practices">2019 Linkoping Sweden</a></li>
-      <li><a href="https://2019.igem.org/Team:FDR-HB_Peru/Human_Practices">2019 FDR HB Peru</a></li>
-      <li><a href="https://2020.igem.org/Team:William_and_Mary/Human_Practices">2020 William and Mary</a></li>
-      <li><a href="https://2020.igem.org/Team:Rochester/Human_Practices">2020 Rochester</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Human_Practices">2020 Leiden</a></li>
-      <li><a href="https://2020.igem.org/Team:Baltimore_BioCrew/Human_Practices">2020 Baltimore BioCrew</a></li>
-    </ul>
+<div class="container-xl shadow-lg mt-5">
+  <div class="row">
+    <div class="col-md-2">
+      Index
+    </div>
+    <div class="col-md-9">
+      <div class="blog-section" id="stakeholders">
+        <div class="blog-table">
+          <table class="table"  border="1" cellspacing="0" cellpadding="0"  > 
+            <tbody>
+              <tr class="bg-success">
+              <td ><p><strong>Stakeholders/Values</strong></p></td>
+              <td><p><strong>Sustainability</strong></p></td>
+              <td><p><strong>Health</strong></p></td>
+              <td><p><strong>Human Relationship</strong></p></td>
+              <td><p><strong>Economic Benefit</strong></p></td>
+              <td><p><strong>Biosafety</strong></p></td>
+              </tr>
+              
+              <tr>
+              <td class="table-success"><p><strong>Investors</strong></p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td><p>3</p></td>
+              </tr>
+              
+              <tr>
+              <td><p><strong>Farmers/Producers</strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="table-success"><p>1</p></td>
+              <td class="bg-success" ><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr class="table-success">
+              <td><p><strong>Consumer</strong></p></td>
+              <td><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td><p>2</p></td>
+              <td><p>2</p></td>
+              <td><p>2</p></td>
+              </tr>
+              
+              <tr>
+              <td><p><strong>Food Industry</strong></p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>2</p></td>
+              </tr>
+              
+              <tr>
+              <td class="table-success"><p><strong>Environment Associations </strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>2</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr>
+              <td><p><strong>Agrochemical industry</strong></p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="table-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr>
+              <td class="table-success"><p><strong>Merchants</strong></p></td>
+              <td class="table-success"><p>2</p></td>
+              <td><p>3</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td><p>3</p></td>
+              </tr>
+              
+              <tr>
+              <td><p><strong>Local communities</strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr>
+              <td class="table-success"><p><strong>Governmet</strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr>
+              <td><p><strong>Researchers in agricultural topics</strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td><p>3</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+              
+              <tr>
+              <td class="table-success"><p><strong>Agronomists</strong></p></td>
+              <td class="bg-success"><p>1</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="table-success"><p>2</p></td>
+              <td class="bg-success"><p>1</p></td>
+              </tr>
+            
+            </tbody>
+          </table>
+          <p class="text-center">Table 1. Stakeholder’s Matrix</p>
+            
+            
+
+        </div>
+
+        <p>To get a better social approach, we made a stakeholder matrix to consider all the people that could be involved in the problem of agricultural food production. We wrote values that could measure the involvement of the stakeholder in the problem such as economic benefit, sustainability, health, biosafety, and human relationship. These were in a range of: 1 = Low impact, 2 = Unknown, 3 = High impact. As a result, we decided which stakeholders could approach for our first interactions such as farmers, agronomists, and the government. Also, we watched out for the possibility of getting economic and social support (one could be the link between each other) from them to implement our project. Finally, we were ready to have our first interactions with stakeholders.        </p>
+
+        <h2 class="blog-subtitle">Stakeholders Approach</h2>
+        <h2 class="blog-title-line"></h2>
+        <h3 class="text-center">Ing. Ernesto Pavel</h3>
+        <div class="row justify-content-between">
+          <img src="https://static.igem.wiki/teams/4422/wiki/human/ingernesto1.png" class="col-md-5 img-fluid">
+          <img src="https://static.igem.wiki/teams/4422/wiki/human/ingernesto2.png" class="col-md-5 img-fluid">
+          <p class="col-12 text-center">Figure 1. Zoom meetings with agronomist stakeholder          </p>
+        </div>
+        <h4>Why?</h4>
+        <p>The first stakeholder we  wanted to contact was someone who knew a lot about agriculture from both perspectives, the social and the scientific. For that reason, a stakeholder that is an agronomist and is also involved in the government was a good idea. We had several interactions with him where we received significant feedback for the project.
+        </p>
+        <h4>Who?</h4>
+        <p>The stakeholder Pável Ernesto Damián Díaz, is an agronomist with a bachelor in Agricultural Engineering, member of the Faculty of Agricultural and Environmental Sciences of UAGRO and General Director of Agriculture, Plant Health and Climatological Risks of the State of Guerrero.
+        </p>
+        <h4>What we learnt? </h4>
+        <p>The principal feedback he have us was:        </p>
+        <ul>
+          <li>Investigate regulations of FAO, SAGARPA and COFEPRIS for the development of a possible biopesticide into a start-up.          </li>
+          <li>He gave us ideas for contacting other possible stakeholders related to the government sector specially about SENASICA and Organismos Auxiliares de Sanidad Vegetal. He also suggested that we contact CropLife (PROCCYT) , a private agriculture enterprise.</li>
+          <li>A very important point was about the formulation method and advice on how we are going to deliver our biopesticide and aspergate it so that it is not wasted.</li>
+          <li>We asked him about the most affected regions in the country and he told us that the State of Mexico was of the most affected places, and also recommend us to watch a documentary about the subject called “Para los que pueden ver”</li>
+        </ul>
+        <h4>How did we implement it?        </h4>
+        <p>The feedback provided by the agronomist gave us important insight on what future possible stakeholders we could contact for gaining more information about how to solve the problem in a correct way. Also the documentary he recommended, gave us the idea of creating a comparative table to know which state or states were going to be the best possible place to visit and make engagements with communities. It also helped us connect more with the problematic and understand pesticides in a different way not just in a scientific way about the health side effects and toxic components</p>
+
+        <h3>iGEM Bolivia</h3>
+        <h4>Why did we contact this stakeholder?</h4>
+        <p>We decided to contact the iGEM Bolivia team for an assessment in the Human Practices section. Last year, the team won best Integrated Human Practices, that is why wanted to have some guidance from their mentors and from the experience of the iGEM Bolivia team members, with whom we have had collaborated in past occasions</p>
+        <h4>Who are they?</h4>
+        <p>The iGEM Bolivia team was assessed by important personalities of the iGEM community such as: Dra. Cecilia González, Dra. Tania Pozo and Dra. Maria Mercedes Pozo. All the team was  really eager to help another LATAM team and they gave us very important feedback.
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/human/igembolivia.png" class="img-fluid col-md-8 ">
+          <p class="text-center">Figure 2. Zoom meeting with iGEM Bolivia Team</p>
+        </div>
+        <h4>What we learnt?</h4>
+        <ol class="list-group">
+          <li>We learnt about the engagement with communities. They started by reminding us that Human Practices is not Education and that if we are going to engage with communities it will be a bilateral dialogue of knowledge not unidirectional from us, so that we can understand what society needs. Another important point was to implement first general questions and then particular ones.</li>
+          <li> Analyze commercialization channels contact agricultural companies such as CROP LIFE, a very important agrotech company in Latin America.</li>
+          <li>Develop a stakeholders matrix for future production centers and have a well established supply chain for making this project a future start-up.</li>
+          <li> Communication logo of the project and in general advice about design and image.</li>
+          <li>Careful with the ideological package of  the term our biopesticide is better because it is natural. That is a vitalist idea that natural is better than chemicals. The pesticides should not be shown as the worst thing that has ever happened to humanity. If we did not have them, food would not be available for many people in the world. The real problem is the relationship and incorrect management of spreading or disposal of these products.</li>
+          <li>Research more about other biopesticides.</li>
+        </ol>
+        <h4>How did we implement it?</h4>
+        <p>We took into account all the points they recommended and implemented them through our project and it helped us improve it, specially in the entrepreneurship area. We learned the importance of doing good field work to understand and be empathic with society in the face of the problem we are trying to solve by seeing it from another approach in such a way that it is society who sees an opportunity to improve through the use of science, especially with synthetic biology.
+        </p>
+        <h3>Dr. Nemesio Chávez        </h3>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/human/nemesio1.png" class="img-fluid col-md-8 ">
+          <p class="text-center">Figure 3. Zoom meeting with expert in science communication</p>
+        </div>
+        <h4>Why?</h4>
+        <p>We wanted to learn from a stakeholder that was scientific but with a social perspective. For that reason, we contacted science communication expert, Dr. Nemesio Chávez, to gain knowledge on what scientific dissemination strategies we should implement for having our first personal engagement with a community from the State of Mexico.
+        </p>
+        <h4>Who?</h4>
+        <p>Dr. Nemesio has a degree in Biology from the Autonomous Metropolitan University. He has been director of the Museum of Natural History of Mexico City (2002-2007); Deputy director of research and collections at the Museum of Natural History of Mexico City (2001-2002). He has taught courses on Molecular Biology, General Chemistry, Origins and Evolution of Life and Organic Evolution Processes at the UAM, Iztapalapa (1981-1998). Professor of photography and audiovisual production at the National Pedagogical University (1992). Professor of the science communication seminar at the Institute of Neurology (1992). Currently he is a professor in the Department of Communication Sciences of the Division of Communication Sciences and Design at UAM Cuajimalpa.</p>
+        <h4>What we learnt?        </h4>
+        <p>We learned that the approach with the communities needed to be empathetic and significant for the communities. We need to arrive with humility and not sell a product or pretend to teach communities that know more about the agricultural sector than us. In addition, he also gave us advice on how to transmit our project in a visual way in our promotional video and in our funding campaign.</p>
+        <h4>How did we implement it ?</h4>
+        <p>After the assessment, we decided to not make educational activities or bring infographics to the communities we were going to visit. Instead, we as a team were the ones that were going to learn about agriculture in a bidirectional dialogue of knowledge to engage with the community.</p>
+        
+
+        <h3>Dra. Argelia García Elizalde        </h3>
+        
+        <h4>Why?</h4>
+        <p>We wanted to consult with a stakeholder expert in the interview part of engagement in agricultural communities, and a social scientist with experience in the field was the best option. We needed to know how to formulate the questions for the questionnaires we were going to make online and on-site for delimiting the problem. In addition, we wanted an assessment of the privacy regulations regarding informed consent in the interviews of the field investigation.
+        </p>
+        <h4>Who?</h4>
+        <p>Dra. Argelia García Elizalde has a bachelor in Food Engineering at UAM Iztapalapa; Master in Public Health Sciences (UATx); She made a short stay on Local Agri-Food Systems of Mexico (Higher Council for Scientific Research in Madrid, Spain) and is a Doctor in Regional Development at Colegio de Tlaxcala A.C.
+        </p>
+        <h4>What we learnt?        </h4>
+        <p>We learned about the privacy regulations for writing and giving it to the people we were going to interview, you can see them in the [annexes section]. She also helped us finish writing the semi-structured interviews. Lastly, she gave us another very important piece of advice before going to the communities, which was building a business model before going. 
+        </p>
+        <h4>How did we implement it ?</h4>
+        <p>We made the business model before attending to the communities, this helped us by gaining insight into what possible solution we could offer to those communities and not making any promises of making a miracle product. Also, the structure of the interviews helped us in obtaining a lot of information. In addition, we gave the interviewees privacy consents following the safety policies for Human Subjects research. 
+        </p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/human/argelia1.png" class="img-fluid col-md-8 ">
+          <p class="text-center">Figure 4. Meeting with social scientist stakeholder</p>
+        </div>
+
+        <iframe src="https://static.igem.wiki/teams/4422/wiki/human/consentimiento-informado-1.pdf" width="100%" height="500px"></iframe>
+
+
+
+
+
+
+      </div>
+    </div>
   </div>
 </div>
 
