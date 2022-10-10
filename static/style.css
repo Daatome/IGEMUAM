@@ -312,7 +312,32 @@ footer a:hover {
 
 /*safety*/
 
-.img-carrusel{
-    max-width: 100%;
-    max-height: 600px;
+.esquema-circulo{
+    margin-top: 200px;
+
+}
+.esquema-circulo2{
+    margin-top: -200px;
+
+}
+.bg-b-b{
+    background-color: var(--color1);
+
+}
+.button-b-b{
+    background-color: var(--color3);
+}
+
+.picudito-top{
+    margin-top: 200px;
+}
+.picudito-bottom{
+    margin-top: -100px;
+}
+
+.nopal-alone{
+    margin-top: -200px;
+}
+.picudo{
+    border: none;
 }

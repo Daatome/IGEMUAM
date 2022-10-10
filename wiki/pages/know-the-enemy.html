@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+  
+{% block title %}Safety{% endblock %}
+{% block lead %}Describe all the safety issues of your project.{% endblock %}
+
+{% block page_content %}
+
+<div >
+
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/knowtheenemy.png" alt="banner" class="img-fluid">
+</div>
+<div class="container-xl shadow-lg">
+
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-9">
+            <div class="blog-section mt-5">
+                <p>According to the National Institute of Ecology and Climate Change in our country, all cultivated plants face phytosanitary problems caused by different organisms such as insects, mites, nematodes, rodents, fungi, bacteria, and viruses, among others. The nopal crop is also susceptible to attack by various phytoparasites, where a particular beetle is considered one of the most frequent pests. 
+                </p>
+                <h4 class="text-center">We introduce you to our worst enemy throughout this season…                </h4>
+                <h3 class="mt-5 text-center">The Cactus Weevil of scientific name <span class="text-center mt-5 fst-italic"> Cactophagus spinolae</span></h3>
+                <img src="https://static.igem.wiki/teams/4422/wiki/safety/picudo.jpg" alt="" class="img-fluid mt-3 mb-3">
+
+                <p>Conforming to the bibliographic data and thanks to our principal stakeholder, we learned that the cactus weevil is a beetle belonging to the Coleoptera order of the family <span class="fst-italic">Curculionidae</span>. To learn more about it, click on cactus weevils in infested nopal. 
+                </p>
+
+
+                <!-- empieza nopal con picudos-->
+                <div>
+                    <div class="nopal-picudos">
+                        <button class="text-danger picudo1 opacity-" data-bs-toggle="modal" data-bs-target="#picudo1">picudo1</button>
+                        <!--inicia modal picudo 1-->
+                        <div class="modal fade" id="picudo1" tabindex="-1" aria-labelledby="picudo1" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="">Modal title</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <!--termina modal picudo 1-->
+
+                        <button class="text-danger picudo2 opacity-" data-bs-toggle="modal" data-bs-target="#picudo2">picudo2</button>
+                        <!--inicia modal picudo 2-->
+                        <div class="modal fade" id="picudo2" tabindex="-1" aria-labelledby="picudo2" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="">Modal title</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <!--termina modal picudo 2-->
+                    </div>
+                </div>
+                <!-- termina nopal con picudos-->
+
+
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+{% endblock %}
