@@ -345,7 +345,9 @@ footer a:hover {
 .picudo{
     border: none;
 }
-
+.img-duda{
+    margin-top: -100px;
+}
 
 /*Human*/
 .blog-section h2{
