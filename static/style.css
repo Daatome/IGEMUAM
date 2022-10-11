@@ -61,7 +61,9 @@ body {
 }
 
 
-
+.bg-home{
+    background-color: var(--color4);
+}
 
 .nav-link{
     color: var(--color4)  !important;
