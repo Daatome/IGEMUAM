@@ -67,6 +67,7 @@ body {
     color: var(--color4)  !important;
 }
 
+
 .logo{
     max-width: 100px;
 }
@@ -347,3 +348,6 @@ footer a:hover {
 
 
 /*Human*/
+.human h2{
+    color: var(--color4) !important;
+}
