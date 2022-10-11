@@ -2,46 +2,57 @@
   
 {% block title %}Model{% endblock %}
 {% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
-
 {% block page_content %}
-
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Gold Medal Criterion #3</h4>
-      <p>Use modeling to gain insight into how your project works or should be implemented. Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-    </div>
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Model Special Prize</h4>
-      <p>Models and computer simulations provide a great way to describe the functioning and operation of BioBrick Parts and Devices. Synthetic biology is an engineering discipline and part of engineering is simulation and modeling to determine system behavior before building your design. Designing and simulating can be iterated many times in a computer before moving to the lab. This award is for teams who build a model of their system and use it to inform system design or simulate expected behavior before or in conjunction with experiments in the wetlab.</p>
-      <p>To compete for the Best Model prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
-    </div>
-  </div>
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/model.png" alt="" class="img-fluid">
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>Mathematical models and computer simulations provide a great way to describe the function and operation of Parts and Devices. Synthetic Biology is an engineering discipline, and part of engineering is simulation and modeling to determine the behavior of your design before you build it. Designing and simulating can be iterated many times in a computer before moving to the lab.</p>
-    <p>Please note you can compete for both the Gold Medal criterion #3 and the Best Model prize with this page.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:GreatBay_China/Model">2018 GreatBay China</a></li>
-      <li><a href="http://2018.igem.org/Team:Leiden/Model">2018 Leiden</a></li>
-      <li><a href="https://2019.igem.org/Team:IISER_Kolkata/Model">2019 IISER Kolkata</a></li>
-      <li><a href="https://2019.igem.org/Team:Exeter/Model">2019 Exeter</a></li>
-      <li><a href="https://2019.igem.org/Team:Mingdao/Model">2019 Mingdao</a></li>
-      <li><a href="https://2020.igem.org/Team:Harvard/Model">2020 Harvard</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Model">2020 Leiden</a></li>
-    </ul>
+<div class="container-xl shadow-lg ">
+  <div class="row">
+    <div class="col-md-2">
+      Index
+    </div>
+    <div class="col-md-9">
+      
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Protein Modelling</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Math Modelling</button>
+        </li>
+        
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="blog-section " id="background">
+            <h1 class="blog-title">Protein Modelling</h2>
+            <h2 class="blog-subtitle">Background</h2>
+            <h2 class="blog-title-line"></h2>
+            <p>Spiders have developed large complex repertoires of peptides in their venoms with various pharmacological and agricultural applications for more than 300 million years (Saez & Herzig, 2019). These peptides are made up of characteristic three-dimensional folds that give them stability and resistance (King, 2019). In this way, spider venom peptides potently and selectively modulate a wide variety of targets, such as ion channels and signaling pathways that are involved in important physiological processes. In addition to the above, due to the multiple disulfide bonds they present, these peptides have remarkable stability within the intestine of insects (King & Hardy, 2013).</p>
+            <p>Spiders use these peptides to incapacitate prey by modulating the activity of their voltage-gated sodium and calcium channels, which can be classified as pore blockers, which physically obstruct the channel pore, or as modifiers of the channel gate, since they alter the entrance of the channel through interactions with one or more specific domains of the same (Shen et al., 2018).</p>
+          </div>
+          <div class="blog-section " id="selected-peptides">
+            <h2 class="blog-subtitle">Selected Peptides</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-2">For spider venom peptides selection, an extensive bibliographic research of these was carried out and a database was established with many peptides from different species of spiders. In the first place, the peptides were selected according to their selectivity in invertebrates, and those that showed affinity in vertebrate ion channels were discarded, likewise, an important parameter within the selection of peptides was the insecticidal effect that they exerted on the insect order Coleoptera.</p>
+            <p>Finally, we reviewed their mechanism of action and the number of disulfide bonds they contained, since these have a great influence on conferring biological stability to the peptide. Based on the specifications mentioned above, the selected peptides were Omega-Hexatoxin-Hv2a (AcTx-Hv2a) and U1-Theraphotoxin-Sp1a (OAIP-1).</p>
+            <p>AcTx-Hv2a from the Australian spider Hadronyche versuta and OAIP-1 from the Australian tarantula Selenotypus plumipes are two insecticidal peptides that target voltage-gated sodium and calcium channels of insects belonging to the orders Coleoptera, Diptera, Dictyoptera, Orthoptera, and Lepidoptera. Both peptides form a cysteine knot, resulting in three disulfide bonds, providing the peptides with biological stability that contributes to their oral activity and resistance to proteases (Hardy et al., 2013).</p>
+
+          </div>
+          <div class="blog-section " id="omega-hexatonin">
+            <h2 class="blog-subtitle">OMEGA-HEXATOXIN-HV2A</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-2">ω-Hexatoxin-Hv2a (ω-HXTX-Hv2a or AcTx-Hv2) is a specific and potent blocker of voltage-gated calcium channels. It is a 45 amino acid peptide containing a compact disulfide-rich core, including a highly hydrophobic C-terminal tail that is essential for interaction with insect calcium channels, the three disulfide bridges in the hydrophobic core form a binding motif inhibitory cysteine (Wang et al., 2001)</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/proteinmodelling/1.png" class="img-fluid col-md-8">
+            </div>
+            <p class="text-center mt-2">Structure of ω-Hexatoxin-Hv2a. The ammino acids marked in yellow are the ones corresponding to the disulfide bonds.</p>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">math</div>
+      </div>
+    </div>
   </div>
 </div>
 
