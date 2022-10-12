@@ -4,39 +4,240 @@
 {% block lead %}Hardware in iGEM should make synthetic biology based on standard parts easier, faster, better, or more accessible to our community.{% endblock %}
 
 {% block page_content %}
-
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Hardware Special Prize</h4>
-      <p>This is a prize for the team that has developed a piece of hardware for synthetic biology. Hardware in iGEM should make synthetic biology based on standard parts easier, faster, better or more accessible to our community. Did your team make a sensor to help teams characterize parts? Did you make a robot that can help teams perform experiments or do cloning more easily? Tell us what your team did for this award!</p>
-      <p>To compete for the Best Hardware prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
-    </div>
-  </div>
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/hardware.png" alt="" class="img-fluid">
 </div>
 
+<div class="container-xl shadow-lg mt-5">
+  <div class="row mt-5">
+    <div class="col-md-2">
+      Index
+    </div>
+    <div class="col-md-9">
+      
+      <div class="blog-section" id="introduction">
+        <h2 class="blog-subtitle">Introduction</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>We are aware of the necessity of using hardware in synthetic biology. In our case, to obtain experimental data for our mathematical model, we required measurement of some parameters, these parameters are fluorescence and optical density. For this, we built an artefact that would allow us to measure these qualities, relying on the iGEM Aachen 2014 team. For environmental conditions, we consulted previous experiments on scientific documentation. We build this hardware considering both our current needs as equipment, as well as those of future equipment. Therefore, this hardware is affordable and easy to use. The total cost of the device does not amount to $100 US dollars. The hardware was programmed in Arduino and Python. Those codes are in the <a href="https://gitlab.igem.org/2022/software-tools/uam" class="btn btn-outline-success">repository</a>  which were carefully commented on thinking about future iGEMers that could occupy them.</p>
+      </div>
+      <div class="blog-section" id="our-inspiration">
+        <p>For the design of hardware, we relied on the device designed by the Aachen team from Germany in 2014. In addition, we researched parameters and conditions in which the optical density and fluorescence measurements were taken. To quantify the protein production of <span class="fst-italic"> P. Pastoris</span>, was proposed the development of an EGFP sensor, as we established a one-to-one relationship of protein production with the intensity of EGFP fluorescence. Of the papers consulted where there is previous experimentation, we have the following</p>
+        <p class="text-center">Table 1. Wavelengths</p>
+        <div  class="blog-table">
+          <table class="table" border="1" cellspacing="0" cellpadding="0"  > 
+            <tbody>
+            <tr >
+             <td  nowrap="" valign="bottom" ><p>EGFP (Enhanced Green Fluorescent Protein)</p></td>
+             <td  nowrap="" valign="bottom" ><p>GFP (Green Fluorescent Protein)</p></td>
+             </tr>
+            
+             <tr>
+             <td  nowrap="" valign="bottom" ><p>Maximum emission 577 nm</p></td>
+             <td  nowrap="" valign="bottom" ><p>Maximum emission 509 nm</p></td>
+             </tr>
+            
+             <tr>
+             <td  nowrap="" valign="bottom" ><p>Maximum excitation 488 nm</p></td>
+             <td  nowrap="" valign="bottom" ><p>Maximum excitation 395</p></td>
+             </tr>
+            
+             </tbody>
+          </table>
+            
+             
+        </div>
+        <p>That is why LEDs of 490 and 600 nm were chosen.</p>
+        <p>In addition, in the paper On-Line Green Fluorescent Protein Sensor with LED Excitation 2 types of measurements were made, on-line and off-line. On-line consisted of measurements taken through the sensor continuously every 2 minutes and off-line measurements made every hour with a fluorescence spectrophotometer. The conditions of the measurements indicated in the article were as follows: The GFP, having 2 absorption peaks at 395 nm and 475 nm, was chosen to excite the longest wavelength excitation peak. Aeration at 1 vvm (volume of liquid per minute), agitation at 300 rpm and temperature at 30 °C.</p>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>In addition to encouraging teams to work with DNA parts and build biological devices in the lab, iGEM also encourages other types of technical solutions for synthetic biology. This can include physical devices (hardware) related to robotic assembly, microfluidics, low-cost measurement devices, to name a few examples. There are many exciting opportunities for hardware innovation in synthetic biology.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:Valencia_UPV/Hardware">2018 Valencia UPV</a></li>
-      <li><a href="http://2018.igem.org/Team:Unesp_Brazil/Hardware">2018 Unesp Brazil</a></li>
-      <li><a href="https://2019.igem.org/Team:BIT/Hardware">2019 BIT</a></li>
-      <li><a href="https://2019.igem.org/Team:Bielefeld-CeBiTec/Hardware">2019 Bielefeld CeBiTec</a></li>
-      <li><a href="https://2019.igem.org/Team:Nanjing-China/Hardware">2019 Nanjing China</a></li>
-      <li><a href="https://2020.igem.org/Team:Vilnius-Lithuania/Hardware">2020 Vilnius Lithuania</a></li>
-      <li><a href="https://2020.igem.org/Team:Aachen/Hardware">2020 Aachen</a></li>
-      <li><a href="https://2020.igem.org/Team:ZJUT_China_B/Hardware">2020 ZJUT China B</a></li>
-    </ul>
+      </div>
+      <div class="blog-section" id="our-device">
+        <h2 class="blog-subtitle"></h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-2">The hardware has two analogue light sensors OPT101 and two LEDs, each sensor is related to an LED to perform fluorescence (F) and optical density (OD) readings. A filter will be used as a screen between the medium and the sensor in order to block any light emitted below 600nm (orange filter).</p>
+        <p>In this way the sensor will be able to measure the OD600. For fluorescence measurement it is the same principle but in this case a filter (green) was used to block any exciting light other than the light emitted by GFP.</p>
+        <p>In addition, it will need an Erlenmeyer flask in which the sample of P. Pastoris will be inside, and there is a magnetic stir bar that will shake it without affecting the system. As indicated above, the device includes two sensors, which takes readings in real-time and send the information to be read by Python and shown in a plot, as data is collected continuously, the Arduino's memory can get saturated. For this, the information only saves the last measurement.</p>
+
+      </div>
+      <div class="blog-section" id="how-it-works">
+        <h2 class="blog-subtitle">How it works?</h2>
+        <h2 class="blog-title-line"></h2>
+        <h3 class="mt-3">Fluorescence</h3>
+        <p>For fluorescence measurements the absorption of light with a specified wavelength is essential. Some substances absorb light at one wavelength, and then emit light called fluorescence at another wavelength. This is a phenomenon in which a substance absorbs light to reach a high-energy level and then emits light to return to its original level. A UV/UV-VIS detector detects light that has passed through the flow cell, an FL detector detects fluorescence emitted in the direction orthogonal to the exciting light. Fluorescence detection is suitable for trace analysis because of generally having high sensitivity and selectivity (not detecting impurities) (Hitachi, 2022)</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen1.png" class="img-fluid col-md-8">
+        </div>
+        <p class="mt-2 text-center">Figure 1: Diagram for Fluorescence sensor</p>
+        <h3 class="mt-3">Optical density</h3>
+        <p>The traditional method for culture density measuring involves measuring 600 nm absorbance of the culture relative to the medium (Myers JA. et al., 2013). This is named the optical density of the culture OD600. The light is not absorbed but is scattered and the relative turbidity of the culture is in fact measured. Though a turbidity sensor is a device which emits light, passes it through the culture and reads the light intensity received (Kiviharju K. et al., 2008) (Marinescu et al., 2018)</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen2.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center">Figure 2: Diagram for Fluorescence sensor</p>
+        
+
+      </div>
+      <div class="blog-section mb-5" id="instructions-for-designing">
+        <h2 class="blog-subtitle">Instructions for designing our senso</h2>
+        <h2 class="blog-title-line"></h2>
+        <h3 class="mt-2">Materials</h3>
+        <p>To build our device we first investigated how laboratory equipment works to measure fluorescence and optical density. From that investigation we were able to make a list of materials that would help us buy online and in physical stores. Many of them were easy to find and inexpensive. The materials we use are shown below.</p>
+        <p class="mt-2">Table 2. Materials to construct the OD and F sensor with their respective cost:</p>
+        <div class="blog-table">
+          <table class="table " border="1" cellspacing="0" cellpadding="0"  > 
+            <tbody>
+            <tr class="table-success" >
+             <td  valign="top" ><p>Component</p></td>
+             <td  valign="top" ><p>Quantity</p></td>
+             <td  valign="top" ><p>Cost per total unit (Mexican pesos)</p></td>
+             <td  valign="top" ><p>Cost (US dollars in October 2022)</p></td>
+             <td  valign="top" ><p>Total cost (US dollar)</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Arduino UNO</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>580</p></td>
+             <td  valign="top" ><p>28.99</p></td>
+             <td  valign="top" ><p>28.99</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>LED 600 nm for Fluorescence</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>2</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p> LED 490 nm for OD</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>2</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Jumpers wire cables</p></td>
+             <td  valign="top" ><p>40</p></td>
+             <td  valign="top" ><p>25 </p></td>
+             <td  valign="top" ><p>1.25 </p></td>
+             <td  valign="top" ><p>1.25</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Protoboard</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>150</p></td>
+             <td  valign="top" ><p>7.5</p></td>
+             <td  valign="top" ><p>7.50</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>OPT101 light sensor</p></td>
+             <td  valign="top" ><p>2</p></td>
+             <td  valign="top" ><p>350</p></td>
+             <td  valign="top" ><p>17.49</p></td>
+             <td  valign="top" ><p>17.49</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>3D printer</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>1/min of printing </p></td>
+             <td  valign="top" ><p>0.05/min</p></td>
+             <td  valign="top" ><p>12.48</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Resistors 180 Ω</p></td>
+             <td  valign="top" ><p>10</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>0.05</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Resistors 1M Ω</p></td>
+             <td  valign="top" ><p>10</p></td>
+             <td  valign="top" ><p>1</p></td>
+             <td  valign="top" ><p>0.05</p></td>
+             <td  valign="top" ><p>0.10</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Color filters</p></td>
+             <td  valign="top" ><p>20 pieces</p></td>
+             <td  valign="top" ><p>5.75</p></td>
+             <td  valign="top" ><p>0.29</p></td>
+             <td  valign="top" ><p>0.54</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Tin</p></td>
+             <td  valign="top" ><p>50 gr</p></td>
+             <td  valign="top" ><p>112</p></td>
+             <td  valign="top" ><p>5.59</p></td>
+             <td  valign="top" ><p>5.59</p></td>
+             </tr>
+            
+             <tr>
+             <td  valign="top" ><p>Welding grease</p></td>
+             <td  valign="top" ><p>60 gr</p></td>
+             <td  valign="top" ><p>39</p></td>
+             <td  valign="top" ><p>1.95</p></td>
+             <td  valign="top" ><p>1.95</p></td>
+             </tr>
+            
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-2">In total 79.19 dollars were invested to build our sensor</p>
+        <h3 class="mt-3">Design</h3>
+        <p>The next step is the design, it is a very important part because even if we have all the material, we could not assemble the device or if we do not plan well the sensor could go wrong. Therefore, first a draft will be made by hand and consider the scale in which we are going to work. The sensor will be in contact with the medium, then we will need the measurements of the flask, the sensor, the diameter of the Leds, etc. Then, form those dimensions, a 3D modelling sensor will be created with the software SketchUp, on a millimeter scale. Three different models are created: the body, bottom, and up part of the sensor. </p>
+        <p>We believe SketchUp is a very user-friendly tool. We even initially started working with Tinkercad but we felt it was less practical, so we decided to use SketchUp instead. It has multiple functions that we discovered as we had more practice. Below are the 3D designs that were made in SketchUp. If you want more details about the design, please check up our repository iGEM UAM 2022.</p>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-4">
+            <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen3.png" class="img-fluid">
+            <p class="text-center">Figure 3 Sensor cap</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen4.png" class="img-fluid">
+            <p class="text-center">Figure 4 Sensor bottom</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen5.png" class="img-fluid">
+            <p class="text-center">Figure 5 Sensor body</p>
+          </div>
+        </div>
+        <h3 class="mt-3">Breadboard</h3>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen6.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 6 Arduino Circuit Diagram</p>
+        <p class="mt-2">The use of the A1 and A2 pins as inputs for the fluorescence and optical density sensors is observed. While pins 9 and 10 as outputs. Finally pins 0 and 1 as a serial communication link.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen7.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 7 Connection of OPT101 datasheet.</p>
+        <p class="mt-2">It is important to add that the sensitivity of our sensor is approximately linear in the region in which we want to make the measurements. As the figure shows.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen8.png" class="img-fluid col-md-8 ">
+        </div>
+        <p class="text-center mt-2">Figure 8 Responsivity of OPT 101 light sensor.</p>
+        <div class="row justify-content-center mt-2">
+          <img src="https://static.igem.wiki/teams/4422/wiki/hardware/imagen9.png" class="col-md-9 img-fluid">
+        </div>
+        <p class="text-center mt-2">Figure 9 Sensor prototype</p>
+
+        <a href="{{url_for('pages',page='experiments')}}" class="btn btn-outline-success">Go to Experiments</a>
+
+
+
+
+
+      </div>
+    </div>
   </div>
 </div>
 
