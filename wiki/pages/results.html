@@ -4,49 +4,236 @@
 {% block lead %}You can describe the results of your project and your future plans here.{% endblock %}
 
 {% block page_content %}
-
-<div class="row mt-4">
-  <div class="col-lg-5">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <ul>
-      <li>Clearly and objectively describe the results of your work.</li>
-      <li>Future plans for the project.</li>
-      <li>Considerations for replicating the experiments.</li>
-    </ul>
-  </div>
-  <div class="col-lg-7">
-    <h2>Describe what your results mean</h2>
-    <hr>
-    <ul>
-      <li>Interpretation of the results obtained during your project. Don't just show a plot/figure/graph/other, tell us what you think the data means. This is an important part of your project that the judges will look for.</li>
-      <li>Show data, but remember <b>all measurement and characterization data must also be on the Part's Main Page on the <a href="http://parts.igem.org/Main_Page">Registry</a>.</b> Otherwise these data will not be in consideration for any medals or part awards!</li>
-      <li>Consider including an analysis summary section to discuss what your results mean. Judges like to read what you think your data means, beyond all the data you have acquired during your project.</li>
-    </ul>
-  </div>
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/results.png" alt="banner" class="img-fluid">
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Project Achievements</h2>
-    <hr>
-    <p>You can also include a list of bullet points (and links) of the successes and failures you have had over your summer. It is a quick reference page for the judges to see what you achieved during your summer.</p>
-    <ul>
-      <li>A list of linked bullet points of the successful results during your project</li>
-      <li>A list of linked bullet points of the unsuccessful results during your project. This is about being scientifically honest. If you worked on an area for a long time with no success, tell us so we know where you put your effort.</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:Newcastle/Results">2019 Newcastle</a></li>
-      <li><a href="https://2019.igem.org/Team:Munich/Results">2019 Munich</a></li>
-      <li><a href="https://2019.igem.org/Team:Tec-Chihuahua/Results">2019 Tec Chihuahua</a></li>
-      <li><a href="https://2020.igem.org/Team:Aalto-Helsinki/Results">2020 Aalto Helsinki</a></li>
-      <li><a href="https://2020.igem.org/Team:GreatBay_SCIE/Results">2020 GreatBay SCIE</a></li>
-      <li><a href="https://2020.igem.org/Team:Queens_Canada/Results">2020 Queens Canada</a></li>
-    </ul>
+<div class="container-xl shadow-lg mt-5 ">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+
+      <div class="blog-section mt-3" id="overview" >
+        <h2 class="blog-subtitle">Overview</h2>
+        <h2 class="blog-title-line"></h2>
+        <ul>
+          <li><p>Assemble two different circuits iUAM_PICZɒA_OAIP and iUAM_PICZɒA_Hv2 to produce two spider venom peptides
+          </p></li>
+          <li><p>Clear confirmation of the genetic circuit constructions using two techniques PCR and restriction enzymes
+          </p></li>
+          <li><p>Test of a new affordable expression medium (YPD with 1% glycerol) compared with the commonly used expression medium (BMMY)</p></li>
+          <li><p>Use a simple screening method using eGFP</p></li>
+          <li><p>Proof of concept of both peptides</p></li>
+
+        </ul>
+        <p>Additionally, we added advice that could help future iGEMers generations. These advice are the collection of learnings from our instructors, advisors and personal thoughts.</p>
+
+      </div>
+      <div class="blog-section mt-3" id="fragments-application">
+        <h2 class="blog-subtitle">Fragments amplification</h2>
+        <h2 class="blog-title-line"></h2>
+
+        <p>In order to create the constructions iUAM_PICZɒA_OAIP and iUAM_PICZɒA_Hv2a, the fragments Fragment A_OAIP (1302 bp) and Fragment B_Hv2a (1347 bp) were synthesized. Both fragments contained similar parts, except for the spider venom peptide, which was specific for each one (Fig. 1). As it is shown, the fragment  A_OAIP contained the spider venom peptide U1-theraphotoxin-Sp1a (OAIP-1) from Selenotypus plumipes while the fragment B_Hv2a contained the fragment Omega-hexatoxin-Hv2a (AcTx-Hv2) from Hadronyche versuta.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/1-lipase-assay-protocol.png" class="img-fluid col-md-9">
+        </div>
+        <p class="text-center">Figure 1. Synthesized fragments</p>
+        <p class="mt-2">In addition, two primers were synthesized for a further Gibson Assembly; thus, these primers amplify the fragments and add 20 nucleotides which overlap with the vector pPICZɒA.  Although the expected annealing temperature was close to 55 °C, a temperature gradient was performed to confirm it, using the polymerase Phusion High -Fidelity DNA Polymerase.</p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/2-pcr.png" class="img-fluid col-md-9">
+        </div>
+        <p class="text-center mt-2">Figure 2. Temperature gradient</p>
+        <p class="mt-2">Surprisingly, the temperature gradient (Fig. 2) shows that at 55°C a higher specificity and good yields are achieved, leading to the following PCR protocol (Table 1).
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/3-pcrfingib.png" class="img-fluid col-md-9">
+        </div>
+        <p class="text-center mt-2">Table 1. PCR optimized protocol</p>
+        <p class="mt-2">Although this optimization improved the PCR results, a nonspecific amplification occurred; then, it was necessary to do an electrophoresis gel and purify the fragments band.
+        </p>
+        <div class="bg-warning rounded p-3 mt-4">
+          <h4 class="text-center fw-bold ">Advise Alert</h4>
+        </div>
+        <ul>
+          <li>
+            <p>Flanking the synthesized fragments with two different restriction enzymes can be useful to perform a restriction enzyme cloning method, in case the Gibson Assembly fails.</p>
+          </li>
+          <li>
+            <p>During the fragment purification, one of the critical decisions is the final elution volume. In our case, the kit Wizard® SV Gel and PCR Clean-Up System Technical Bulletin recommended 50 µL per purification column. However, better results in quantification and Gibson Assembly were obtained using 40  µL per purification column.
+            </p>
+          </li>
+          <li>
+            <p>The use of Taq polymerases not only risks the fidelity sequence, but also adds a poly(A) tail that could interfere with the Gibson Assembly method. Thus, it is highly recommended not to use them to amplify Gibson fragments.</p>
+          </li>
+        </ul>
+
+      </div>
+      <div class="blog-section mt-3 " id="digestion">
+        <h2 class="blog-subtitle">Digestión</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>pPICZα A was selected as the expression vector to assemble our two fragments. To perform the assembly protocol it was needed to perform some previous steps. The vector was amplified using the E. coli DH5α strain and it was purified by running a DNA extraction protocol with a MidiPrep commercial kit from Promega. 
+        </p>
+        <p>Due to the coexpression of eGFP and pesticide proteins, it was necessary to eliminate the His-tag from the original pPICZα A. This change in the fragments order made impossible the use of two restriction enzyme sites from the multiple cloning site (Figure 3). Luckly, the restriction enzyme AgeI was present after de His-tag and was neither present in the fragments nor other places in the vector. The second restriction site was EcoRI which is inside the multiple cloning site.</p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/4-digest.png" class="col-md-10 img-fluid">
+        </div>
+        <p class="text-center mt-2">Figure 3. pPICZαA digestion</p>
+        <p class="mt-2">In order to perform a double digestion, it was necessary to execute them separately since these enzymes do not share a buffer where they exhibit an activity higher than 50% as it is shown in table 2 (specifically for NEB enzymes). 
+        </p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/5-buffer.png" class="col-md-10 img-fluid">
+        </div>
+        <p class="text-center">Table 2. Buffers for enzyme digestion</p>
+        <p>Although the quick protocol suggested 15 minutes at 37 °C as enough time to perform each digestion, they were carried overnight at room temperature, obtaining optimal results (Fig. 4) and avoiding the presence of circular vector after digestion. In this case, the length of the complete vector is 3593, the expected length of the linearized vector was 3405 bp, and the length of the liberated fragment is 188 bp.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/6-digest-chida.png" class="col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 4. pPICZαA vector digestion</p>
+        <p class="mt-2">It is important to mention that after the first digestion a purification step was done. Then, after the second one, an electrophoresis gel was necessary to purify the linearized vector band.</p>
+        <div class="bg-warning rounded p-3 mt-4">
+          <h4 class="text-center fw-bold ">Advise Alert</h4>
+        </div>
+        <ul>
+          <li>
+            <p>To linearize the vector, selecting two restriction enzymes that are present only once in the vector is necessary to avoid more cuts that could make the vector unsuitable for further Gibson techniques.
+            </p>
+          </li>
+          <li>
+            <p>To linearize the vector, selecting two restriction enzymes that are not present in the fragments allows the confirmation of the construction when the Gibson Assembly method is performed, since this method does not leave scars in the junctions, conserving the restriction sites.</p>
+          </li>
+          <li>
+            <p>When linearizing the vector with restriction enzymes, it is important to make sure that there are no lefts of circular vector, since it could be detrimental for further steps.</p>
+          </li>
+          <p>In figure 5, an electrophoresis gel of pPICZɒA with EcoRI and AgeI is showed; however, the size of vector is higher than the expected (3405 bp). This could be due to a poor restriction enzyme digest.</p>
+          <div class="row justify-content-center">
+            <img src="https://static.igem.wiki/teams/4422/wiki/results/7-digest-fea.png" class="img-fluid col-md-10">
+          </div>
+          <p class="text-center mt-2">Figure 5. pPICZɒA poor enzyme digestion</p>
+          <li><p>During the purification of linearized vector, one of the critical decisions is the final elution volume. In our case, the kit Wizard® SV Gel and PCR Clean-Up System Technical Bulletin recommended 50 µL per purification column. However, <span class="fw-bold"> better results in quantification and Gibson Assembly were obtained using 35 µL per purification column.</span></p></li>
+        </ul>
+
+      </div>
+      <div class="blog-section mt-3" id="fragment-and-linearized">
+        <h2 class="blog-subtitle">Fragment and linearized vector quantification</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>Before performing the Gibson assembly, it is necessary to quantify the concentration of fragments and linearized vector to obtain the volumes that contain the optimum amount of DNA. In addition, it is important to know the purity of the DNA, using the 260/230 and 260/280 ratios.</p>
+        <p>The quantification of the fragments and linearized vector pPICZɒA was performed using a ThermoFisher NanoDrop One/One-c (Table 3). In each case the 260/230 and 260/280 ratios were optimum, between 2.0-2.2 and 1.-2.0, respectively.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/8-quant.png" class="col-md-8 img-fluid">
+        </div>
+        <p class="text-center">Table 3. Fragment and linearized vector quantification </p>
+      </div>
+      <div class="blog-section mt-3" id="gibson-assembly">
+        <h2 class="blog-subtitle">Gibson Assembly </h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-2">Due to their multiple advantages, such as no need for specific restriction sites and no scars between fragments, Gibson Assembly was the selected method to assemble our genetic circuit. Using this method, we were able to have complete control over the fragments that were assembled into the expression vector. Thus, the insertion of additional unwanted sequences was prevented.         </p>
+        <p>The assembly protocol was performed using the Gibson Cloning Kit from New England Biolabs. This protocol recommends a total of 0.02–0.5 pmols of DNA fragments when 1 or 2 fragments are being assembled into a vector. Therefore, the number of pmols of each fragment was calculated to increase the efficiency of the reaction.  
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/9-copy-of-lipase-assay-protocol.png" class="col-md-10 img-fluid">
+        </div>
+        <p class="text-center">Figure 6. Gibson assembly quantities</p>
+        <p class="mt-2">The reactions were set up on ice and they were incubated in a thermocycler at 50 °C for 30 minutes. The gene constructs obtained from the assembly are shown in the following illustration.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/10-vectors.png" class="img-fluid col-md-10">
+        </div>
+        <p class="text-center">Figure 7. Genetic circuits</p>
+        <p class="mt-2">Then, a sample of 5 ul of the Gibson Assembly reaction was analyzed through an agarose gel electrophoresis. 
+        </p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/11-electro-y-uv.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 8. Gibson Assembly reaction</p>
+        <p class="mt-2">The agarose gel analysis shows a 1500 base pairs band of length that corresponds to the DNA fragments. The band between 3000 and 4000 base pairs corresponds to the empty plasmid. Finally, the bands observed above 5000 base pairs correspond to the gene construct where the plasmid isoforms can be observed (Fig. 8). </p>
+
+        <div class="bg-warning rounded p-3 mt-4">
+          <h4 class="text-center fw-bold ">Advise Alert</h4>
+        </div>
+        <ul>
+          <li>The Gibson Assembly Cloning Kit from NEB recommends an incubation time of 15 minutes when 2-3 fragments are being assembled. However, in orden to increase the assembly efficiencies we recommend  using extended incubation times. During our experiments time was extended up to 30 minutes to assemble two fragments.</li>
+          <li>It is not recommended to use overlaps containing His-tag repeats. His-tag sequences should be flanked on both sides with at least two nucleotides.</li>
+        </ul>
+
+        <h3 class="mt-2">E. coli transformation</h3>
+        <p>5-alpha Competent E. coli cells were transformed with 2 µl of the reaction sample following the Gibson Assembly Transformation Protocol from NEB. Next, 100 µl of the cells were plated onto LB medium plates with Phleomycin at a concentration of 20 ug/ml. The plates were incubated overnight at 37 °C.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/12-petri.png" class="col-md-10 img-fluid">
+        </div>
+        <p class="mt-2 text-center">Figure 9. Transformants</p>
+        <p class="mt-2">Five transformants were obtained for the iUAM_PICZαA_OAIP construct and three for the iUAM_PICZαA_Hv2a construct. All the colonies were picked and purified on fresh LB-Phleomycin plates. Once the colonies were isolated in new LB plates, a 5 ml liquid culture was inoculated to perform a MiniPrep protocol. The purified DNA was used to run the confirmation protocols</p>
+
+      </div>
+      <div class="blog-section mt-3" id="construction-confirmation">
+        <h2 class="blog-subtitle">Construction confirmation</h2>
+        <h2 class="blog-title-line"></h2>
+        <h3 class="mt-2">Restriction analysis </h3>
+        <p>In orden to confirm the correct assembly of the gene circuit two restriction enzymes were performed. Due to the capability of the Gibson method to conserve the original sequence without modifications the EcoRl and Agel restriction sites allowed the confirmation of the gene constructs iUAM_PICZαA_OAIP and iUAM_PICZαA_Hv2a. Additionally,  A second restriction assay was performed using the enzyme Hindlll in both constructs. </p>
+        <p>As shown in figure 10 the restriction assay with the enzymes EcoRl and Agel two DNA bands can be observed in well number five. One near to the 5000 base pairs length and another in 1500 base pairs of length. This result was predicted using the restriction enzyme tool from Benchling. Similarly,  the restriction digest performed with the enzyme Hindlll shows consistency with the computational simulation. 
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/figura10.png" class="col-md-8 img-fluid">
+        </div>
+        <p class="text-center mt-2">Figure 10. Confirmation by restriction analysis</p>
+
+        <h3 class="mt-2">PCR confirmation    </h3>
+        <p class="mt-2">Similarly, the transformants were confirmed by PCR. The primers used amplify the Gibson fragments; thus, the length should correspond to 1302 bp for the construction iUAM_PICZɒA_OAIP since the amplified fragment is Fragment A_OAIP and 1347 bp for the construction iUAM_PICZɒA_Hv2a since the amplified fragment is Fragment B_Hv2a. As it is shown in the figure 11, all the tested transformed colonies amplified the cloned fragment, while the last sample containing the vector PICZɒA purified from <span class="fst-italic"> Escherichia coli</span> did not amplified, validating that the construction was present in the transformed colonies.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/14-copy-of-digest-chida.png" class="col-md-9 img-fluid">
+        </div>
+        <p class="text-center">Figure 11. Confirmation by PCR</p>
+
+        <div class="mt-4 bg-warning rounded p-3">
+          <p class="text-center fw-bold fs-5">Advise Alert</p>
+        </div>
+        <ul>
+          <li><p>Confirmation is one of the most important steps in science. When it results as expected you should feel proud, you did great. However, when it turns out different you should stay calm and remember that science is always about learning.</p></li>
+          <p>The best way to understand which steps are causing problems is double checking your previous data and creating hypotheses to probe. Professor Barrios-Gonzales (our PI) told us that when we fail we can discover and learn new things that are valuable. We should not feel ashamed, failing is part of making science.
+          </p>
+        </ul>
+      </div>
+      <div class="blog-section mt-3" id="tranformacion-pichia">
+        <h2 class="blog-subtitle">Transformación de Pichia pastoris 
+        </h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-2">To start with the transformation protocol of Pichia pastoris a MidiPrep protocol was performed.  It allowed us to obtain a stock of purified DNA of the gene constructions iUAM_PICZαA_OAIP and iUAM_PICZαA_Hv2a</p>
+        <p>The linearization of the expression vector is recommended to promote the integration of the genetic cassette into the yeast genome. Therefore, the restriction enzyme Sacl was used to linearize the plasmids. It is fundamental to ensure the complete digestion of the DNA considering that it has been reported that the linearization increases the transformation efficiency. 
+        </p>
+        <p>The transformation was performed using the pPICZ A, B, and C manual from invitrogen. Electroporated cells were plated into YPDS plates containing 50 ug/ml of phleomycin and the plates were incubated 48 hours at 30 ºC.</p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/pichia-pastoris.png" class="col-md-8 img-fluid">
+        </div>
+        <p class="text-center mt-2">Figure 12. Pichia pastoris transformants</p>
+        <p class="mt-2">In this step 10 colonies from each plate were picked and purified on fresh YPD plates containing 50 ug/ul of phleomycin.</p>
+
+      </div>
+      <div class="blog-section mt-3" id="transformants-confirmation">
+        <h2 class="blog-subtitle">Transformants confirmation with eGFP detection</h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt3">In order to easily screen the transformants and identify the expressing colonies, our construction co-express eGFP. We screened 25 Pichia pastoris colonies of each construction, obtaining 5 transformants in total: 3 transformants with the iUAM_PICZαA_OAIP construction and 2 transformants with the iUAM_PICZαA_Hv2a construction. In the figure 13, the comparison between the expressing colonies and no expressing colonies is shown.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/results/13-pichia-pastoris-egfp-fluorecenc.png" class="col-md-8 img-fluid">
+        </div>
+        <p class="text-center">Figure 13. Pichia pastoris transformants screening</p>
+        <div class="mt-4 bg-warning rounded p-3">
+          <p class="text-center fw-bold fs-5">Advise Alert</p>
+        </div>
+        <ul>
+          <li>The suggested protocol to express proteins in Pichia pastoris with methanol uses the medium BMGY and BMMY. These mediums use reagents such as biotin that can be expensive. However, optimal results can be obtained, using YPD with 2% of glycerol and YPD with 1% of methanol.</li>
+          <li>Analyzing multiple colonies is necessary to select expressing colonies. Although these can take time, you can use agar plates and screen multiple colonies.</li>
+        </ul>
+
+      </div>
+      <div class="blog-section mt-3" id="proof-of-concept">
+        <h2 class="blog-subtitle"> Proof of concept </h2>
+        <h2 class="blog-title-line"></h2>
+        <p>To verify the efficacy of Spidicide-CX over a commercial pesticide named Malathion, we designed a proof of concept. It consisted of feeding groups of larvae and adult insects with different treatments every six hours. And during that, we will observe the mortality of the insects and do an ANOVA and Tukey tests to compare the data recollected. Due to the lack of insect samples and of time, we modified the initial protocol. These new changes consisted in reducing the treatments and recollected data for the first 18 hours. Despite the preliminary data, we can observe favorable results because it shows that our biopesticide has a similar effect to the chemical pesticide Malathion. You can check the results in the section dedicated to the <a href="{{url_for('pages',page='proof-of-concept')}}" class="text-decoration-none btn btn-outline-success"> proof of concept</a>.</p>
+      </div>
+      
+    </div>
   </div>
 </div>
 
