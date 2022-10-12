@@ -8,14 +8,611 @@
   <img src="https://static.igem.wiki/teams/4422/wiki/banners/software.png" alt="banners" class="img-fluid">
 </div>
 
-<div class="container-xl shadow-lg ">
+<div class="container-xl shadow-lg mt-5">
   <div class="row">
     <div class="col-md-2">
       Index
     </div>
     <div class="col-md-9">
-      <div>
+      <div class="blog-section " id="software">
+        <p class="mt-3">Bioinformatics is defined as the application of tools of computation and analysis to the capture and interpretation of biological data. In the same way as we mentioned in the hardware section, we created a homemade spectrophotometer. In the software section we created a controller for our spectrophotometer called “UAMonitor”. </p>
+        <p>The following software was used:</p>
+        <ul>
+          <li>Windows 11 Pro x64</li>
+          <li>Proteus 8.9 SP2 (Build 28501) with Simulino library</li>
+          <li>Anaconda Spyder 5.1.5 with Python 3.10.7 64 bits on Windows</li>
+          <li>ARDUINO Genuino 1.8.19 Arduino code compiler</li>
+          <li>V.S.P.D. 6 v6.9 (Build 6.9.1.134) (x86,x64) Serial port simulator.</li>
+          <p>The following computer was used to simulation:</p>
+          <li>PC Intel core i5-1035G1 CPU @ 1.00GHz, 8 GB RAM, unity HDD 1TB</li>
+
+        </ul>
+
+
+
+      </div>
+      <div class="blog-section" id="development-of-simulated-circuit-in-proteus">
+        <h2 class="blog-subtitle">Development of simulated circuit in Proteus</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>We developed a Simulation in Proteus to prove our program controller. We used the library Simulino to do it and we configured a virtual serial port with V.S.P.D. The following elements are used:</p>
+        <ul>
+          <li>SIMULINO UNO</li>
+          <li>1 blue LED</li>
+          <li>1 red LED</li>
+          <li>2 OPT 101P sensors</li>
+          <li>2 resistor 1M Ohm</li>
+          <li>2 resistor 300 Ohm</li>
+          <li>RS232 connector (COMPIM)</li>
+        </ul>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen1.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 1 Circuit connection in Proteus.</p>
+
+      </div>
+      <div class="blog-section" id="development-of-arduino-code">
+        <h2 class="blog-subtitle">Development of Arduino Code</h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-3">The most important part of the Arduino program is reading the inputs that UAMonitor sends. As well as collect the information that the fluorescence and optical density sensors collect. Next, we will explain each part of the code:</p>
+        <p><code>#define Flu A2</code></p>
+        <p><code>#define OD A1</code></p>
+        <p><code>#define ledFlu 9</code></p>
+        <p><code>#define ledOD 10</code></p>
+        <p>In the first section we define the outputs and inputs of our system, the pin A2 is used to fluorescence sensor, and the pin A1 is used to Optical density sensor. In the other hand the pin 9 is used to the fluorescence sensor (Blue) and the pin 10 is used to optical density led (Red).</p>
+        <p><code>void setup() {</code></p>
+        <p><code>Serial.begin(9600);</code></p>
+        <p><code>delay(30);</code></p>
+        <p><code>pinMode(ledFlu, OUTPUT);</code></p>
+        <p><code>pinMode(ledOD, OUTPUT);</code></p>
+        <p><code>digitalWrite(ledFlu,0);</code></p>
+        <p><code> digitalWrite(ledOD,0);</code></p>
+        <p><code>}</code></p>
+        <p>In the next section we established the led blue and red like an Outputs and we turned off them. Also, we open the serial port to communicate with UAMonitor.</p>
+        <p><code>int vFlu=0,vOD=0,pos, i=0,res;<br>
+          String dat,dat1,dat2;<br>
+          void loop() {<br>
+            int vFlu1 = analogRead(Flu);<br>
+            int vOD1 = analogRead(OD);<br>
+            vFlu1 = map(vFlu1, 0, 1024, 0, 200);<br>
+            vOD1 = map(vOD1, 0, 1024, 0, 200);<br>
+            Serial.println(String(vFlu1) + "," + String(vOD1));<br>
+          </code> 
+        </p>
+        <p>In the third section we declared some variables and we save the lectures of the fluorescence and optical density sensor. After that, we mapped the values to adjusted it to a 1 to 200 scale and sent these lectures by the serial port.</p>
+        <p><code>if(Serial.available()){<br>
+          dat = Serial.readString(); <br>
+          pos = dat.indexOf(',');<br><br>
+          dat1= dat.substring(0,pos);<br>
+          dat2= dat.substring(pos+1); <br>
+       
+          if(vFlu != dat1.toInt()){<br>
+            vFlu = dat1.toInt();  <br>
+            digitalWrite(ledFlu,vFlu);<br> 
+          }<br>
+          if(vOD != dat2.toInt()){<br>
+            vOD = dat2.toInt();  <br>
+            digitalWrite(ledOD,vOD);<br>
+          }
+          </code>
+        </p>
+        <p>In this section we save the instruction that we received in the serial port. We tried to read if UAMonitor sent any communication to turn off or turn on the leds. </p>
+
+        <p>
+          <code>
+            if(dat2.toInt()==1 && dat1.toInt() == 1){<br>
+              i = 0;<br>
+            }<br>
+            if(vOD == 1 && vOD == 1){<br>
+              res = 200%i;<br>
+              if(res < 100){<br>
+                digitalWrite(ledFlu,1);<br>
+                digitalWrite(ledOD,0);<br>
+                }<br>
+              else{<br>
+                digitalWrite(ledFlu,0);<br>
+                digitalWrite(ledOD,1);  <br>
+                }<br>
+            }     <br>
+          delay(10);<br>
+          } 
         
+          </code>
+        </p>
+        <p>Finally, we created a function to turn on the leds alternately to measure fluorescence and optical density at the same time, but this feature could not be perfected in time and was deprecated.</p>
+        <p>After the program is finished, it is saved and a file is generated. hex that is loaded into Proteus for the simulation.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen2.png" class="img-fluid col-md-6">
+        </div>
+        <p class="text-center mt-2">Figure 2 Simulation</p>
+        <p class="mt-2">Subsequently, the .hex file is uploaded to Arduino uno to the Proteus simulation.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen3.png" class="img-fluid col-md-6">
+        </div>
+        <p class="text-center mt-2">Figure 3 Load .hex file, in Proteus.</p>
+        <p class="mt-2">We need to open the virtual serial port using V.S.P.D. We use port "COM 1" to "COM 2"</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen4.png" class="img-fluid col-md-6">
+        </div>
+        <p class="text-center mt-2">Figure 4 Creating port COM1 to COM2 on VSPE.</p>
+        <p>COM2 port is assigned using COMPIM in Proteus and set the baud rate to 9600 baud.</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen5.png" class="img-fluid col-md-6">
+        </div>
+        <p class="text-center mt-2">Figure 5 Port mapping in Proteus</p>
+      </div>
+      <div class="blog-section" id="development-of-python-code">
+        <h2 class="blog-subtitle">Development of Python Code</h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-3">Before making the connection via serial communication, the "serial" module must be installed from the CMD Console. In order to be able to import the respective libraries for the serial connection.</p>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen6.png" class="img-fluid col-md-6">
+        </div>
+        <p class="text-center mt-2">Figure 6 Installation of serial module in CMD Console</p>
+        <p class="mt-2">With the module installed, a base code is generated, which sends and receives values for Arduino to compare and generate an action in the Proteus simulation:</p>
+        <p>
+          <code>
+            #Abilitate if you use jupiterlab <br>
+            #%matplotlib widget<br>
+            #Paketing used<br>
+            #Add libraries to import a plot in a Tkinterface <br>
+            import tkinter<br>
+            import serial     <br>
+            import time<br>
+            import os<br>
+            import re<br>
+            import threading<br>
+            import multiprocessing<br>
+            import numpy as np<br>
+            import pandas as pd<br>
+            from datetime import date<br>
+            from datetime import datetime<br>
+            from tkinter import filedialog<br>
+          </code>
+        </p>
+        <p>
+          <code>
+            # Implement the default Matplotlib key bindings. <br>
+            from matplotlib.backend_bases import key_press_handler<br>
+            from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)<br>
+            from matplotlib.figure import Figure<br>
+            from matplotlib.pyplot import *<br>
+            import matplotlib.animation as animation<br>
+            from matplotlib import backend_bases<br>
+            
+            #Inicial conditions<br>
+            ledFlu=0<br>
+            ledOD=0<br>
+
+          </code>
+        </p>
+        <p>In the first section, we import all the libraries that we used. Also created some initial values. If you use jupiter lab you need to erase “#” to the line 2.</p>
+        <p>
+          <code>
+            #Create a Tkinterface with our icon and title<br>
+            root = tkinter.Tk()<br>
+            root.wm_title("UAMonitor")<br>
+            <br>
+            if "nt" == os.name:<br>
+              root.wm_iconbitmap(bitmap = "iGEM.ico")<br>
+            else:<br>
+              root.wm_iconbitmap(bitmap = "iGEM.xbm")<br>
+              <br>
+            #root['background']='yellow'<br>
+            <br>
+            #imgicon = PhotoImage(file=os.path.join(Documents/Mauricio/iGEM/Arduino/Espectro_Foto/sketch_sep28a/iGEM.ico,'iGEM.ico'))<br>
+            #root.tk.call('wm', 'iconphoto', root._w, imgicon)<br>  
+            <br>
+            <br>
+            """<br>
+            Frame = tkinter.Frame() #Frame creation<br>
+            Frame.config(cursor="heart")<br>
+            Frame.config(width="150", height="150")<br>
+            Frame.pack(fill="both")<br>
+            Frame.config(bg="blue")<br>
+            Frame.pack(side="bottom")<br>
+            """
+
+          </code>
+        </p>
+        <p>In the second place, we created a tkinter windows and assign an icon image. In dependence of kernel, we use a different file to put as icon.</p>
+        <p>
+          <code>
+            # initialize the data arrays <br>
+            gDATA = []<br>
+            gDATA.append([0])<br>
+            gDATA.append([0])<br>
+            gDATA.append([0])<br>
+            <br>
+            # create a figure with two subplots<br>
+            fig, (ax1, ax2) = subplots(1,2)<br>
+            <br>
+            #Add the figure to the Tkinterface<br>
+            canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.<br>
+            canvas.draw()<br>
+            canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)<br>
+            <br>
+            #Configure Fluorescence plot<br>
+            ax1.set_title('Fluorescence')<br>
+            ax1.grid()<br>
+            ax1.set_xlim((0,100))<br>
+            ax1.set_ylim((-1,100))<br>
+            <br>
+            #Configure Optical Density plot<br>
+            ax2.set_title('Optical Density')<br>
+            ax2.grid()<br>
+            ax2.set_xlim((0,100))<br>
+            ax2.set_ylim((-1,100))<br>
+            <br>
+            # intialize two line objects (one in each axes)<br>
+            line1, = ax1.plot(gDATA[0], gDATA[1], lw=2, color='green')<br>
+            line2, = ax2.plot(gDATA[0], gDATA[2], lw=2, color='orange')<br>
+            line = [line1, line2]<br>
+            <br>
+            <br>
+            def update_line(num,line,data):<br>  
+            #     axis limits checking. Same as before, just for both axes<br>
+                for ax in [ax1, ax2]:<br>
+                    xmin, xmax = ax.get_xlim()<br>
+                    if max(data[0])>= xmax:<br>
+                        ax.set_xlim(xmin, 1.5*xmax)<br>
+                        ax.figure.canvas.draw()<br>
+                # update the data of both line objects<br>
+                line[0].set_data(data[0], data[1])<br>
+                line[1].set_data(data[0], data[2])<br>
+                return line<br>
+            
+            ani = animation.FuncAnimation(fig, update_line, blit=True, fargs=(line, gDATA),interval=100, repeat=False)<br>
+
+          </code>
+        </p>
+        <p>In the next section we created an array to save the values of we received from Arduino. We created a figure which we attached to the Tkinter window. Also, we configurated the figure as two graphs. We define the titles, limits and colors of the graphs. We define the data of our array as the points of the graph and configurate a function which animate (and update) the graphs in the Tkinter windows.</p>
+        <p>
+          <code>
+            #In the next part we remove the button configure subplot because cause a warning message. <br>
+            # mpl.rcParams['toolbar'] = 'None'<br>
+            backend_bases.NavigationToolbar2.toolitems = (<br>
+                    ('Home', 'Reset original view', 'home', 'home'),<br>
+                    ('Back', 'Back to  previous view', 'back', 'back'),<br>
+                    ('Forward', 'Forward to next view', 'forward', 'forward'),<br>
+                    (None, None, None, None),<br>
+                    ('Pan', 'Pan axes with left mouse, zoom with right', 'move', 'pan'),<br>
+                    ('Zoom', 'Zoom to rectangle', 'zoom_to_rect', 'zoom'),<br>
+                    (None, None, None, None),<br>
+                    ('Save', 'Save the figure', 'filesave', 'save_figure'),<br>
+                  )<br>
+                  <br>
+            #Add a Toolbar to control the figure<br>
+            toolbar = NavigationToolbar2Tk(canvas, root)<br>
+            toolbar.update()<br>
+            canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)<br>
+            <br>
+          </code>
+        </p>
+        <p>In this section, we created a toolbar to modify the graphs in real time, we can move it, zoom in, zoom out, and save it. Also, we removed the button configure subplot in the tool bar.</p>
+        <p>
+          <code>
+            def timer(condition): <br>
+              global tim<br>
+              tim=0<br>
+              while True:<br>
+                time.sleep(0.1)<br>
+                tim = tim + 0.1<br>
+                if Mode != condition:<br>
+                  break<br>
+              return<br>
+          </code>
+        </p>
+        <p>In this section we create a timer that is reset every time the measurement mode is changed and always runs as a secondary thread.</p>
+        <p>
+          <code>
+            def GetData(gDATA,condition,state): <br>
+            <br>
+            global format<br>
+            #Time <br>
+            if condition != 'M' or state != 'O':<br>
+              format = datetime.now().strftime('%d-%m-%Y, %H;%M;%S')<br>
+              <br>
+            global vFlu<br>
+            vFlu=0<br>
+            global vOD<br>
+            vOD=0<br>
+            <br>
+            gDATA[0]=[0]<br>
+            gDATA[1]=[0]<br>
+            gDATA[2]=[0]<br>
+            <br>
+            <br>
+            #datAR =serialArduino.readline().decode('ascii')<br> 
+            datAR =serialArduino.readline().decode('ascii').strip()<br>
+            time.sleep(0.5)<br>
+            <br>            
+            if condition == 'M' and state == 'O':<br>
+              time.sleep(1.0)<br>
+              <br>
+            format_before = '0'<br>
+            <br>
+            while True:<br>
+            <br>
+              if datAR:<br>
+                pos=datAR.index(",")<br>
+                if state == 'F':<br>
+                  vFlu=int(datAR[:pos])<br>
+                if state == 'O':<br>
+                  vOD=int(datAR[pos+1:])<br>
+                gDATA[0].append(tim)<br>
+                gDATA[1].append(vFlu)<br>
+                gDATA[2].append(vOD)<br>
+                <br>
+                saves = pd.DataFrame(gDATA,index=['Time', 'Fluorecense','Optical Density']).transpose()<br>
+                saves.to_csv('data '+str(format)+'('+str(condition)+').csv', index=False)<br>
+                if len(gDATA[0]) > 200:<br>
+                  if condition != 'M' or state != 'O':<br>
+                    if format_before != '0':<br>
+                      data = pd.read_csv('data '+str(format)+'('+str(condition)+').csv', index=False)<br> 
+                      updated_data = pd.read_csv('data '+str(format)+'.csv') <br>
+                      final_dataframe = pd.concat([data, updated_data]).drop_duplicates(subset='Time', keep='last').reset_index(drop=True) <br>
+                      final_dataframe.to_csv('data '+str(format)+'.csv', index=False)<br>
+                      os.remove('data '+str(format_before)+'.csv')<br>
+                    i = 0<br>
+                    gDATA[0]=[]<br>
+                    gDATA[1]=[]<br>
+                    gDATA[2]=[]<br>
+                    format_before = format<br>
+                    format=datetime.now().strftime('%d-%m-%Y, %H;%M;%S')<br>
+                datAR =serialArduino.readline().decode('ascii').strip() <br>
+                time.sleep(1)      <br>
+              if Mode != condition:<br>
+                break<br>
+            return<br>
+
+          </code>
+        </p>
+        <p>This section contains the most complicated function. This communicates the Arduino to collect data from the fluorescence and optical density light sensors. This information is saved in the previously created array. Likewise, it assigns the time in which the function to create a CVS file that is saved automatically is started. Finally, when the array reaches a length of 200, it restarts and creates a new CVS file that is concatenated with the already created.</p>
+        <p>
+          <code>
+            def Monitor_loop(condition): <br>
+            while True:<br>
+              Assing_LED(1,0)<br>
+              time.sleep(1)<br>
+              Assing_LED(0,1)<br>
+              time.sleep(1)<br>
+              print("Sí")<br>
+              if condition != 'M':<br>
+                break<br>
+            return<br>
+            <br>
+          #This funtion control the state of the LEDs<br>
+          def Assing_LED(ledFlu,ledOD):<br>
+            dat = str(ledFlu) + ","+ str(ledOD)<br>
+            serialArduino.write(dat.encode('ascii'))<br>
+            return<br>
+            <br>
+          def _stop():<br>
+            if serialArduino != None:<br>
+              Assing_LED(0,0)<br>
+            global Mode<br>
+            Mode = 'X'<br>
+            return <br>
+            <br>
+          def _connect():<br>
+            global serialArduino<br>
+            serialArduino = serial.Serial("COM2",9600,timeout=1.0)<br>
+            if serialArduino != None:<br>
+              tkinter.messagebox.showinfo("Information Window",  "Successful connection with Arduino")<br>
+            return <br>
+            <br>
+          def _quit():<br>
+            root.quit()     # stops mainloop<br>
+            root.destroy()  # this is necessary on Windows to<br>
+            _stop()<br>
+            serialArduino.close()<br>
+            return          # Fatal Python Error: PyEval_RestoreThread: NULL tstate<br>
+            <br>
+          def _save():<br>
+            dataFile=pd.read_csv('data '+str(format)+'('+str(Mode)+').csv')<br>
+            SAVING_PATH = filedialog.asksaveasfile(mode='w', defaultextension=".csv")<br>
+            dataFile.to_csv(SAVING_PATH)<br>
+          </code>
+        </p>
+        <p>In this section, we define multiple functions that have different purposes. First, the Monitor_loop function controls a loop in which the fluorescence and optical density LEDs alternately turn on and off. Afterwards, the Assing_LED function sends the necessary information to turn on or off the leds in the Arduino. The third function stops all measurements. The fourth function closes the serial port and closes the window created by Tkinter. And the fifth function saves the files created by the GetData function in the desired location</p>
+        <p>
+          <code>
+            '''********************** <br>
+            *      MODES MENU      *<br>
+            ************************<br>
+            *                      *<br>
+            *  F >> Fluorence mode *<br>
+            *  O >> OD mode        *<br>
+            *  M >> Monitor mode   *<br>
+            *  X >> Salir          *<br>
+            *                      *<br>
+            ************************'''<br>
+            #Definition of Fluorescence Mode           
+            def _FLU(): <br>
+              global Mode<br>
+              Mode='O'<br>
+              Assing_LED(1,0)<br>
+              Cronometer = threading.Thread(target = timer, args=('F',))<br>           
+              dataCollectorFLU = threading.Thread(target = GetData, args=(gDATA,'F','F',))<br>
+              dataCollectorFLU.start()<br>
+              Cronometer.start()<br>
+              return<br>
+              #Definition of Optical Density Mode <br>
+            def _OD():<br>
+              global Mode<br>
+              Mode='O'<br>
+              Assing_LED(0,1)<br>
+              Cronometer = threading.Thread(target = timer, args=('O',))  <br>         
+              dataCollectorOD = threading.Thread(target = GetData, args=(gDATA,'O','O',))<br>
+              dataCollectorOD.start()<br>
+              Cronometer.start()<br>
+              return<br>
+              <br>
+            #Definition of Monitor Mode<br>
+            def _MON():<br>
+              global Mode<br>
+              Mode='M'<br>
+              Assing_LED(1,1)<br>
+              #loop= threading.Thread(target = Monitor_loop, args=('M',)) <br>
+              #loop.start()<br>
+              Cronometer = threading.Thread(target = timer, args=('M',))           <br>
+              dataCollectorMON_FLU = threading.Thread(target = GetData, args=(gDATA,'M','F',))<br>
+              dataCollectorMON_OD = threading.Thread(target = GetData, args=(gDATA,'M','O',))<br>
+              dataCollectorMON_FLU.start()  <br>
+              dataCollectorMON_OD.start()<br>
+              Cronometer.start()<br>
+              return
+          </code>
+        </p>
+        <p>In this section we enable the measurement modes of fluorescence, optical density and a monitor mode that could not be improved and was disabled in the final version. These measurement modes open multiple threads that control the data collection, the timer and turn on the LEDs appropriately.</p>
+        <p>
+          <code>
+            #Enable a button and option to quit the window <br>
+            qui = tkinter.Button(master=root, text="Quit", command=_quit, fg="#E0218A")<br>
+            qui.pack(side=tkinter.RIGHT)<br>
+            <br>
+            #Enable a button and option to stop mesurate<br>
+            sto = tkinter.Button(master=root, text="Stop", command=_stop, fg="#E0218A")<br>
+            sto.pack(side=tkinter.RIGHT)<br>
+            <br>
+            #Enable a button of the function to connect the program to Arduino  <br>
+            con = tkinter.Button(master=root, text="Connect Arduino", command=_connect, fg="#E0218A")<br>
+            con.pack(side=tkinter.TOP)<br>
+            <br>
+            #Label to indicate the version<br>
+            label = tkinter.Label(root, text="UAMonitor beta v0.1")<br>
+            label.pack(side=tkinter.BOTTOM, anchor=tkinter.CENTER)<br>
+            <br>
+            #Enable a button of the Monitor Mode<br>
+            Mon = tkinter.Button(master=root, text="Save", command=_save, fg="#E0218A")<br>
+            Mon.pack(side=tkinter.BOTTOM)<br>
+            <br>
+            #Enable a button of the OD Mode<br>
+            OD = tkinter.Button(master=root, text="OD Mode", command=_OD, fg="#E0218A")<br>
+            OD.pack(side=tkinter.LEFT)<br>
+            <br>
+            #Enable a button of the Fluorescence Mode<br>
+            Flu = tkinter.Button(master=root, text="Fluorecense Mode", command=_FLU, fg="#E0218A")<br>
+            Flu.pack(side=tkinter.LEFT)<br>
+            <br>
+            #Enable a button of the Monitor Mode<br>
+            #Mon = tkinter.Button(master=root, text="Monitor Mode", command=_MON, fg="#E0218A")<br>
+            #Mon.pack(side=tkinter.LEFT)<br>
+            <br>
+            root.mainloop()<br>
+            # If you put root.destroy() here, it will cause an error if the window is closed with the window manager.
+          </code>
+        </p>
+        <p>Finally, we enable all the buttons that we used, every button calls a function witch we mentioned before.</p>
+        <p>This is the appearance of the final version of our software with all the functionalities enables:</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen7.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 7 Visual interface of UAMonitor</p>
+        <p class="mt-2 fw-bold">Recommendations:</p>
+        <ul>
+          <li>
+            <p>It must be verified that the Proteus has all the Arduino libraries, otherwise there will be errors in the circuit simulation.</p>
+          </li>
+          <li>
+            <p>Care must be taken with the assignment of COM ports, if there is a port already in use, the port must be changed in all the codes that allow it, this new COM must be the same for all. </p>
+          </li>
+          <li>
+            <p>When using the Tkinter library in versions greater than Python 2.7, the library must be imported with lowercase “from tkinter import * ”.</p>
+          </li>
+        </ul>
+
+        <h3>Achievements</h3>
+        <p>As a proof of concept for our optical density and fluorescence measuring sensor, we performed a calibration curve using E. coli according to the dry weight protocol described in the Experiments section. This calibration curve will help us to calculate the concentration (in grams of biomass per liter of medium) of our microorganism that is being analyzed using the absorbance data recorded and monitored by the built software UAMonitor VER 0.1</p>
+
+        <p class="mt-2 text-center">Table 18 Data taken from the OD/Fluorescence sensor coupled to the UAMonitor 0.1 for the calculation of the optical density of E. coli.</p>
+        <div class="blog-table">
+          <table class="table"  border="1" cellspacing="0" cellpadding="0" > 
+            <tbody>
+            <tr class="table-success">
+             <td><p><strong>CONCENTRATION</strong></p>
+            
+            <p><strong>(gBiomass/L)</strong></p></td>
+             <td><p><strong>ABSORBANCE 1</strong></p></td>
+             <td><p><strong>ABSORBANCE 2</strong></p></td>
+             <td><p><strong>ABSORBANCE 3</strong></p></td>
+             <td><p><strong>MEAN</strong></p></td>
+             <td><p><strong>DEVIATION</strong></p></td>
+             </tr>
+            
+             <tr>
+             <td><p>1.96</p></td>
+             <td><p>4.600</p></td>
+             <td><p>3.700</p></td>
+             <td><p>4.850</p></td>
+             <td><p>4.380</p></td>
+             <td><p>0.604</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>1</p></td>
+             <td><p>2.550</p></td>
+             <td><p>2.880</p></td>
+             <td><p>3.120</p></td>
+             <td><p>2.850</p></td>
+             <td><p>0.286</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>0.5</p></td>
+             <td><p>1.150</p></td>
+             <td><p>1.070</p></td>
+             <td><p>1.240</p></td>
+             <td><p>1.150</p></td>
+             <td><p>0.085</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>0.4</p></td>
+             <td><p>0.780</p></td>
+             <td><p>0.910</p></td>
+             <td><p>0.840</p></td>
+             <td><p>0.840</p></td>
+             <td><p>0.065</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>0.2</p></td>
+             <td><p>0.430</p></td>
+             <td><p>0.520</p></td>
+             <td><p>0.510</p></td>
+             <td><p>0.480</p></td>
+             <td><p>0.049</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>0.1</p></td>
+             <td><p>0.280</p></td>
+             <td><p>0.250</p></td>
+             <td><p>0.320</p></td>
+             <td><p>0.280</p></td>
+             <td><p>0.035</p></td>
+             </tr>
+            
+             <tr>
+             <td><p>0.05</p></td>
+             <td><p>0.070</p></td>
+             <td><p>0.050</p></td>
+             <td><p>0.150</p></td>
+             <td><p>0.090</p></td>
+             <td><p>0.052</p></td>
+             </tr>
+            
+            </tbody>
+          </table>
+        </div>
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen8.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center mt-2">Figure 8 Calibration curve using different concentrations of E. coli in LB medium measuring absorbance with the OD/Fluorescence sensor.</p>
+        <p class="mt-3 mb-3">We can observe that the best data obtained for the construction of the calibration curve are found at concentrations between 0 - 1 g Biomass/L, because this region linearly relates the absorbance and the turbidity of the medium. Fitting the average of the absorbances to a straight line, we can find an R value of 0.9942, which represents a highly fitted value.</p>
       </div>
     </div>
   </div>
