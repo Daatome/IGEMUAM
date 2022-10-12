@@ -4,15 +4,36 @@
 {% block lead %}Make a useful contribution for future iGEM teams. Use this page to document that contribution.{% endblock %}
 
 {% block page_content %}
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/contribution.png" alt="" class="img-fluid">
+</div>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Bronze Medal Criterion #4</h4>
-      <p>Make a useful contribution for future iGEM teams. Use this page to document that contribution.<p>
-      <p>If you are making a contribution by adding information to an existing Part or creating a new Part, you must document your contribution on the Part's Main Page on the <a href="http://parts.igem.org/Main_Page">Registry</a> for your team to be eligible for this criteria. You can use this page to link to that part and include additional information about your contribution.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
+<div class="container-xl shadow-lg ">
+  <div class="row">
+    <div class="col-md-2">
+      Index
+    </div>
+    <div class="col-md-9">
+      <div class="blog-section" id="modeling-manual">
+        <p class="mt-3">As an iGEM team from Latin America and presenting for the first time in the International Competition, we wanted to do our best to contribute and support future new teams with tools that could facilitate productive work. This could be reflected in the activities that we have developed this year within IGEM UAM, as well as with the collaborations that we made with other teams.</p>
+
+        <h2 class="blog-subtitle">Modeling manual </h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-3">First, we would like to mention the initiative to create a manual for the creation of mathematical models that serve as a basis for new teams that want to participate in the IGEM competition. This manual was inspired by the <a href="https://static.igem.org/mediawiki/2020/9/96/T--Imperial_College--introtomodelling.pdf" class="btn btn-outline-success"> Imperial College </a>London IGEM 2020 team and developed in conjunction with Tec Chihuahua, USP-EEL Brazil. It is available in Portuguese, Spanish and English at the <a href="https://gitlab.igem.org/Rexmali/math_mdelling_manual_uam-tecchihuahua-uspeel" class="textd-decoration-none btn btn-outline-success">following link </a> </p>
+
+
+      </div>
+      <div class="blog-section" id="optical-density-sensor">
+        <h2 class="blog-subtitle">Optical Density Sensor / Fluorescence in real time (Hardware)</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>One of the challenges we faced this year was finding experimental methods to find parameters to feed into our mathematical model. For this, we based ourselves on some previous hardware projects and designed an optical density and fluorescence sensor based on Arduino. Which can be used in microbial growth systems to know in real time the production of some product coupled to a fluorescent marker (GFP). Details of this artifact can be found <a href="{{url_for('pages',page='hardware')}}" class="btn btn-outline-success"> here</a>. </p>
+
+      </div>
+      <div>
+        <h2 class="blog-subtitle">UAMonitor of DO/Fluorescence in real time (Software)</h2>
+        <h2 class="blog-title-line"></h2>
+        <p>As part of the tools that we develop for use in synthetic biology projects is the graphical interface of our sensor, which we have named UAMonitor. This graphical interface based on Python, allows us to communicate our computer through the serial port to the sensor and monitor fluorescence and microbial growth in real time and save the information in .csv files. It also has the benefit of not being expensive, the materials we used were easy to get and of good quality. Technical details as well as repository information can be found <a href="{{url_for('pages',page='software')}}" class="btn btn-outline-success">here</a>.</p>
+      </div>
     </div>
   </div>
 </div>
