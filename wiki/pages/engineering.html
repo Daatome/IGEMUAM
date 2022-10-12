@@ -4,15 +4,129 @@
 {% block lead %}Demonstrate engineering success in a part of your project by going through at least one iteration of the engineering design cycle.{% endblock %}
 
 {% block page_content %}
+<div>
+  <img src="https://static.igem.wiki/teams/4422/wiki/banners/engineering.png" alt="banner" class="img-fluid">
+</div>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Silver Medal Criterion #1</h4>
-      <p>Demonstrate engineering success in a part of your project by going through at least one iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.<p>
-      <p>If you plan to show engineering success by creating a new Part that has been shown to work as expected, you must document your contribution on the Part's Main Page on the <a href="http://parts.igem.org/Main_Page">Registry</a> for your team to be eligible for this criteria.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
+<div class="container-xl shadow-lg mt-5">
+  <div class="row justify-content-center">
+    
+    <div class="col-md-10">
+      <div class="blog-section" id="design">
+
+        <p class="mt-3">For a synthetic biologist it is fundamental to develop a deep understanding of the cellular mechanisms. Through the improvement of experimental techniques for the manipulation of the cell’s genotype, it has been possible to engineer cells in order to exhibit a new programmed behavior that could be useful to produce molecules of industrial interest. The capability of building complex biological constructs has made possible to solve environmental, health and agricultural problems around the world (Chandran et al., 2008).</p>
+        <h2 class="mt-3 blog-subtitle">Design</h2>
+        <h2 class="blog-title-line"></h2>
+        <h3 class="mt-2">Chassis selection</h3>
+        <p class="mt-2">The chassis selection is a crucial step during the design process. Two of the most common chassis were selected to be analyzed in the context of our project. However, we asked for advice from an expert in metabolic engineering and the production of recombinant proteins. Thus, we added to our list the well-known emergent chassis <span class="fst-italic"> Pichia pastoris</span>.</p>
+        <p>To start with the chassis selection, we identified two fundamental characteristics that had to be accomplished to successfully produce our proteins. First, these peptides are short and come from a eukaryotic organism. Then, the chassis should be capable of folding and assembling eukaryotic proteins. Second, these peptides have disulfide bonds. Then, the chassis should make post-translational modifications correctly.</p>
+        <p>Due to the characteristics of the chassis Pichia pastoris, this methylotrophic yeast was selected as the host cell of our gene construct. Additionally, P. pastoris has enormous advantages such as obtaining high recombinant protein production yields. 
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/1.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center">Figure 1. Chassis selection</p>
+        <h3 class="mt-2">Engineering Design        </h3>
+        <p class="mt-2">Throughout the design step it is essential to ideate creative solutions to solve the possible problems and disadvantages that could affect the development of the project. Thus, the design step is a constant search for improvement. Six different designs of genetic circuits were proposed at the beginning of the project. We classified these circuits in two types, the ones that use methanol and the methanol free systems. From the analysis it was determined that the more feasible designs were the ones that use methanol. </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/2.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center">Figure 2. Methanol System vs Free Methanol System</p>
+        <p class="mt-2">Three of the original genetic circuit designs were selected to perform a second analysis process. Each option proposes the protein production in a different manner. In the first one, two different strains are employed to produce the peptides. In the second one, the production of both peptides happens in the same strain using the same inducible promoters. In the third option, two different promoters will be employed to the protein production, avoiding a possible metabolic overload (Balbas, 2004). From this analysis, the circuit with simultaneous expression was discarded.</p>
+
+
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/3.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center">Figure 3. Number of cells and promoters</p>
+        <p>The most optimal genetic circuit designs were selected from the previous screening process. The main goal of this project is the development of a system where the expression happens in different cells. Thus, we assemble in silico circuits, design and optimize lab protocols and perform an experimental process to develop this option.</p>
+
+        <h3 class="mt-2">Genetic circuits Description</h3>
+        <p class="mt-2">Two genetic circuits were designed to express each peptide in different strains. However, both have the same general fundamentals and behavior. The pPICZαA plasmid was selected to assemble the two genetic circuits. The protein expression will be regulated by the well-characterized and strong promoter PAOX1. This promoter is induced with methanol and repressed with glycerol, ethanol, and glucose. This promoter contains a Kozak consensus sequence that serves as the initiation site for transcription. After it, an alpha factor secretion signal will target recombinant proteins to the growth medium, simplifying the purification step. After these parts, both circuits can be divided into three sections: a purification section, a fusion protein section, and a detection section.
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/4.png" class="img-fluid col-md-8">
+        </div>
+        <p class="text-center">Figure 4. Genetic circuits</p>
+
+        <h3 class="mt-3">Purification section</h3>
+        <p class="mt-2">This section contains an 8X His tag domain head that will be used in the purification step. This tag was selected because it is unlikely to affect the protein function and has well-established protocols (Young et al., 2012). However, the peptides U1-theraphotoxin-Sp1a  and Omega-hexatoxin-Hv2a only have 34 and 45 amino acids (UniProt, 2021) thus the interference of the tag with its function is probable. In order to overcome this possible issue, we proposed two solutions. First, we added a flexible linker of four amino acids (Gly-Gly-Ser-Gly) that allows the tag mobility, decreasing the probability of an interference. Second, in case the linker does not work as expected, the removal of the tag and linker after purification is possible due to the insertion of the Xa factor that once translated will be recognized by the protease (Young et al., 2012).
+        </p>
+
+        <h3 class="mt-3">Fusion protein section</h3>
+        <p class="mt-2">It contains one of the venom insecticidal peptides OAIP-1 or AcTx-Hv2a fused to a lectin. The snowdrop lectin has been characterized as a transporter of molecules with biological activity throughout the hemolymph of the insects after oral ingestion. In addition, a 3X Ala linker was added in between to ensure flexibility and no affection of the peptide function (Powell, 2020).</p>
+        <p>Lastly, a c-Myc sequence was added after lectin for further detection and quantification of the protein expression. 
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/5.png" class="img-fluid col-md-8">
+        </div>
+
+        <h3 class="mt-3">Detection section</h3>
+        <p>The Green Fluorescent Protein (GFP) will be employed as a reporter protein. it will confirm the expression of the fusion protein; also, it will help us select high producers and obtain protein expression data for the math model. To achieve coexpression, we added the “self cleaving” peptide T2A before the eGFP sequence. The cleaving mechanism of T2A is the ribosome skipping in the formation of a glycyl-prolyl peptide bond at its C-terminus (Liu, 2017). The eGFP is not part of the fusion protein, avoiding its possible interference with the venom peptides. Also, the GFP will not be secreted to the growth medium.</p>
+        <p>In addition, the circuits have two restriction enzymes sites. One for KpnI and one for Cfr421</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/0c.jpg" class="col-md-8 img-fluid">
+        </div>
+      </div>
+      <div class="blog-section mt-3" id="build">
+        <h2 class="blog-subtitle">Build</h2>
+        <h2 class="blog-title-line" ></h2>
+        <h3 class="mt-2">Experimental overview</h3>
+        <p>The build step of the design cycle is a great opportunity to put hands-on work. Therefore, this could be one of the most challenging phases of the project development. The results obtained from the experimental phase are highly important for the next steps. The data obtained during this phase could be fundamental to propose new improvements.</p>
+        <p>An experimental process was designed and proposed to assemble the gene constructs. We aim to obtain a strain of the yeast Pichia pastoris  capable of executing the instructructions programmed in the expression cassette that will be integrated into the genome of this microorganism.</p>
+
+      </div>
+      <div class="blog-section mt-3" id="test">
+        <p>The test phase helped us to understand the overlook points in our design and improve them:</p>
+        <ol style="list-style-type: lower-alpha">
+          <li><p>During the test phase we noticed that restriction enzymes needed to exchange the fragments inside the circuit were expensive and unaffordable. Thus, we could not use them.</p></li>
+          <li><p>In addition, the Gibson Assembly does not recommend using primers with His tag sequences. In our case, one of our primers had an His tag sequence; these could be the cause of the little amount of transformant colonies. To learn more about it visit the results link.
+          </p></li>
+          <li><p>Although the test helped us identify the points a and b to improve, we were able to appreciate our achievements. One of them was the use of eGFP, which helped us identify the expressing colonies.</p></li>
+        </ol>
+
+      </div>
+      <div class="blog-section mt-3" id="learn">
+        <h2 class="blog-section">Learn</h2>
+        <h2 class="blog-title-line"></h2>
+        <p class="mt-2">Overall, these are key points to improve in further designs:
+        </p>
+        <ul>
+          <li><p>Avoid His tag sequences in Gibson Assembly.
+          </p></li>
+          <li><p>Exchange the restriction enzyme sites for a more common pair.</p></li>
+          <p>Additionally, these are key points that should be conserved in further designs:</p>
+          <li><p>The eGFP is a good tool to identify the expressing colonies.</p></li>
+        </ul>
+
+      </div>
+      <div class="blog-section" id="references">
+        <h2 class="blog-subtitle">References</h2>
+        <h2 class="blog-title-line"></h2>
+        <ul>
+          <li>
+            <p>Chandran, D., Copeland, W., Sleight, S., & Sauro, H. (2008). Mathematical modeling and synthetic biology. Drug Discovery Today: Disease Models, 5(4), 299–309. https://doi.org/10.1016/j.ddmod.2009.07.002
+            </p>
+          </li>
+          <li>
+            <p>Balbás, P., & Lorence, A. (2004). Recombinant Gene Expression: Reviews And Protocols, 2/E (Second Edition). Balbas, Paulina, Lorence, Argelia (Eds.). </p>
+          </li>
+          <li>
+            <p>Young, C. L., Britton, Z. T., & Robinson, A. S. (2012). Recombinant protein expression and purification: a comprehensive review of affinity tags and microbial applications. Biotechnology journal, 7(5), 620–634. https://doi.org/10.1002/biot.201100155</p>
+          </li>
+          <li>
+            <p>UniProt. (2021). U1-theraphotoxin-Sp1a precursor - Selenotypus plumipes (Australian featherleg tarantula). UniProtKB - K7N5K9 (TX1_SELPU). Recuperado 18 de octubre de 2021, de https://www.uniprot.org/uniprot/K7N5K9</p>
+          </li>
+          <li>
+            <p>UniProt. (2021). Omega-hexatoxin-Hv2a - Hadronyche versuta (Blue mountains funnel-web spider). UniProtKB - P82852 (TOT2A_HADVE). Recuperado 18 de octubre de 2021, de https://www.uniprot.org/uniprot/P82852
+            </p>
+          </li>
+          <li>
+            <p>Powell, M. E., Bradish, H. M., Cao, M., Makinson, R., Brown, A. P., Gatehouse, J. A., & Fitches, E. C. (2020). Demonstrating the potential of a novel spider venom-based biopesticide for target-specific control of the small hive beetle, a serious pest of the European honeybee. Journal of Pest Science, 93(1), 391–402. https://doi.org/10.1007/s10340-019-01143-3</p>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </div>
