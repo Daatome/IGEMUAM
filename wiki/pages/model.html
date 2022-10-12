@@ -132,7 +132,379 @@
 
 
 
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">math</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="blog-section" id="introduction">
+            <h1 class="blog-title">Mathematical Modelling </h1>
+            <h2 class="blog-subtitle">Introduction</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">Synthetic biology is an engineering discipline that builds on our mechanistic understanding of molecular biology to programming microbes to carry out new functions. Such predictable modification of a cell requires modelling and experimental techniques to work together. The modelling component of synthetic biology allows one to design biological circuits and analyze their expected behavior. The synthetic merges models with evident systems by providing quantitative data and sets of available biological parts that can be employed to construct circuits. Sufficient progress has been made in the combined use of modelling and experimental methods, which reinforces the idea of being able to use engineered microbes as a technological platform (Chandran et. al., 2008).</p>
+            <p>In other words, for iGEM teams, the mathematical model is a useful tool that can make the wet lab easier to improve the planned experiment. It consists of trying to synthesize the nature of a phenomenon from computational tools and does not try to demonstrate the phenomenon (iGEM Foundation, 2022). In this way, we can do a simple or idealized description of our system, situation, or process, often in mathematical terms, that is put forward as a basis for theoretical or empirical understanding or for calculations, predictions, etc. (OED Online, 2022).</p>
+            <p>From mathematical equations we can build a mathematical model that is a set of differential equations. Then one can go from biochemical reactions to equations that indicate how the different concentrations of the species in the system change as a function of time. There are even more reasons why the mathematical model is relevant for synthetic biology (iGEM Foundation, 2022):</p>
+            <ul>
+              <li><p>Prove that an experimental design is realizable</p></li>
+              <li><p>It guides us in the selection of parts and assembly</p></li>
+              <li><p>Predict expected results before experiments in the lab</p></li>
+              <li><p>Give us feedback so we can improve the design, redesign if is the case</p></li>
+              <li><p>Run experiments under conditions that may be dangerous or costly in the real system</p></li>
+              <li><p>It shows if it is necessary to reduce the risk inherent in decision making</p></li>
+            </ul>
+          </div>
+          <div class="blog-section" id="background">
+            <h2 class="blog-subtitle">Background</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">Our model represents the interaction mechanism between the genetic circuit elements and all the proteins that interact with the latter over time. Since we could not transform the Pichia correctly with our fusion protein to do experiments, we tried to make useful predictions from a model, using the parameters accurately estimated. Mechanistic models were established on the fundamental physical and chemical laws. Including parameters that carry physical, chemical, or biological principles. For this, less experimental data are necessary to determine parameters and calibrate the model (Zheng & Ganesh, 2010)</p>
+            <p>The parameters that define our system can be found in literature, experimental, or screening. For literature, iGEM teams have previously registered constants that can help us, so we must find at least a range of values; experiments refer to when parameters are relevant to measure in the laboratory; screening is required when we do not found any data in the literature. Then we proceed to perform a screening of parameters (iGEM Foundation, 2022). In this case, we implemented the screening parameters.</p>
+            <p>Last year we performed a sensitivity analysis and implemented a genomic scale metabolic model; the mathematical model was then adjusted and helped us simulate the behavior of systems to optimize the production of Spidicide-CX. However, the results were not specific to our system. Then, we took a rank to predict relevant parameters for our system. For this, we based on previous iGEM teams with similar parameters we obtained. Those are iGEM Colombia’s Team (2012, 2013); iGEM iBowu-China's Team (2019) .</p>
+            <p>After speaking with our advisers, we knew that was necessary to find a specific value of just one or two parameters to make it simple. To create a prediction of the model closer to what we could obtain by having our transformed cell ready and performing the respective experiments. This value would be looked at in papers where the aim would be like what we were looking. We found only one parameter in the literature that, after performing the screening, we knew that it was one of the parameters sensitive to the model.; we could not have the values we wanted experimentally, but we had another solution to solve this situation (hardware and software).</p>
+
+          </div>
+          <div class="blog-section" id="mechanistic-model">
+            <h2 class="blog-subtitle">Mechanistic model</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">We can define a mechanistic mathematical model as the mathematical description of the elements forming a system, their mutual interactions, and their interaction with the environment. Such models are used in technical systems to enable the extrapolation of systems' behavior relying on the mathematically described features of elements and mechanisms of their interaction (OED Online, 2022).</p>
+            
+          </div>
+          <div class="blog-section" id="mechanistic-model">
+            <h2 class="blog-subtitle">Modelling Description</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">For our model we employ differential equations to express the mass balances of the system, the representation of the molecular mechanisms uses what is known as the law of mass action and Hill's equation</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec1.png" class="col-md-4 img-fluid">
+            </div>
+            <p class="mt-2">Where:</p>
+            <ul>
+              <li><p>𝛽<sub>0</sub> is the basal expression (if it is 0 there are no activators)</p></li>
+              <li><p>A is the number of activators</p></li>
+              <li><p>n is Hill's coefficient</p></li>
+              <li><p>d is the association constant</p></li>
+            </ul>
+            <p>These equations complement each other and use the experimental parameters obtained in literature to represent the relationships of the compounds involved.</p>
+
+            
+          </div>
+          <div class="blog-section" id="genetic-circuit">
+            <h2 class="blog-subtitle">Genetic circuit to produce OAIP-1 and AcTx-Hv2 in <span class="fst-italic">Pichia pastoris</span> </h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">In this case, we focus on a scenario where the main objective is the production of the fused protein (FP) OAIP-1 and AcTx-Hv2. As we know, they are produced separately but have the same genetic circuit. The two proteins are presented as PF but remember the last mentioned.</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/fig1.png" class="img-fluid col-md-8">
+            </div>
+            <p class="text-center mt-2">Figure 1: Genetic circuit illustrated</p>
+
+
+          </div>
+          <div class="blog-section" id="enzymatic-reactions">
+            <h2 class="blog-subtitle">Enzymatic reactions</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">First, of all we would represent the enzymatic reactions that are happening inside the cell:</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec2.png" class="img-fluid col-md-6">
+            </div>
+          </div>
+          <div class="blog-section" id="differential-equations">
+            <h2 class="blog-subtitle">Differential equations</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">From those enzymatic reactions, differential equations were proposed. Differential equations express the mass balances of the system, and the representation of the molecular mechanisms uses what is known as the law of mass action and Hill's equation. These equations complement each other and use the experimental parameters obtained in the literature to represent the relationships of the compounds involved. With the help of this equation, it is possible to describe the behavior of each element of the events that are happening inside the cell.</p>
+            <p>All the equations represented below are based on the law of mass conservation:</p>
+            <p class="text-center">Accumulation = Input - Output + Generation - Consumption</p>
+            <p>Below are the equations and their respective description of what happens in our model for the fused protein production.</p>
+            <p class="text-center">Table 1. Differential equations</p>
+            <div class="blog-table">
+              <table class="table"  border="1" cellspacing="0" cellpadding="0" > 
+                <tbody>
+                <tr class="table-success">
+                 <td  valign="top" ><p>Symbol</p></td>
+                 <td  valign="top" ><p>Description</p></td>
+                 <td  valign="top" ><p>Equation meaning</p></td>
+                 <td  valign="top" ><p>Equation</p></td>
+                 </tr>
+                
+                 <tr>
+                 <td  valign="top" >MetHO<sub>out</sub> </td>
+                 <td  valign="top" >Methanol as an inducer of the circuit. Its concentration only depends on the diffusion rate.  </td>
+                 <td  valign="top" > Out-of-cell concentration depending on the diffusion rate to enter or leave the cell. </td>
+                 <td  valign="top" ><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ec3"> <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec3.png" class="img-fluid"> </button> </td>
+                 </tr>
+                
+                 <tr>
+                 <td  valign="top" >MetHO<sub>in</sub>  </td>
+                 <td  valign="top" >The amount of methanol inside the cell depends on its degradation rate, diffusion rate, and binding to transcription factors. </td>
+                 <td  valign="top" > Circuit and amount of methanol. </td>
+                 <td  valign="top" > <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ec4"> <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec4.png" class="img-fluid"> </button> </td>
+                 </tr>
+                
+                 <tr>
+                 <td  valign="top" >mRNA  </td>
+                 <td  valign="top" >The concentration of mRNA depends on the basal production of this molecule. </td>
+                 <td  valign="top" >Degradation rate of mRNA  </td>
+                 <td  valign="top" ><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ec5"> <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec5.png" class="img-fluid"> </button>  </td>
+                 </tr>
+                
+                 <tr>
+                 <td  valign="top" >PFGFP  </td>
+                 <td  valign="top" > Production of the fusion protein and GFP mediated by translation and diffusion out-of-cell rate. </td>
+                 <td  valign="top" >Rate of degradation within the cell  </td>
+                 <td  valign="top" > <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ec6"> <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec6.png" class="img-fluid"> </button>  </td>
+                 </tr>
+                
+                 <tr>
+                 <td  valign="top" >PF<sub>out</sub>  </td>
+                 <td  valign="top" >Concentration of fusion protein outside the cell depending on the diffusion rate of the cell.  </td>
+                 <td  valign="top" >Rate of degradation outside.  </td>
+                 <td  valign="top" > <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ec7"> <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec7.png" class="img-fluid"> </button> </td>
+                 </tr>
+                
+                 </tbody>
+              </table>
+
+              <!--modals-->
+              <!--e3-->
+              <div class="modal fade" id="ec3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec3.png" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--e4-->
+              <div class="modal fade" id="ec4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec4.png" class="img-fluid">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--e5-->
+              <div class="modal fade" id="ec5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec5.png" class="img-fluid">
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--e6-->
+              <div class="modal fade" id="ec6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec6.png" class="img-fluid">
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--e7-->
+              <div class="modal fade" id="ec7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/ec7.png" class="img-fluid">
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              
+            </div>
+            
+
+          </div>
+          <div class="blog-section" id="parameters">
+            <h2 class="blog-subtitle">Parameters</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">Parameters are the key and limiting step of model construction; this quantity is fixed in a particular case and can vary in different situations. Without them, we cannot proceed to demonstrate something we want to prove. If an initial model exhibits significant departures from experimental data, further experiments may need to be accomplished to refine the parameter values. The process is iteratively repeated until the construction of a satisfactory model.</p>
+            <p>There are many ways we can obtain the parameters; it could be from literature or even estimated manually. Frequently, the estimation of the parameters is obtained from experimental observations. In our case, that was not possible. We are still experimenting with our chassis. Consequently, we have not yet acquired a product of interest to carry out such tests. Amongst this parameter estimation, a computationally intensive but powerful and robust method is used.</p>
+            <p>Given the lack of data, we take a range of values to test which parameters are relevant to our project. We get these parameters from other iGEM teams since these parameters have not been found in the literature. Below are the parameters that we believe are the most relevant. Those that do not show significant sensitivity are neglected.</p>
+            <p class="mt-2 text-center">Table 2. Parameters</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/tabla2.jpg" class="img-fluid col-md-6">
+            </div>
+            <p>Estimated range of values of the parameters involved in the mathematical model (iGEM Colombia’s Team, 2012, 2013; iGEM iBowu-China's Team, 2019; Valencia UPV iGEM, 2018)</p>
+
+
+          </div>
+          <div class="blog-section" id="sensivity-analysis">
+            <h2 class="blog-subtitle">Description of sensitivity analysis</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-2">In a numerical model, the Sensitivity Analysis (SA) is a method that measures how the impact of uncertainties of one or more input variables can lead to ambiguity on the output variables. This analysis is appropriate because it improves the prediction of the model. Reduces it by studying qualitatively and quantitatively the model response to a change in input variables or by understanding the phenomenon studied by the analysis of interactions between variables (Wexler P., 2014).</p>
+            <p>In the development of our project, the production of a fusion protein implies more characteristics and behaviors than previously known. In addition, the lack of information about it in the literature. Even though determining specific parameters by experimenting was hard to execute. That is why we change the approach of the modelling part.</p>
+            <p>At the first step of design, a sensitivity analysis was performed using the specialized MATLAB software to determine the importance of each parameter in our fusion protein production. The results allow us to focus on the parameters that will be needed to be experimentally measured in the system to enhance in a second iteration the mathematical model. Those will help us with simulations and predictions, previously made in silico, geared toward biopesticide production.</p>
+            <p>The range for each parameter was taken from the literature and set to a specific value. Hence, each parameter established in the model has performed the sensitivity analysis. Afterward, the value of the parameters analyzed changed according to the various signal. The concentration of fusion protein inside the cell is the response signal, and the one that reaches the steady state is what the analysis determined.</p>
+
+          </div>
+          <div class="blog-section" id="obtaining-experimental-data">
+            <h2 class="blog-subtitle">Obtaining experimental data</h2>
+            <h2 class="blog-title-line"></h2>
+            <p class="mt-3">Our models need an adjustment to improve them. In this way, we need to obtain the parameters which describe our system. But the specialized literature offers few reported parameters that are useful to us because our chassis is uncommon.</p>
+            <p>We can get the parameters which we need by experimentation. The particularities of our strain of P. Pastoris would require experimentation, in which the kinetic parameters are studied to adequately fit our mathematical model. However, the equipment necessary for such a task was not easily accessible to us and to solve this problem we decided to create hardware capable of performing some of these measurements.</p>
+            <p>We didn't create a revolutionary device; we made a homemade spectrometer. The Aachen team from Germany made a very similar device in 2014. We proposed to develop a visual interface to be more user-friendly.</p>
+            <p>Our device seeks to measure optical density and fluorescence using cheap and easily accessible materials. We rely on the Arduino platform, in conjunction with the python programming language to build the necessary hardware and software. The use and design of hardware and software will be covered in more depth in this section.</p>
+            <p>Our objectives for this device are the followings:</p>
+            <ul>
+              <li>Make a homemade spectrophotometer that can monitor the fluorescence and optical density of a bioreactor in real-time.</li>
+              <li>Make a script in Python, which allows serial communication with Arduino. Transmission of signals to LEDs and reading of sensors.</li>
+              <li>Make a circuit with an Arduino, which allows serial communication with Python, which contains 2 LED outputs and the reading of two light sensors.</li>
+              <li>In the Python code, we must include a graphical interface which has the following options: Connect to the Arduino circuit, create an optical density measurement mode, create a fluorescence measurement mode, save the measurements to a CVS file, and display the data in a graph in real-time.</li>
+              <li>Simulate the connection in real-time with a replica of the Arduino circuit in Proteus.</li>
+            </ul>
+            <p>You can obtain the protocol of our parameter clicking the following</p>
+            <a href="https://static.igem.wiki/teams/4422/wiki/protocols/math-modeling/calibration-curve-with-escherichia-coli.pdf" class="text-decoration-none btn btn-outline-success">Parameter protocol</a>
+            <p>Note: we decided to calibrate our device using E. Coli instead of P. Pastoris because E. Coli, which also produces GFP, was already transformed when the device was developed, thus, the protocol was elaborated in a hypothetical aspect.</p>
+
+          </div>
+          <div class="blog-section" id="metabolic-model">
+            <h2 class="blog-subtitle">Metabolic model</h2>
+            <h2 class="blog-title-line"></h2>
+            <h2 class="mt-2">Genome-scale metabolic model (GEM) of <span class="fst-italic"> Pichia Pastoris</span></h2>
+            <p>We implemented a genomic scale metabolic model that incorporates the production of our biopesticide to design growth strategies for our microorganism at the bioreactor level. Based on this, we adjust the mathematical models that help us simulate the behavior of systems to optimize the production of the Spidicide-CX.</p>
+            <p>GEM reconstruction has been established as one of the main modelling approaches for systems-level metabolic studies. GEM allows metabolic forecasting flux values for an entire set of metabolic reactions using optimization techniques, such as flux balance analysis (FBA), which uses linear programming (Gu C. et al., 2019). GEMs are a network-based tool that collects all known metabolic information of a biological system, including the genes, enzymes, reactions, associated gene-protein-reaction (GPR) rules, and metabolites. These metabolic networks provide quantitative predictions related to growth or cellular fitness based on GPR relationships.</p>
+            <p>Consequently, from the mechanistic model, it is possible to study a potential behavior of the design according to changes in the protein due to the concentration of certain factors such as transcribers, and inducers, among others. Information about the Pichia that performs the product transformation, can be added to optimize the production conditions of the peptide of interest. In this way, the metabolic model can be switched to the genomic scale and finally predict the rate of protein synthesis, before experimenting with the wet lab.</p>
+            <p>To simulate the production of OAIP-1 and AcTx-Hv2a, we followed the methodology of Sohn et al., and the Genome-Scale Metabolic Model of Pichia Pastoris, taken from the BioModels repository (Tomàs-Gamisans, 2016) (Sohn S. et al., 2010). Three products were taken as a reference to represent the production mechanism of each protein: their respective DNA, mRNA, and amino acid sequence.</p>
+            <p class="mt-2 text-center">Table 5. Metabolic reactions representing the production of fusion proteins OAIP-1 and AcTx-Hv2a</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/tabla5.jpg" class="img-fluid col-md-10">
+            </div>
+            <p class="mt-2">With the help of the MATLAB Cobra Toolbox tool and based on these equations, simulations were developed by selecting the maximization of the biomass reaction to obtain an optimization.</p>
+            <p>Through this analysis, the optimal rate of carbon consumption for each type of protein produced was resolved. Next, the impact of methanol consumption was analyzed when the System works correctly to produce the fusion protein. The results could be represented with a heat map where the horizontal axis indicates the carbon consumption, the vertical axis the protein production rate and the specific growth rate through the contour lines.</p>
+            <p>Although the analysis of the rate of carbon consumed was not enough, it was intended to analyze the oxygen consumption from the optimum values of the inducer. This to demonstrate what the literature indicates, P. Pastoris in a hypoproteins. Therefore, the production of fusion proteins was determined, as well as the growth rate at different oxygen concentrations.</p>
+
+          </div>
+          <div class="blog-section" id="results">
+            <h2 class="blog-subtitle">Results</h2>
+            <h2 class="blog-title-line"></h2>
+            <h2 class="blog-subtitle mt-2">Mechanistic model</h2>
+            <p class="mt-2">Now, the results obtained from the sensitivity of the mechanistic model are presented below. It should be noted that the results were divided into three levels of sensitivity: none, low and high. None refers to the fact that there is no slope on the graph, it is a constant value. Low is considered when the slope of the graph is minimal and high when the slope is very noticeable and there is a drastic change in the concentration of the fusion protein.</p>
+            <p class="text-center">Table 6. Results of the mechanistic model</p>
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/tabla6.jpg" class="col-md-10 img-fluid">
+            </div>
+            <p>A high sensitivity is equal to say that a minimal change in this parameter will drastically affect the intracellular concentration of fusion proteins. This study allows us to deduce which parameters are important to measure in the laboratory and consequently obtain better predictions from our model.</p>
+            <p>Within the parameters analyzed, there is only high sensitivity in mRNA degradation rate, translation rate, FP1/FP2 diffusion rate and FP1/FP2 degradation rate.</p>
+            <p>According to the parameters that had the greatest effect on the mechanistic model, we performed a simple optimization analysis within the previously established ranges. Due to the lack of experimental information, an estimation approach for the parameters with the greatest effect can be performed to find the values at which we can find a higher concentration of the fusion protein. In the future we will be able to show whether our estimates are correct by fitting the model to experimental data.</p>
+            <p>The following graph shows the results of the simulation with the sensitive parameters that estimate the highest concentration of fusion protein in the shortest time. This simulation, like the previous ones, was done in Matlab using the ode45 function to solve the differential equations.</p>
+
+            <div class="row justify-content-center">
+              <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/imagen-q-falta.png" class="img-fluid col-md-9">
+            </div>
+            <p class="text-center mt-2">Figure 20: Model prediction using the best sensible parameter values</p>
+            <p>Over time we can observe a decrease in the concentration of methanol outside the cell, due to its consumption as an inducer in the production of the fusion protein. This simulation presents a maximum peak and the highest production rate of the PF in the first 15 minutes of the process, reaching a semi-steady state after 35 minutes. This simulation represents the best capacity of our circuit using the best sensitive parameters found in the sensitivity analysis, whose specific values are: mRNA degradation rate 0.3 min-1, translation rate 0.7 min<sup>-1</sup> and PF degradation rate 0.05 min<sup>-1</sup>.</p>
+            <h3 class="mt-2">Metabolic model</h3>
+            <p>The simulations results using the previous described GEM on P. Pastoris showed the carbon flux distributions for both fusion proteins.</p>
+            <p>A heatmap data visualization is a method of graphically representing numerical data where the value of each data point is indicated using colors. For OAIP-1 and AcTx-Hv2a production, the same behavior is observed. The heatmap allowed us to obtain a range of values of methanol and oxygen consumption rates.</p>
+            <p>For both fusion proteins, the rate of <span class="fst-italic"> Pichia Pastoris</span> is more important when the consumption of methanol is high and protein production rate is low. This is due because the protein production is mutually exclusive with the specific growth rate. A curious fact is that we could achieve a considerable number of fusion proteins without having biomass. One thing we must consider is that at high concentrations of methanol, it can damage the cell, so we decided to consider a rate of methanol consumption rate value of 7 mmol/gDCW/h.</p>
+            <p>An optimum performance is present at a low oxygen uptake rate for both cases of fusion protein production. In this situation, the highest values of the protein or biomass production rate can be reached.</p>
+            <p>We can then conclude that the best conditions in which there is an optimal production of protein and biomass is at a rate of methanol consumption of 7 mmol/gDCW/h and oxygen consumption rate of 2 mmol/gDCW/h.</p>
+            <div class="blog-table">
+              <table  border="1" cellspacing="0" cellpadding="0"  > 
+                <tbody>
+                <tr>
+                 <td  nowrap="" valign="bottom" >  </td>
+                 <td  nowrap="" valign="bottom" ><p>OAIP-1</p></td>
+                 <td  nowrap="" valign="bottom" ><p>AcTx-Hv2</p></td>
+                 </tr>
+                
+                 <tr>
+                 <td  nowrap="" valign="bottom" ><p>Methanol uptake rate</p></td>
+                 <td  nowrap="" valign="bottom" ><img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/map1.jpg" class="img-fluid">  </td>
+                 <td  nowrap="" valign="bottom" ><img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/map2.jpg" class="img-fluid">   </td>
+                 </tr>
+                
+                 <tr>
+                 <td  nowrap="" valign="bottom" ><p>oxigen uptake rate</p></td>
+                 <td  nowrap="" valign="bottom" > <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/map-3.jpg" class="img-fluid">  </td>
+                 <td  nowrap="" valign="bottom" > <img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/map4.jpg" class="img-fluid">  </td>
+                 </tr>
+                
+                 </tbody>
+              </table>
+            </div>
+            <p class="mt-2">Finally, we can say that this analysis of the metabolic model together with the mechanistic model, achieve a good prediction to reach an optimal value of fusion protein production. Therefore, the values obtained by mathematical modelling will facilitate laboratory experiments.</p>
+
+          </div>
+          <div class="blog-section">
+            <h2 class="blog-subtitle">Future vision</h2>
+            <h2 class="blog-title-line"></h2>
+            <p>In its broadest sense, mathematical modelling is the process of a problem solving by the mathematical expression of real-life event or a problem. The study we have done have already done a great prediction. However, laboratory measurements of the parameters that were considered sensitive for protein production have yet to be taken. This is one the priority will be to know the parameters of the model by designing the required experiments for next year.</p>
+            <p>It is also planned to carry out measurements with the transformed Pichia sensor. Recall that protein production is equivalent to the presence of fluorescence. Therefore, we could verify the results of the metabolic modelling, that with high concentrations of methanol and low concentrations of oxygen there will be greater fluorescence. Likewise, it would be interesting to verify how much protein is produced when a methanol shock is administered to the cell medium.</p>
+            <p>The protocol that will be necessary to follow to verify these assumptions is presented below.</p>
+            <div class="row justify-content-center">
+              <a href="https://static.igem.wiki/teams/4422/wiki/mathmodelling/protocols-mm.pdf" class="col-md-10" target="_blank"><img src="https://static.igem.wiki/teams/4422/wiki/mathmodelling/last-figure.png" class="img-fluid"></a>
+            </div>
+            <p class="text-center">Figure 21. Protocol for obtaining model parameters</p>
+          </div>
+          <div class="blog-section" id="collaboration">
+            <h2 class="blog-subtitle">Collaboration</h2>
+            <h2 class="blog-title-line"></h2>
+            <p>In the math modelling section, we did a collaboration with Tec Chihuahua and USP-EEL Brazil to create a Project Modelling Manual for future iGEM teams. We also reached an agreement with <a href="https://static.igem.org/mediawiki/2020/9/96/T--Imperial_College--introtomodelling.pdf" class="text-decoration-none btn btn-outline-dark"> Imperial College London</a> IGEM 2020 to be able to use their manual as inspiration.</p>
+            <p>We are deeply grateful to each of these teams for having worked with us during this season. Together we were able to do a very good job, share ideas and knowledge. In addition to that we had in common ideas about the lack of documentation in our mother tongue in the modelling field, especially in LATAM. However, we can make an effort to be able to support and share with future iGEM teams, especially Latinos, so that they can take advantage of what we have acquired during this long journey of iGEM competition 2022.</p>
+
+          </div>
+          <div class="blog-section" id="references">
+            <h2>REFERENCES</h2>
+            <h2 class="blog-title-line"></h2>
+            <ul>
+              <li><p>Chandran, D., Copeland, W. B., Sleight, S. C., & Sauro, H. M. (2008). Mathematical modelling and synthetic biology. Drug discovery today. Disease models, 5(4), 299–309. https://doi.org/10.1016/j.ddmod.2009.07.002</p></li>
+              <li><p>iGEM Foundation [iGEMFoundation]. (2022, july 14). Modelling for SynBio: from ODEs to Gene expression. Youtube. https://www.youtube.com/watch?v=ph5iYWwXsPw</p></li>
+              <li><p>"model, n. and adj." OED Online. Oxford University Press, September 2022. Web. 4 October 2022.</p></li>
+              <li><p>Team:Colombia Uniandes/Parameters - 2013.igem.org. (s. f.). Recuperado 4 de octubre de 2022, de https://2013.igem.org/Team:Colombia_Uniandes/Parameters</p></li>
+              <li><p>Stalidzans, E., Zanin, M., Tieri, P., Castiglione, F., Polster, A., Scheiner, S., Pahle, J., Stres, B., List, M., Baumbach, J., Lautizi, M., Van Steen, K. & Schmidt, H. H. (2020, 1 mayo). Mechanistic Modelling and Multiscale Applications for Precision Medicine: Theory and Practice. Network and Systems Medicine, 3(1), 36-56. https://doi.org/10.1089/nsm.2020.0002</p></li>
+              <li><p>Randers-Eichhorn, L., Albano, C. R., Sipior, J., Bentley, W. E., & Rao, G. (1997). On-Line Green Fluorescent Protein Sensor with LED Excitation. In John Wiley & Sons, Inc. Biotech-nol Bioeng (Vol. 55).</p></li>
+              <li><p>Team:Alemania Recuperado 6 de octubre de 2022, de https://2014.igem.org/Team:Aachen/OD/F_device</p></li>
+              <li><p>Wexler, P. (2014). Encyclopedia of Toxicology. Elsevier Gezondheidszorg.</p></li>
+              <li><p>Gu, C., Kim, G.B., Kim, W.J. et al. Current status and applications of genome-scale metabolic models. Genome Biol 20, 121 (2019). https://doi.org/10.1186/s13059-019-1730-3</p></li>
+              <li><p>Passi, A., Tibocha-Bonilla, J. D., Kumar, M., Tec-Campos, D., Zengler, K., & Zuniga, C. (2021). Genome-Scale Metabolic Modelling Enables In-Depth Understanding of Big Data. Metabolites, 12(1), 14. https://doi.org/10.3390/metabo12010014</p></li>
+              <li><p>Tomàs-Gamisans2016 - Genome-Scale Metabolic Model of Pichia pastoris (version 2) | BioModels. (s. f.). Recuperado 8 de octubre de 2022, de https://www.ebi.ac.uk/biomodels/MODEL1508040001</p></li>
+              <li><p>Sohn, S. B., Graf, A. B., Kim, T. Y., Gasser, B., Maurer, M., Ferrer, P., Mattanovich, D., & Lee, S. Y. (2010). Genome-scale metabolic model of methylotrophic yeast Pichia pastoris and its use for in silico analysis of heterologous protein production. Biotechnology journal, 5(7), 705–715. https://doi.org/10.1002/biot.201000078.</p></li>
+              <li><p>Principle and Feature of Various Detection Methods (2) : Hitachi High-Tech GLOBAL. (s. f.). Recuperado 9 de octubre de 2022, de https://www.hitachi-hightech.com/global/products/science/tech/ana/lc/basic/course8.html</p></li>
+              <li><p>Myers JA, Curtis BS, Curtis WR, et al. Improving accuracy of cell and chromophore concentration measurements using optical density. BMC Biophys. 2013;6(1):4. doi:10.1186/2046-1682- 6-4.</p></li>
+              <li><p>Kiviharju K, Salonen K, Moilanen U, Eerikäinen T. Biomass measurement online: The performance of in situ measurements and software sensors. J Ind Microbiol Biotechnol. 2008;35(7):657-665. doi:10.1007/s10295-008-0346-5.</p></li>
+              <li><p>Marinescu, Catalin & Popescu, Roua. (2018). Open-Source bioreactor controller for bacterial protein expression. 10.7287/peerj.preprints.27150v1.</p></li>
+            </ul>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
