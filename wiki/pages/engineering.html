@@ -20,7 +20,7 @@
         <h3 class="mt-2">Chassis selection</h3>
         <p class="mt-2">The chassis selection is a crucial step during the design process. Two of the most common chassis were selected to be analyzed in the context of our project. However, we asked for advice from an expert in metabolic engineering and the production of recombinant proteins. Thus, we added to our list the well-known emergent chassis <span class="fst-italic"> Pichia pastoris</span>.</p>
         <p>To start with the chassis selection, we identified two fundamental characteristics that had to be accomplished to successfully produce our proteins. First, these peptides are short and come from a eukaryotic organism. Then, the chassis should be capable of folding and assembling eukaryotic proteins. Second, these peptides have disulfide bonds. Then, the chassis should make post-translational modifications correctly.</p>
-        <p>Due to the characteristics of the chassis Pichia pastoris, this methylotrophic yeast was selected as the host cell of our gene construct. Additionally, P. pastoris has enormous advantages such as obtaining high recombinant protein production yields. 
+        <p>Due to the characteristics of the chassis <span class="fst-italic">Pichia pastoris</span>, this methylotrophic yeast was selected as the host cell of our gene construct. Additionally, <span class="fst-italic"> P. pastoris</span> has enormous advantages such as obtaining high recombinant protein production yields. 
         </p>
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/engineering/1.png" class="img-fluid col-md-8">
@@ -41,7 +41,7 @@
         <p class="text-center">Figure 3. Number of cells and promoters</p>
         <p>The most optimal genetic circuit designs were selected from the previous screening process. The main goal of this project is the development of a system where the expression happens in different cells. Thus, we assemble in silico circuits, design and optimize lab protocols and perform an experimental process to develop this option.</p>
 
-        <h3 class="mt-2">Genetic circuits Description</h3>
+        <h3 class="mt-2">Genetic circuits description</h3>
         <p class="mt-2">Two genetic circuits were designed to express each peptide in different strains. However, both have the same general fundamentals and behavior. The pPICZαA plasmid was selected to assemble the two genetic circuits. The protein expression will be regulated by the well-characterized and strong promoter PAOX1. This promoter is induced with methanol and repressed with glycerol, ethanol, and glucose. This promoter contains a Kozak consensus sequence that serves as the initiation site for transcription. After it, an alpha factor secretion signal will target recombinant proteins to the growth medium, simplifying the purification step. After these parts, both circuits can be divided into three sections: a purification section, a fusion protein section, and a detection section.
         </p>
         <div class="row justify-content-center">
@@ -60,20 +60,23 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/engineering/5.png" class="img-fluid col-md-8">
         </div>
+        <p class="text-center">Figure 5. Purified protein</p>
+
 
         <h3 class="mt-3">Detection section</h3>
         <p>The Green Fluorescent Protein (GFP) will be employed as a reporter protein. it will confirm the expression of the fusion protein; also, it will help us select high producers and obtain protein expression data for the math model. To achieve coexpression, we added the “self cleaving” peptide T2A before the eGFP sequence. The cleaving mechanism of T2A is the ribosome skipping in the formation of a glycyl-prolyl peptide bond at its C-terminus (Liu, 2017). The eGFP is not part of the fusion protein, avoiding its possible interference with the venom peptides. Also, the GFP will not be secreted to the growth medium.</p>
         <p>In addition, the circuits have two restriction enzymes sites. One for KpnI and one for Cfr421</p>
         <div class="row justify-content-center">
-          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/0c.jpg" class="col-md-8 img-fluid">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/6.jpeg" class="col-md-8 img-fluid">
         </div>
+        <p class="text-center">Figure 6. Protein production induced by methanol</p>
       </div>
       <div class="blog-section mt-3" id="build">
         <h2 class="blog-subtitle">Build</h2>
         <h2 class="blog-title-line" ></h2>
         <h3 class="mt-2">Experimental overview</h3>
-        <p>The build step of the design cycle is a great opportunity to put hands-on work. Therefore, this could be one of the most challenging phases of the project development. The results obtained from the experimental phase are highly important for the next steps. The data obtained during this phase could be fundamental to propose new improvements.</p>
-        <p>An experimental process was designed and proposed to assemble the gene constructs. We aim to obtain a strain of the yeast Pichia pastoris  capable of executing the instructructions programmed in the expression cassette that will be integrated into the genome of this microorganism.</p>
+        <p>The build step of the design cycle is a great opportunity to put hands-on work. Therefore, this could be one of the most challenging phases of the project development. The <a href="{{ url_for('pages', page='results') }}" class="btn btn-outline-success"> results</a> obtained from the experimental phase are highly important for the next steps. The data obtained during this phase could be fundamental to propose new improvements.</p>
+        <p>An experimental process was designed and proposed to assemble the gene constructs. We aim to obtain a strain of the yeast <span class="fst-italic">Pichia pastoris</span>  capable of executing the instructructions programmed in the expression cassette that will be integrated into the genome of this microorganism.</p>
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/protocols/molecular-biology/1-molecular-biology-overview.png" class="img-fluid col-md-10">
         </div>
@@ -86,7 +89,7 @@
         <p>The test phase helped us to understand the overlook points in our design and improve them:</p>
         <ol style="list-style-type: lower-alpha">
           <li><p>During the test phase we noticed that restriction enzymes needed to exchange the fragments inside the circuit were expensive and unaffordable. Thus, we could not use them.</p></li>
-          <li><p>In addition, the Gibson Assembly does not recommend using primers with His tag sequences. In our case, one of our primers had an His tag sequence; these could be the cause of the little amount of transformant colonies. To learn more about it visit the results link.
+          <li><p>In addition, the Gibson Assembly does not recommend using primers with His tag sequences. In our case, one of our primers had an His tag sequence; these could be the cause of the little amount of transformant colonies. To learn more about it visit the <a href="{{ url_for('pages', page='results') }}" class="btn btn-outline-success">results</a> link.
           </p></li>
           <li><p>Although the test helped us identify the points a and b to improve, we were able to appreciate our achievements. One of them was the use of eGFP, which helped us identify the expressing colonies.</p></li>
         </ol>

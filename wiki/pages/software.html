@@ -45,7 +45,7 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen1.png" class="img-fluid col-md-8">
         </div>
-        <p class="text-center mt-2">Figure 1 Circuit connection in Proteus.</p>
+        <p class="text-center mt-2">Figure 1: Circuit connection in Proteus.</p>
 
       </div>
       <div class="blog-section" id="development-of-arduino-code">
@@ -56,7 +56,7 @@
         <p><code>#define OD A1</code></p>
         <p><code>#define ledFlu 9</code></p>
         <p><code>#define ledOD 10</code></p>
-        <p>In the first section we define the outputs and inputs of our system, the pin A2 is used to fluorescence sensor, and the pin A1 is used to Optical density sensor. In the other hand the pin 9 is used to the fluorescence sensor (Blue) and the pin 10 is used to optical density led (Red).</p>
+        <p>In the first section we define the outputs and inputs of our system, the pin A2 is used to fluorescence led, and the pin A1 is used to Optical density sensor. In the other hand the pin 9 is used to the fluorescence sensor (Blue) and the pin 10 is used to optical density led (Red).</p>
         <p><code>void setup() {</code></p>
         <p><code>Serial.begin(9600);</code></p>
         <p><code>delay(30);</code></p>
@@ -121,22 +121,22 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen2.png" class="img-fluid col-md-6">
         </div>
-        <p class="text-center mt-2">Figure 2 Simulation</p>
+        <p class="text-center mt-2">Figure 2: Simulation</p>
         <p class="mt-2">Subsequently, the .hex file is uploaded to Arduino uno to the Proteus simulation.</p>
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen3.png" class="img-fluid col-md-6">
         </div>
-        <p class="text-center mt-2">Figure 3 Load .hex file, in Proteus.</p>
+        <p class="text-center mt-2">Figure 3: Load .hex file, in Proteus.</p>
         <p class="mt-2">We need to open the virtual serial port using V.S.P.D. We use port "COM 1" to "COM 2".</p>
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen4.png" class="img-fluid col-md-6">
         </div>
-        <p class="text-center mt-2">Figure 4 Creating port COM1 to COM2 on VSPE.</p>
+        <p class="text-center mt-2">Figure 4: Creating port COM1 to COM2 on VSPE.</p>
         <p>COM2 port is assigned using COMPIM in Proteus and set the baud rate to 9600 baud.</p>
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen5.png" class="img-fluid col-md-6">
         </div>
-        <p class="text-center mt-2">Figure 5 Port mapping in Proteus.</p>
+        <p class="text-center mt-2">Figure 5: Port mapping in Proteus.</p>
       </div>
       <div class="blog-section" id="development-of-python-code">
         <h2 class="blog-subtitle">Development of Python Code</h2>
@@ -146,7 +146,7 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen6.png" class="img-fluid col-md-6">
         </div>
-        <p class="text-center mt-2">Figure 6 Installation of serial module in CMD Console</p>
+        <p class="text-center mt-2">Figure 6: Installation of serial module in CMD Console</p>
         <p class="mt-2">With the module installed, a base code is generated, which sends and receives values for Arduino to compare and generate an action in the Proteus simulation:</p>
         <p>
           <code>
@@ -507,7 +507,7 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen7.png" class="img-fluid col-md-8">
         </div>
-        <p class="text-center mt-2">Figure 7 Visual interface of UAMonitor</p>
+        <p class="text-center mt-2">Figure 7:: Visual interface of UAMonitor</p>
         <p class="mt-2 fw-bold">Recommendations:</p>
         <ul>
           <li>
@@ -609,7 +609,7 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/software/imagen8.png" class="img-fluid col-md-8">
         </div>
-        <p class="text-center mt-2">Figure 8 Calibration curve using different concentrations of E. coli in LB medium measuring absorbance with the OD/Fluorescence sensor.</p>
+        <p class="text-center mt-2">Figure 8: Calibration curve using different concentrations of E. coli in LB medium measuring absorbance with the OD/Fluorescence sensor.</p>
         <p class="mt-3 mb-3">We can observe that the best data obtained for the construction of the calibration curve are found at concentrations between 0 - 1 g Biomass/L, because this region linearly relates the absorbance and the turbidity of the medium. Fitting the average of the absorbances to a straight line, we can find an R value of 0.9942, which represents a highly fitted value.</p>
       </div>
     </div>
