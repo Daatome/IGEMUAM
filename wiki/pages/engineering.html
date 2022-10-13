@@ -70,6 +70,23 @@
           <img src="https://static.igem.wiki/teams/4422/wiki/engineering/6.jpeg" class="col-md-8 img-fluid">
         </div>
         <p class="text-center">Figure 6. Protein production induced by methanol</p>
+
+        <h3>Boolean behavior</h3>
+        <p>A common standardized way to present  the behavior of a genetic circuit in synthetic biology is through boolean operators (AND, NOT and OR). These operators use biological inputs such as the presence or absence of a reagent and translated to an algebraic meaning that can 1 or 0 respectively. </p>
+        <p>In this project the circuits iUAM_PICZαA_OAIP and UAM_PICZαA_Hv2a behave as a NYPLY gate which is the union between an AND and a NOT gate. Thus, the AND gate must have two 1 in the input to produce a 1 in the output that means the production of heterologous proteins. In order to produce these inputs, glycerol should be absent and methanol present (Fig. 7). 
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/boolean-3.jpeg" class="col-md-10">
+        </div>
+        <p class="text-center">Figure 7. Boolean representation of the genetic circuits
+        </p>
+        <p>This behavior allows a growth phase with glycerol and an expression phase with methanol, avoiding a metabolic overload and an efficient utilization of carbon sources in each phase (Fig. 8).
+        </p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/boolean1.jpeg" class="img-fluid col-md-10">
+        </div>
+        <p class="text-center">Figure 8. Protein production with methanol induction
+        </p>
       </div>
       <div class="blog-section mt-3" id="build">
         <h2 class="blog-subtitle">Build</h2>
@@ -80,6 +97,8 @@
         <div class="row justify-content-center">
           <img src="https://static.igem.wiki/teams/4422/wiki/protocols/molecular-biology/1-molecular-biology-overview.png" class="img-fluid col-md-10">
         </div>
+        <p class="text-center">Figure 9. Experimental overview
+        </p>
 
 
       </div>
@@ -98,15 +117,20 @@
       <div class="blog-section mt-3" id="learn">
         <h2 class="blog-section">Learn</h2>
         <h2 class="blog-title-line"></h2>
-        <p class="mt-2">Overall, these are key points to improve in further designs:
-        </p>
+        <p class="mt-2">Overall, these are key points to improve in further designs:</p>
         <ul>
-          <li><p>Avoid His tag sequences in Gibson Assembly.
+          <li><p>Avoid His tag sequences in Gibson Assembly or add extra pair bases at the beginning .</p></li>
+          <li><p>Exchange the restriction enzyme sites for a more common pair (KpnI and XhoI).
           </p></li>
-          <li><p>Exchange the restriction enzyme sites for a more common pair.</p></li>
           <p>Additionally, these are key points that should be conserved in further designs:</p>
           <li><p>The eGFP is a good tool to identify the expressing colonies.</p></li>
         </ul>
+        <p>Thus, the optimized final circuit is:</p>
+        <div class="row justify-content-center">
+          <img src="https://static.igem.wiki/teams/4422/wiki/engineering/boolean-2.jpeg" class="col-md-10">
+        </div>
+        <p class="text-center ">Figure 10. Optimized circuit
+        </p>
 
       </div>
       <div class="blog-section" id="references">
