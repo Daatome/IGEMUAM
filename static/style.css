@@ -355,3 +355,12 @@ footer a:hover {
 .human h2{
     color: var(--color4) !important;
 }
+@media (min-width:768px){
+    
+    .tabla2-attribution{
+        margin-top: -80px;
+    }
+}
+h2{
+    color: var(--color4);
+}
